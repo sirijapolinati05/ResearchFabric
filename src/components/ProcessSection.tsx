@@ -36,7 +36,7 @@ const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section id="about" className="py-14 bg-process-blue overflow-hidden">
+    <section id="process" className="py-14 bg-process-blue overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <div className="flex items-center justify-center gap-3 mb-4">

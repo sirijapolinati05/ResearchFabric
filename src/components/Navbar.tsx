@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 // ✅ FIXED PATHS (IMPORTANT)
@@ -7,19 +7,17 @@ import logo from "../assets/LandingPage/research-fabric.png";
 import lightLogo from "../assets/LandingPage/research-fabric-footer.png";
 
 const navItems = [
-  { label: "Home", href: "#home" },
   { label: "Our Practices", href: "#practices" },
   { label: "CXO AI Research", href: "#cxo" },
   { label: "Analysts", href: "#analysts" },
   { label: "Latest Research", href: "#latest-research" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Process", href: "#process" },
 ];
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("#home");
+  const [activeSection, setActiveSection] = useState(navItems[0].href);
   const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
 
@@ -43,13 +41,13 @@ const Navbar = () => {
 
   useEffect(() => {
     if (!isHomePage) {
-      setActiveSection("#home");
+      setActiveSection(navItems[0].href);
       return;
     }
 
     const handleScroll = () => {
       const scrollPos = window.scrollY + 100;
-      let current = "#home";
+      let current = navItems[0].href;
 
       navItems.forEach((item) => {
         const section = document.querySelector(item.href);
@@ -144,12 +142,8 @@ const Navbar = () => {
               showLightNavbar ? "text-black/70" : "text-white/70"
             }`}
           >
-            Sign In | Subscribe
+            Subscribe
           </span>
-
-          <button className={showLightNavbar ? "text-black" : "text-white"}>
-            <Search size={18} />
-          </button>
         </div>
       </div>
 
