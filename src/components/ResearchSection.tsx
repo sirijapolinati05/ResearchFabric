@@ -1,9 +1,9 @@
-import linkedinIcon from "@/assets/LandingPage/linkedin.png";
-import research1 from "@/assets/LandingPage/Agentic-Enterprise.png";
-import research2 from "@/assets/LandingPage/silicon.jpeg";
-import research3 from "@/assets/LandingPage/Quantum-Readiness.png";
-import research4 from "@/assets/LandingPage/Agentic-Enterprise1.png"; // ✅ NEW IMAGE
-import whiteTypographyImg from "@/assets/LandingPage/White-Typography.png";
+import linkedinIcon from "../assets/LandingPage/LinkedIn.png"; // ✅ FIXED CASE + PATH
+import research1 from "../assets/LandingPage/Agentic-Enterprise.png";
+import research2 from "../assets/LandingPage/silicon.jpeg";
+import research3 from "../assets/LandingPage/Quantum-Readiness.png";
+import research4 from "../assets/LandingPage/Agentic-Enterprise1.png";
+import whiteTypographyImg from "../assets/LandingPage/White-Typography.png";
 
 const ResearchSection = () => {
   return (
@@ -35,7 +35,6 @@ const ResearchSection = () => {
             <img
               src={whiteTypographyImg}
               alt=""
-              aria-hidden="true"
               className="pointer-events-none absolute -left-44 -top-28 z-0 w-[360px] max-w-none opacity-90"
             />
 
@@ -129,7 +128,7 @@ const ResearchSection = () => {
             </div>
           </div>
 
-          {/* THIRD CARD ✅ ONLY IMAGE CHANGED */}
+          {/* THIRD CARD */}
           <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md">
             <div className="flex-1 p-4">
               <span className="rounded-full bg-gradient-to-r from-blue-800 to-sky-400 px-2 py-1 text-[10px] text-white">
@@ -158,7 +157,6 @@ const ResearchSection = () => {
               </div>
             </div>
 
-            {/* ✅ ONLY THIS LINE CHANGED */}
             <img src={research4} className="h-auto w-full" />
           </div>
 
