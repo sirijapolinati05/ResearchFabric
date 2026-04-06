@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/LandingPage/research-fabric.png";
-import lightLogo from "@/assets/LandingPage/research-fabric-footer.png";
+
+// ✅ FIXED PATHS (IMPORTANT)
+import logo from "../assets/LandingPage/research-fabric.png";
+import lightLogo from "../assets/LandingPage/research-fabric-footer.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -20,6 +22,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("#home");
   const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+
   const isHomePage = pathname === "/";
   const showLightNavbar = isScrolled || !isHomePage;
 
@@ -73,16 +76,13 @@ const Navbar = () => {
     return isActive ? "text-black" : "text-black/80 hover:text-black";
   };
 
-  // STRIP SAME
   const logoFrameClass =
     "relative h-14 w-[200px] overflow-hidden md:h-16 md:w-[240px]";
 
-  // DARK LOGO
   const darkLogoClass =
     "absolute left-0 top-0 h-[115%] w-auto object-contain transition-all duration-500 " +
     (showLightNavbar ? "opacity-0" : "opacity-100");
 
-  // 🔥 FOOTER LOGO (FINAL LEFT TUNE)
   const lightLogoClass =
     "absolute -left-7 -top-7 h-[180%] w-auto object-contain transition-all duration-500 " +
     (showLightNavbar ? "opacity-100" : "opacity-0");
