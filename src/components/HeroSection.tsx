@@ -4,20 +4,18 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-[#081A34] overflow-hidden">
       
-      {/* LEFT DARK PANEL */}
       <div className="absolute inset-0 w-full h-full bg-[#081A34]" />
 
-      {/* IMAGE */}
-      <div className="absolute top-0 right-0 w-[48%] h-[58%] overflow-hidden">
+      {/* ✅ IMAGE SIZE MUCH BIGGER */}
+      <div className="absolute top-0 right-0 w-[60%] h-[58%] overflow-hidden">
         <img
           src={heroImg}
           alt="Abstract 3D"
-          className="w-full h-full object-cover object-[center_-20px]"
+          className="w-full h-full object-cover object-top scale-[1.44]"
         />
       </div>
 
-      {/* TEXT BELOW IMAGE */}
-      <div className="absolute right-0 top-[60%] w-[48%] px-6">
+      <div className="absolute right-0 top-[58%] w-[60%] px-6">
         <p className="text-white/70 text-sm leading-relaxed text-left">
           RESEARCHFABRIC™ delivers practitioner-led Smart research on{" "}
           <strong className="text-white">Perpetuating Technologies</strong>{" "}
@@ -29,10 +27,8 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* CONTENT */}
       <div className="relative z-20 max-w-7xl mx-auto px-8 pt-32 pb-20 flex flex-col justify-center min-h-screen">
         
-        {/* HEADING */}
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold leading-[1.2] text-white mb-6">
             
@@ -66,14 +62,18 @@ const HeroSection = () => {
           <div className="flex flex-col gap-4 w-fit">
             <a
               href="#practices"
-              className="bg-[#3CC8FF] text-[#081A34] px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
+              className="flex items-center justify-center bg-[#3CC8FF] text-[#081A34] px-6 py-3 rounded-full text-sm font-semibold 
+              transition-all duration-300 ease-in-out
+              hover:scale-105 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(60,200,255,0.5)]"
             >
               Explore Our Practices
             </a>
 
             <a
               href="#cxo"
-              className="bg-[#43E0B1] text-[#081A34] px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
+              className="flex items-center justify-center bg-[#43E0B1] text-[#081A34] px-6 py-3 rounded-full text-sm font-semibold 
+              transition-all duration-300 ease-in-out
+              hover:scale-105 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(67,224,177,0.5)]"
             >
               CXO AI Research
             </a>
@@ -83,9 +83,7 @@ const HeroSection = () => {
         {/* GRID SECTION */}
         <div className="mt-40 pt-12">
           
-          {/* TOP 4 ITEMS */}
           <div className="grid grid-cols-2 md:grid-cols-4 text-center">
-            
             {[
               { title: "Technology", sub: "Deep Tech Capabilities" },
               { title: "Markets", sub: "B2B, B2C & B2G" },
@@ -94,26 +92,31 @@ const HeroSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`px-4 py-6 ${
+                className={`group px-4 py-6 cursor-pointer transition-all duration-300 ${
                   index !== 3 ? "border-r border-white/20" : ""
                 }`}
               >
-                <h3 className="text-[#2FE6D6] font-serif text-xl font-semibold">
+                <h3 className="text-[#2FE6D6] font-serif text-xl font-semibold 
+                transition-transform duration-300 group-hover:scale-90">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-sm mt-2">
+
+                <p className="text-white/60 text-sm mt-2 
+                transition-transform duration-300 group-hover:scale-90">
                   {item.sub}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* 🔥 PRACTICES (FINAL PERFECT POSITION) */}
-          <div className="text-center mt-3 pt-5 border-t border-white/20">
-            <h3 className="text-[#2FE6D6] font-serif text-xl font-semibold">
+          <div className="group text-center mt-3 pt-5 border-t border-white/20 cursor-pointer">
+            <h3 className="text-[#2FE6D6] font-serif text-xl font-semibold 
+            transition-transform duration-300 group-hover:scale-90">
               Practices
             </h3>
-            <p className="text-white/60 text-sm mt-1">
+
+            <p className="text-white/60 text-sm mt-1 
+            transition-transform duration-300 group-hover:scale-90">
               Research Engineering
             </p>
           </div>

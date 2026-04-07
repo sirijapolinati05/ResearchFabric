@@ -2,19 +2,21 @@ import heroImage from "@/assets/hero-3d.jpg";
 
 const AnalystTeamHero = () => {
   return (
-    <section className="relative min-h-[720px] overflow-hidden bg-[#030B1E] text-white">
-      <img
-        src={heroImage}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+    <section className="relative overflow-hidden pb-10 text-white md:pb-12">
+      <div className="absolute inset-x-0 top-0 h-[360px] overflow-hidden md:h-[400px]">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center"
+        />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,8,25,0.86)_0%,rgba(4,14,40,0.64)_50%,rgba(1,8,24,0.88)_100%)]" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,8,25,0.86)_0%,rgba(4,14,40,0.64)_50%,rgba(1,8,24,0.88)_100%)]" />
 
-      {/* Right glow */}
-      <div className="absolute inset-y-0 right-0 w-[26%] bg-[radial-gradient(circle_at_bottom_right,rgba(38,124,255,0.28),transparent_58%)]" />
+        {/* Right glow */}
+        <div className="absolute inset-y-0 right-0 w-[26%] bg-[radial-gradient(circle_at_bottom_right,rgba(38,124,255,0.28),transparent_58%)]" />
+      </div>
 
       {/* Curves */}
       <div className="absolute bottom-0 right-0 h-[230px] w-[280px] rounded-tl-[140px] border-l border-t border-[#2A49A5]/60 opacity-80" />
@@ -22,7 +24,7 @@ const AnalystTeamHero = () => {
       <div className="absolute bottom-0 right-0 h-[170px] w-[200px] rounded-tl-[96px] border-l border-t border-[#2A49A5]/60 opacity-60" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[600px] max-w-[1100px] items-center justify-center px-6 py-24 text-center md:py-32">
+      <div className="relative z-10 mx-auto flex max-w-[1100px] items-start justify-center px-6 pt-[180px] text-center md:pt-[205px]">
         <div className="max-w-4xl">
           
           {/* Heading - Single Line */}

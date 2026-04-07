@@ -14,7 +14,7 @@ import ResearchSection from "@/components/ResearchSection";
 import AnalystTeamHero from "@/components/AnalystTeam/AnalystTeamHero";
 import AnalystTeamTierOne from "@/components/AnalystTeam/AnalystTeamTierOne";
 import AnalystTeamTierTwo from "@/components/AnalystTeam/AnalystTeamTierTwo";
-import AnalystTeamTierThree from "@/components/AnalystTeam/tierthree/AnalystTeamTierThree";
+import AnalystTeamTierThree from "@/components/AnalystTeam/AnalystTeamTierThree";
 import MicroMarketResearchExpertise from "@/components/MicroMarketResearch/MicroMarketResearchExpertise";
 import MicroMarketResearchHero from "@/components/MicroMarketResearch/MicroMarketResearchHero";
 import MicroMarketResearchMethodology from "@/components/MicroMarketResearch/MicroMarketResearchMethodology";

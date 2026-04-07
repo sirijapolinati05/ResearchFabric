@@ -1,4 +1,4 @@
-import linkedinIcon from "../assets/LandingPage/LinkedIn.png"; // ✅ FIXED CASE + PATH
+import linkedinIcon from "../assets/LandingPage/LinkedIn.png";
 import research1 from "../assets/LandingPage/Agentic-Enterprise.png";
 import research2 from "../assets/LandingPage/silicon.jpeg";
 import research3 from "../assets/LandingPage/Quantum-Readiness.png";
@@ -38,26 +38,28 @@ const ResearchSection = () => {
               className="pointer-events-none absolute -left-44 -top-28 z-0 w-[360px] max-w-none opacity-90"
             />
 
-            <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md">
+            <div className="group relative z-10 flex h-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md
+            transform transition-all duration-300 hover:scale-[1.05] hover:bg-[#0A1F44]">
+
               <div className="flex-1 p-4">
                 <span className="rounded-full bg-gradient-to-r from-blue-800 to-sky-400 px-2 py-1 text-[10px] text-white">
                   AI / IA
                 </span>
 
-                <h3 className="mt-3 text-sm font-semibold">
+                <h3 className="mt-3 text-sm font-semibold group-hover:text-white">
                   The Agentic Enterprise: When AI Stops Assisting and Starts Acting
                 </h3>
 
-                <p className="mt-2 text-[11px] text-gray-500">
+                <p className="mt-2 text-[11px] text-gray-500 group-hover:text-white/80">
                   A framework for how autonomous AI agents reshape enterprise operations.
                 </p>
 
                 <div className="mt-3 flex items-center justify-between whitespace-nowrap">
-                  <p className="text-[10px] font-medium text-gray-700">
+                  <p className="text-[10px] font-medium text-gray-700 group-hover:text-white/80">
                     FEB 2026 · Thought Shaping Paper
                   </p>
 
-                  <div className="flex items-center text-black">
+                  <div className="flex items-center text-black group-hover:text-white">
                     <img src={linkedinIcon} className="h-5 w-5 object-contain" />
                     <span className="-ml-1 text-[9px] leading-none">
                       Releasing soon on <span className="font-semibold">LinkedIn</span>
@@ -73,7 +75,9 @@ const ResearchSection = () => {
           {/* SECOND COLUMN */}
           <div className="flex h-full flex-col gap-4">
 
-            <div className="relative overflow-hidden rounded-2xl shadow-md">
+            <div className="relative overflow-hidden rounded-2xl shadow-md
+            transform transition-all duration-300 hover:scale-[1.05]">
+
               <img src={research2} className="h-32 w-full object-cover" />
 
               <div className="absolute inset-0 flex flex-col justify-between bg-black/60 p-3 text-left">
@@ -100,7 +104,9 @@ const ResearchSection = () => {
               </div>
             </div>
 
-            <div className="flex min-h-[320px] flex-1 flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md">
+            <div className="group flex min-h-[320px] flex-1 flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md
+            transform transition-all duration-300 hover:scale-[1.05] hover:bg-[#0A1F44]">
+
               <img src={research3} className="h-36 w-full object-cover" />
 
               <div className="flex flex-1 flex-col justify-between p-3">
@@ -109,16 +115,16 @@ const ResearchSection = () => {
                     Quantum
                   </span>
 
-                  <h4 className="mt-2 text-xs font-semibold">
+                  <h4 className="mt-2 text-xs font-semibold group-hover:text-white">
                     Quantum Readiness Index 2026: Enterprise Preparedness Assessment
                   </h4>
 
-                  <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
+                  <p className="mt-1 text-[11px] leading-relaxed text-gray-500 group-hover:text-white/80">
                     Benchmarking Fortune 500 quantum strategies across readiness, talent, and investment vectors.
                   </p>
                 </div>
 
-                <div className="mt-3 flex items-center text-black">
+                <div className="mt-3 flex items-center text-black group-hover:text-white">
                   <img src={linkedinIcon} className="h-5 w-5 object-contain" />
                   <span className="-ml-1 text-[9px] leading-none">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
@@ -129,26 +135,28 @@ const ResearchSection = () => {
           </div>
 
           {/* THIRD CARD */}
-          <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md">
+          <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-md
+          transform transition-all duration-300 hover:scale-[1.05] hover:bg-[#0A1F44]">
+
             <div className="flex-1 p-4">
               <span className="rounded-full bg-gradient-to-r from-blue-800 to-sky-400 px-2 py-1 text-[10px] text-white">
                 AI / IA
               </span>
 
-              <h3 className="mt-3 text-sm font-semibold">
+              <h3 className="mt-3 text-sm font-semibold group-hover:text-white">
                 The Agentic Enterprise: When AI Stops Assisting and Starts Acting
               </h3>
 
-              <p className="mt-2 text-[11px] text-gray-500">
+              <p className="mt-2 text-[11px] text-gray-500 group-hover:text-white/80">
                 A framework for how autonomous AI agents reshape enterprise operations.
               </p>
 
               <div className="mt-3 flex items-center justify-between whitespace-nowrap">
-                <p className="text-[10px] font-medium text-gray-700">
+                <p className="text-[10px] font-medium text-gray-700 group-hover:text-white/80">
                   FEB 2026 · Thought Shaping Paper
                 </p>
 
-                <div className="flex items-center text-black">
+                <div className="flex items-center text-black group-hover:text-white">
                   <img src={linkedinIcon} className="h-5 w-5 object-contain" />
                   <span className="-ml-1 text-[9px] leading-none">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>

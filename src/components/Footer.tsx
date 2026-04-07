@@ -26,7 +26,11 @@ const Footer = () => {
             <ul className="space-y-1.5">
               {menuLinks.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors">
+                  <a 
+                    href="#" 
+                    className="text-muted-foreground text-sm transition-all duration-300 
+                    hover:text-foreground hover:translate-x-1"
+                  >
                     {link}
                   </a>
                 </li>
@@ -37,16 +41,30 @@ const Footer = () => {
           {/* Subscribe */}
           <div>
             <h4 className="text-base font-bold text-foreground mb-3">Subscribe</h4>
-            <div className="flex">
+
+            <div className="flex group">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="flex-1 bg-muted rounded-l px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground outline-none"
+                className="flex-1 bg-muted rounded-l px-3 py-2 text-sm text-foreground 
+                placeholder:text-muted-foreground outline-none 
+                transition-all duration-300
+                focus:ring-2 focus:ring-primary focus:shadow-lg"
               />
-              <button className="bg-navy text-primary-foreground px-3 py-2 rounded-r hover:bg-navy-light transition-colors">
+
+              {/* 🔥 BUTTON WITH EFFECTS */}
+              <button 
+                className="bg-navy text-primary-foreground px-3 py-2 rounded-r
+                transition-all duration-300 ease-in-out
+                hover:scale-110 hover:-translate-y-1
+                hover:bg-navy-light
+                hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] 
+                active:scale-95"
+              >
                 <ArrowRight size={16} />
               </button>
             </div>
+
             <p className="text-muted-foreground text-xs mt-1">*Send Message</p>
           </div>
 

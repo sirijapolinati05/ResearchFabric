@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import techImg from "@/assets/LandingPage/Technology-Research.png";
 import tickImg from "@/assets/LandingPage/technology-research-icon.png";
-import microIcon from "@/assets/LandingPage/micromarket-research-icon.png"; // ✅ FIXED PATH
+import microIcon from "@/assets/LandingPage/micromarket-research-icon.png";
 import patternImg from "@/assets/LandingPage/Typographic.png";
 import whitePattern from "@/assets/LandingPage/White-Typography.png";
 
@@ -53,16 +53,15 @@ const PracticesSection = () => {
         </h2>
 
         <p className="mt-5 max-w-[760px] text-[13px] leading-[1.85] text-[#5A6B85]">
-          RESEARCHFABRIC™ operates through two focused research practices, each
-          designed to deliver deep, SME-led intelligence at different scales of
-          the technology landscape.
+          RESEARCHFABRIC™ operates through two focused research practices.
         </p>
       </div>
 
       <div className="mx-auto grid max-w-6xl items-stretch gap-3 px-6 md:grid-cols-3">
 
-        {/* IMAGE CARD */}
-        <div className="h-[364px] overflow-hidden rounded-[10px] border border-[#E2E6EE] bg-white shadow-[0_10px_24px_rgba(17,27,77,0.10)]">
+        {/* 1st IMAGE CARD */}
+        <div className="h-[364px] overflow-hidden rounded-[10px] border border-[#E2E6EE] bg-white shadow-[0_10px_24px_rgba(17,27,77,0.10)] 
+        transform transition-all duration-300 hover:scale-[0.95] hover:z-10">
           <img
             src={techImg}
             alt="Technology"
@@ -71,18 +70,18 @@ const PracticesSection = () => {
         </div>
 
         {/* 2nd CARD */}
-        <div className="flex h-[364px] flex-col rounded-[10px] border border-[#E2E6EE] bg-white p-4 shadow-[0_10px_24px_rgba(17,27,77,0.10)]">
+        <div className="flex h-[364px] flex-col rounded-[10px] border border-[#E2E6EE] bg-white p-4 shadow-[0_10px_24px_rgba(17,27,77,0.10)] 
+        transform transition-all duration-300 hover:bg-[#E6F2FF] hover:scale-[0.95] hover:z-10">
+
           <div className="flex flex-1 flex-col">
             <img src={tickImg} alt="tick" className="mb-3 h-7 w-7" />
 
-            <h3 className="mb-2 text-[18px] font-serif font-semibold leading-tight text-[#0A1F44]">
+            <h3 className="mb-2 text-[18px] font-serif font-semibold text-[#0A1F44]">
               Technology Research
             </h3>
 
-            <p className="mb-4 text-[11px] leading-[1.45] text-[#5A6B85]">
-              Macro-level research on Generative AI, Quantum Computing, and
-              advanced architectures, mapping technologies from breakthroughs to
-              enterprise adoption.
+            <p className="mb-4 text-[11px] text-[#5A6B85]">
+              Macro-level research on Generative AI, Quantum Computing, and advanced architectures.
             </p>
 
             <div className="mb-4 flex min-h-[126px] flex-wrap content-start gap-2">
@@ -100,7 +99,7 @@ const PracticesSection = () => {
           </Link>
         </div>
 
-        {/* 3rd CARD ✅ ICON UPDATED */}
+        {/* 3rd CARD */}
         <div className="relative h-[364px] rounded-[10px]">
           <img
             src={whitePattern}
@@ -108,24 +107,22 @@ const PracticesSection = () => {
             className="pointer-events-none absolute right-[-35%] top-[-55%] h-[140%] w-[140%] scale-x-[-1] object-cover opacity-[0.15]"
           />
 
-          <div className="relative flex h-full flex-col overflow-hidden rounded-[10px] border border-[#E2E6EE] bg-white p-4 shadow-[0_10px_24px_rgba(17,27,77,0.10)]">
-            <div className="relative z-10 flex flex-1 flex-col">
+          <div className="relative flex h-full flex-col overflow-hidden rounded-[10px] border border-[#E2E6EE] bg-white p-4 shadow-[0_10px_24px_rgba(17,27,77,0.10)] 
+          transform transition-all duration-300 hover:bg-[#E6F2FF] hover:scale-[0.95] hover:z-10">
 
-              {/* ✅ ICON CHANGE */}
+            <div className="relative z-10 flex flex-1 flex-col">
               <img
                 src={microIcon}
                 alt="micro market icon"
                 className="mb-3 h-7 w-7"
               />
 
-              <h3 className="mb-2 text-[18px] font-serif font-semibold leading-tight text-[#0A1F44]">
+              <h3 className="mb-2 text-[18px] font-serif font-semibold text-[#0A1F44]">
                 Micro-Market Research
               </h3>
 
-              <p className="mb-4 text-[11px] leading-[1.45] text-[#5A6B85]">
-                Granular analysis of high-growth market segments, mapping
-                competitive dynamics and delivering actionable intelligence for
-                strategic decisions.
+              <p className="mb-4 text-[11px] text-[#5A6B85]">
+                Granular analysis of high-growth market segments.
               </p>
 
               <div className="mb-4 flex min-h-[126px] flex-wrap content-start gap-2">

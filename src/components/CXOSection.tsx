@@ -44,43 +44,51 @@ const CXOSection = () => {
           <div className="grid sm:grid-cols-2 gap-4">
 
             {/* CARD 1 */}
-            <div className="rounded-lg border border-white/85 bg-white p-6 shadow-[0_20px_55px_rgba(3,12,32,0.16)]
-              hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="h-full flex flex-col justify-between rounded-lg border border-white/85 bg-white p-6 
+            shadow-[0_20px_55px_rgba(3,12,32,0.16)]
+            transform transition-all duration-300 ease-in-out 
+            hover:scale-[0.95] hover:bg-[#E6F2FF] hover:z-10">
               
-              <img
-                src={cutThroughIcon}
-                alt="cut through noise"
-                className="mb-5 h-7 w-7 object-contain"
-              />
+              <div>
+                <img
+                  src={cutThroughIcon}
+                  alt="cut through noise"
+                  className="mb-5 h-7 w-7 object-contain"
+                />
 
-              <h3 className="mb-2 text-lg font-bold text-[#0A1F44]">
-                Cut Through Noise
-              </h3>
+                <h3 className="mb-2 text-lg font-bold text-[#0A1F44]">
+                  Cut Through Noise
+                </h3>
 
-              <p className="font-sans text-xs leading-6 text-[#5A6B85]">
-                Quantitative assessment of industry landscapes, competitive frameworks
-                and macro-economic metrics.
-              </p>
+                <p className="font-sans text-xs leading-6 text-[#5A6B85]">
+                  Quantitative assessment of industry landscapes, competitive frameworks
+                  and macro-economic metrics.
+                </p>
+              </div>
             </div>
 
             {/* CARD 2 */}
-            <div className="rounded-lg border border-white/85 bg-white p-6 shadow-[0_20px_55px_rgba(3,12,32,0.16)]
-              hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="h-full flex flex-col justify-between rounded-lg border border-white/85 bg-white p-6 
+            shadow-[0_20px_55px_rgba(3,12,32,0.16)]
+            transform transition-all duration-300 ease-in-out 
+            hover:scale-[0.95] hover:bg-[#E6F2FF] hover:z-10">
               
-              <img
-                src={translateIcon}
-                alt="translate into action"
-                className="mb-5 h-7 w-7 object-contain"
-              />
+              <div>
+                <img
+                  src={translateIcon}
+                  alt="translate into action"
+                  className="mb-5 h-7 w-7 object-contain"
+                />
 
-              <h3 className="mb-2 text-lg font-bold text-[#0A1F44]">
-                Translate Into Action
-              </h3>
+                <h3 className="mb-2 text-lg font-bold text-[#0A1F44]">
+                  Translate Into Action
+                </h3>
 
-              <p className="font-sans text-xs leading-6 text-[#5A6B85]">
-                We turn complex AI trends into clear business implications your
-                leadership team can act on immediately.
-              </p>
+                <p className="font-sans text-xs leading-6 text-[#5A6B85]">
+                  We turn complex AI trends into clear business implications your
+                  leadership team can act on immediately.
+                </p>
+              </div>
             </div>
 
           </div>

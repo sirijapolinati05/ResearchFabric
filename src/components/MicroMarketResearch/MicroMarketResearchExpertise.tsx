@@ -39,6 +39,7 @@ const MicroMarketResearchExpertise = () => {
       id="expertise"
       className="relative overflow-hidden bg-[#101341] px-6 py-20 text-white lg:px-14 lg:py-24"
     >
+      {/* BACKGROUND */}
       <div className="absolute left-[-80px] top-[-70px] h-[320px] w-[320px] rounded-full border border-white/20" />
       <div className="absolute left-[-64px] top-[-56px] h-[290px] w-[290px] rounded-full border border-white/20" />
       <div className="absolute left-[-48px] top-[-42px] h-[260px] w-[260px] rounded-full border border-white/20" />
@@ -58,9 +59,11 @@ const MicroMarketResearchExpertise = () => {
               <span className="h-px w-10 bg-[#18afe5]" />
             </span>
           </p>
+
           <h2 className="mt-6 text-[2.7rem] leading-none tracking-[-0.02em] md:text-[3.45rem]">
             Micro-Market Competencies
           </h2>
+
           <p className="mx-auto mt-5 max-w-[860px] text-[17px] leading-9 text-white/90">
             Our proprietary framework allows us to dissect complex value chains
             and isolate the specific variables driving growth in emerging
@@ -68,23 +71,34 @@ const MicroMarketResearchExpertise = () => {
           </p>
         </div>
 
+        {/* CARDS */}
         <div className="mt-14 grid gap-x-10 gap-y-10 md:grid-cols-3 xl:gap-x-16 xl:gap-y-12">
           {expertiseItems.map((item) => {
             return (
-              <article key={item.title} className="max-w-[320px]">
+              <article
+                key={item.title}
+                className="max-w-[320px] p-4 rounded-xl cursor-pointer
+                transition-all duration-300 ease-in-out
+                hover:scale-105 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl"
+              >
+                {/* ICON (ONLY HOVER HERE) */}
                 <div className="flex h-[48px] w-[48px] items-center justify-center">
                   <img
                     src={starImg}
                     alt=""
                     aria-hidden="true"
-                    className="h-[28px] w-[28px] object-contain"
+                    className="h-[28px] w-[28px] object-contain 
+                    transition-all duration-300
+                    hover:scale-110 hover:rotate-12"
                   />
                 </div>
 
+                {/* TITLE */}
                 <h3 className="mt-4 text-[1.22rem] leading-tight tracking-[-0.01em] md:text-[1.42rem]">
                   {item.title}
                 </h3>
 
+                {/* DESCRIPTION */}
                 <p className="mt-3 text-[15px] leading-8 text-white/92">
                   {item.description}
                 </p>

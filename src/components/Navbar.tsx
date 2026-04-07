@@ -101,8 +101,8 @@ const Navbar = () => {
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-        {/* LOGO */}
-        <Link to="/" className={`ml-3 md:ml-5 flex items-center ${logoFrameClass}`}>
+        {/* ✅ LOGO (slightly more right on mobile) */}
+        <Link to="/" className={`ml-[14px] md:ml-5 flex items-center ${logoFrameClass}`}>
           <img src={logo} alt="logo" className={darkLogoClass} />
           <img src={lightLogo} alt="logo" className={lightLogoClass} />
         </Link>

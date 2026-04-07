@@ -30,7 +30,6 @@ const TechnologyResearchDomains = () => {
       id="domains"
       className="relative overflow-hidden bg-[#f8f7f3] px-6 py-20 text-[#141742] lg:px-14"
     >
-
       <img
         src={whiteTypographyImg}
         alt=""
@@ -63,29 +62,34 @@ const TechnologyResearchDomains = () => {
           {domains.map((domain) => (
             <article
               key={domain.title}
-              className="relative w-full flex flex-col h-full" // 🔥 FIX
+              className="group relative w-full flex flex-col h-full p-4 rounded-xl
+              transition-all duration-300 ease-in-out
+              hover:scale-[1.04] hover:bg-white hover:shadow-xl"
             >
-              <div className="aspect-[1.02/0.72] overflow-hidden bg-[#11153b]">
+              {/* IMAGE */}
+              <div className="aspect-[1.02/0.72] overflow-hidden bg-[#11153b] rounded-lg">
                 <img
                   src={domain.image}
                   alt={domain.title}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
-              <h3 className="mt-3 max-w-[250px] text-[1.45rem] leading-[1.04]">
+              {/* TITLE */}
+              <h3 className="mt-3 max-w-[250px] text-[1.45rem] leading-[1.04] transition-colors duration-300 group-hover:text-[#0A1F44]">
                 {domain.title}
               </h3>
 
-              {/* 🔥 FLEX GROW FOR EQUAL HEIGHT */}
-              <p className="mt-2.5 max-w-[285px] text-[14px] leading-6 text-[#202453]/88 flex-grow">
+              {/* DESCRIPTION */}
+              <p className="mt-2.5 max-w-[285px] text-[14px] leading-6 text-[#202453]/88 flex-grow transition-colors duration-300 group-hover:text-[#202453]">
                 {domain.description}
               </p>
 
-              {/* 🔥 BUTTON ALWAYS BOTTOM */}
+              {/* BUTTON */}
               <a
                 href="#papers"
-                className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.02em] text-[#161a46]"
+                className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.02em] text-[#161a46]
+                transition-all duration-300 group-hover:gap-3"
               >
                 Explore Research
                 <span aria-hidden="true">→</span>

@@ -33,38 +33,65 @@ const TechnologyResearchHero = () => {
               Computing, AI Hardware, and Artificial Intelligence.
             </p>
 
-            <div className="relative mt-8 max-w-[520px] overflow-hidden rounded-[24px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(2,6,34,0.34)] backdrop-blur-xl md:rounded-[26px]">
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,rgba(102,231,208,0.08)_100%)]" />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40" />
-              <div className="pointer-events-none absolute left-0 top-0 h-24 w-24 rounded-full bg-white/12 blur-2xl" />
+            {/* ðŸ”¥ GLASS CARD WITH HOVER */}
+            <div className="group relative mt-8 max-w-[520px] overflow-hidden rounded-[24px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(2,6,34,0.34)] backdrop-blur-xl md:rounded-[26px]
+            transition-all duration-500 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02] hover:border-white/40 hover:shadow-[0_35px_80px_rgba(2,6,34,0.55)]">
+
+              {/* GLASS SHINE */}
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,rgba(102,231,208,0.08)_100%)]
+              opacity-80 group-hover:opacity-100 transition duration-500" />
+
+              {/* TOP LINE */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40 group-hover:bg-white/70 transition" />
+
+              {/* GLOW ORB */}
+              <div className="pointer-events-none absolute left-0 top-0 h-24 w-24 rounded-full bg-white/12 blur-2xl
+              group-hover:bg-[#68e1d0]/30 transition duration-500" />
 
               <div className="relative flex flex-col md:flex-row">
-              {stats.map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className={`flex-1 px-7 py-5 ${index < stats.length - 1 ? "border-b border-white/15 md:border-b-0 md:border-r" : ""} border-white/15`}
-                >
-                  <p className="text-5xl font-semibold leading-none text-[#68e1d0]">{stat.value}</p>
-                  <p className="mt-2 max-w-[120px] text-xl leading-7 text-white">{stat.label}</p>
-                </div>
-              ))}
+                {stats.map((stat, index) => (
+                  <div
+                    key={stat.label}
+                    className={`flex-1 px-7 py-5 ${
+                      index < stats.length - 1
+                        ? "border-b border-white/15 md:border-b-0 md:border-r"
+                        : ""
+                    } border-white/15`}
+                  >
+                    <p className="text-5xl font-semibold leading-none text-[#68e1d0]
+                    transition duration-300 group-hover:text-white">
+                      {stat.value}
+                    </p>
+                    <p className="mt-2 max-w-[120px] text-xl leading-7 text-white">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
+            {/* BUTTONS */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#papers"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-[#33ace5] px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-[#2498cf]"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-[#33ace5] px-8 py-4 text-base font-semibold text-white
+                transition-all duration-300 ease-in-out
+                hover:scale-105 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(51,172,229,0.5)]"
               >
                 Explore Thought Shaping
               </a>
+
               <a
                 href="#domains"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-[#64d7bf] px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-[#4cc8ae]"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-[#64d7bf] px-8 py-4 text-base font-semibold text-white
+                transition-all duration-300 ease-in-out
+                hover:scale-105 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(100,215,191,0.5)]"
               >
                 Our Focus Areas
               </a>
             </div>
+
           </div>
         </div>
       </div>

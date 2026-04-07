@@ -18,6 +18,7 @@ const MicroMarketResearchHero = () => {
             <br />
             Defining the Future.
           </h1>
+
           <p className="mt-5 max-w-[860px] text-[18px] leading-8 text-white/95 md:text-[19px]">
             We specialize in identifying, sizing, and forecasting
             high-potential micro-markets within broader technology ecosystems.
@@ -25,10 +26,21 @@ const MicroMarketResearchHero = () => {
             opportunity.
           </p>
 
-          <div className="relative mt-8 max-w-[520px] overflow-hidden rounded-[24px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(2,6,34,0.34)] backdrop-blur-xl md:rounded-[26px]">
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,rgba(102,231,208,0.08)_100%)]" />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40" />
-            <div className="pointer-events-none absolute left-0 top-0 h-24 w-24 rounded-full bg-white/12 blur-2xl" />
+          {/* ðŸ”¥ STATS CARD WITH HOVER */}
+          <div className="group relative mt-8 max-w-[520px] overflow-hidden rounded-[24px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(2,6,34,0.34)] backdrop-blur-xl md:rounded-[26px]
+          transition-all duration-500 ease-in-out
+          hover:-translate-y-2 hover:scale-[1.02] hover:border-white/40 hover:shadow-[0_35px_80px_rgba(2,6,34,0.55)]">
+
+            {/* GLASS SHINE */}
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,rgba(102,231,208,0.08)_100%)]
+            opacity-80 group-hover:opacity-100 transition duration-500" />
+
+            {/* TOP LINE */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40 group-hover:bg-white/70 transition" />
+
+            {/* GLOW ORB */}
+            <div className="pointer-events-none absolute left-0 top-0 h-24 w-24 rounded-full bg-white/12 blur-2xl
+            group-hover:bg-[#68e1d0]/30 transition duration-500" />
 
             <div className="relative flex flex-col md:flex-row">
               {heroStats.map(([value, lineOne, lineTwo], index) => (
@@ -40,7 +52,7 @@ const MicroMarketResearchHero = () => {
                       : ""
                   } border-white/15`}
                 >
-                  <p className="text-5xl font-semibold leading-none text-[#68e1d0]">
+                  <p className="text-5xl font-semibold leading-none text-[#68e1d0] transition duration-300 group-hover:text-white">
                     {value}
                   </p>
                   <p className="mt-2 max-w-[120px] text-xl leading-7 text-white">
@@ -53,12 +65,17 @@ const MicroMarketResearchHero = () => {
             </div>
           </div>
 
+          {/* BUTTON */}
           <button
             type="button"
-            className="mt-5 rounded-full bg-[linear-gradient(180deg,#31b9ee_0%,#249fd8_100%)] px-8 py-3 text-[15px] font-semibold text-white shadow-[0_10px_22px_rgba(18,130,193,0.42)] transition hover:brightness-105"
+            className="mt-5 rounded-full bg-[linear-gradient(180deg,#31b9ee_0%,#249fd8_100%)] px-8 py-3 text-[15px] font-semibold text-white 
+            shadow-[0_10px_22px_rgba(18,130,193,0.42)]
+            transition-all duration-300 ease-in-out
+            hover:scale-105 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(18,130,193,0.6)]"
           >
             Explore Capabilities
           </button>
+
         </div>
       </div>
     </section>

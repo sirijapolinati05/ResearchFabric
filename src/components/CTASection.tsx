@@ -12,19 +12,33 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          
+          {/* 🔥 PRIMARY BUTTON */}
           <a
             href="#"
-            className="bg-teal text-navy font-sans font-semibold px-6 py-2.5 rounded-full text-sm hover:bg-teal-light transition-colors"
+            className="bg-teal text-navy font-sans font-semibold px-6 py-2.5 rounded-full text-sm
+            transition-all duration-300 ease-in-out
+            hover:scale-110 hover:-translate-y-1
+            hover:bg-teal-light
+            hover:shadow-[0_10px_25px_rgba(45,212,191,0.5)]
+            active:scale-95"
           >
             Download approach note
           </a>
 
+          {/* 🔥 SECONDARY BUTTON */}
           <a
             href="#"
-            className="border border-primary-foreground/40 text-primary-foreground font-sans font-semibold px-6 py-2.5 rounded-full text-sm hover:bg-primary-foreground/10 transition-colors"
+            className="border border-primary-foreground/40 text-primary-foreground font-sans font-semibold px-6 py-2.5 rounded-full text-sm
+            transition-all duration-300 ease-in-out
+            hover:scale-110 hover:-translate-y-1
+            hover:bg-primary-foreground/10
+            hover:shadow-[0_10px_25px_rgba(255,255,255,0.2)]
+            active:scale-95"
           >
             Get in Touch
           </a>
+
         </div>
 
       </div>

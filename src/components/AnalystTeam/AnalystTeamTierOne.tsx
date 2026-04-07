@@ -4,6 +4,7 @@ import ashwinImg from "@/assets/LandingPage/Ashwin-Gaidhani.png";
 import tapatiImg from "@/assets/LandingPage/Tapati-Bandhopadhyay.png";
 import markImg from "@/assets/LandingPage/Mark-Purdy.png";
 import gaurangImg from "@/assets/LandingPage/Gaurang-Padgi.png";
+import AnalystTeamAvatar from "@/components/AnalystTeam/AnalystTeamAvatar";
 
 const partnerCards = [
   {
@@ -29,7 +30,7 @@ const partnerCards = [
 ];
 
 const cardClassName =
-  "flex min-h-[236px] w-full max-w-[184px] flex-col border border-[#dfe4ea] bg-white px-4 pb-5 pt-3 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)]";
+  "group flex min-h-[236px] w-full max-w-[184px] flex-col border border-[#dfe4ea] bg-white px-4 pb-5 pt-3 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)] transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0d4f96] hover:bg-[#0d4f96] hover:shadow-[0_20px_34px_rgba(8,18,59,0.24)]";
 
 const AnalystTeamTierOne = () => {
   return (
@@ -39,7 +40,7 @@ const AnalystTeamTierOne = () => {
           <p className="text-[17px] font-semibold leading-none text-[#20254d]">
             <span className="inline-flex items-center gap-4">
               <span className="h-px w-[48px] bg-[#20254d]" />
-              Tier 1
+              Core Leadership Team
               <span className="h-px w-[48px] bg-[#20254d]" />
             </span>
           </p>
@@ -59,20 +60,14 @@ const AnalystTeamTierOne = () => {
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {partnerCards.map((member) => (
               <article key={member.name} className={cardClassName}>
-                <div className="mx-auto h-[94px] w-[94px] overflow-hidden rounded-full bg-[#edf1f4]">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <AnalystTeamAvatar name={member.name} image={member.image} />
 
-                <h3 className="mt-4 text-[1.02rem] leading-[1.15] tracking-[-0.02em] text-[#17204c]">
+                <h3 className="mt-4 text-[1.02rem] leading-[1.15] tracking-[-0.02em] text-[#17204c] transition-colors duration-300 group-hover:text-white">
                   {member.name}
                 </h3>
 
                 <p
-                  className={`mt-1 min-h-[32px] text-[0.68rem] leading-[1.2] text-[#5ab5eb] ${
+                  className={`mt-1 min-h-[32px] text-[0.68rem] leading-[1.2] text-[#5ab5eb] transition-colors duration-300 group-hover:text-white/85 ${
                     member.name === "Gaurang Pagdi"
                       ? "mx-auto max-w-[150px]"
                       : ""
@@ -81,20 +76,20 @@ const AnalystTeamTierOne = () => {
                   {member.subtitle}
                 </p>
 
-                <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5]" />
+                <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/35" />
 
                 <div className="mt-4 flex items-center justify-center gap-4">
                   <button
                     type="button"
                     aria-label={`${member.name} LinkedIn`}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f]"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
                   >
                     <Linkedin size={14} strokeWidth={2.2} />
                   </button>
                   <button
                     type="button"
                     aria-label={`${member.name} email`}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f]"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
                   >
                     <Mail size={14} strokeWidth={2.2} />
                   </button>

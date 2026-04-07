@@ -24,7 +24,7 @@ const TechnologyResearchPapers = () => {
 
         <div className="relative mt-8">
           
-          {/* 🔥 TYPOGRAPHIC IMAGE (MORE TOP + SMALLER) */}
+          {/* TYPOGRAPHIC IMAGE */}
           <img
             src={whiteTypographyImg}
             alt=""
@@ -37,7 +37,10 @@ const TechnologyResearchPapers = () => {
             {papers.map((paper) => (
               <article
                 key={paper.id}
-                className="relative overflow-hidden bg-[#0c1044] p-6 text-white shadow-[0_16px_35px_rgba(12,16,68,0.15)]"
+                className="relative overflow-hidden bg-[#0c1044] p-6 text-white 
+                shadow-[0_16px_35px_rgba(12,16,68,0.15)]
+                transform transition-all duration-300 ease-in-out
+                hover:scale-[1.05] hover:shadow-xl"
               >
                 <h3 className="relative max-w-[420px] text-[1.6rem] leading-[1.1]">
                   {paper.title}
