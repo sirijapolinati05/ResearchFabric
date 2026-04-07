@@ -93,19 +93,29 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-        
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={showLightNavbar ? "text-black lg:hidden" : "text-white lg:hidden"}
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
 
-        {/* ✅ LOGO (slightly more right on mobile) */}
-        <Link to="/" className={`ml-[14px] md:ml-5 flex items-center ${logoFrameClass}`}>
-          <img src={logo} alt="logo" className={darkLogoClass} />
-          <img src={lightLogo} alt="logo" className={lightLogoClass} />
-        </Link>
+        {/* ✅ MOBILE ONLY (MENU + LOGO SIDE BY SIDE) */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={showLightNavbar ? "text-black" : "text-white"}
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+          <Link to="/" className={`flex items-center ${logoFrameClass}`}>
+            <img src={logo} alt="logo" className={darkLogoClass} />
+            <img src={lightLogo} alt="logo" className={lightLogoClass} />
+          </Link>
+        </div>
+
+        {/* ✅ DESKTOP ONLY (UNCHANGED) */}
+        <div className="hidden lg:block">
+          <Link to="/" className={`ml-[14px] md:ml-5 flex items-center ${logoFrameClass}`}>
+            <img src={logo} alt="logo" className={darkLogoClass} />
+            <img src={lightLogo} alt="logo" className={lightLogoClass} />
+          </Link>
+        </div>
 
         {/* NAV ITEMS */}
         <div className="hidden lg:flex items-center gap-6">
@@ -147,7 +157,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE */}
+      {/* MOBILE MENU */}
       {mobileOpen && (
         <div
           className={`lg:hidden px-6 pb-4 ${
