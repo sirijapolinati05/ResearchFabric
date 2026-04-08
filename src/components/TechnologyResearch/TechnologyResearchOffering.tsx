@@ -1,6 +1,6 @@
 import researchImage from "@/assets/TechnologyResearch/signature-offering.png";
 import peopleIcon from "@/assets/TechnologyResearch/People.png";
-import starIcon from "@/assets/TechnologyResearch/Star1.png";
+import starIcon from "@/assets/TechnologyResearch/star1.png"; // ✅ FIXED
 import bookIcon from "@/assets/TechnologyResearch/Book.png";
 
 const features = [
