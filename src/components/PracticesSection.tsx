@@ -5,7 +5,6 @@ import techImg from "@/assets/LandingPage/Technology-Research.png";
 import tickImg from "@/assets/LandingPage/technology-research-icon.png";
 import microIcon from "@/assets/LandingPage/micromarket-research-icon.png";
 import patternImg from "@/assets/LandingPage/Typographic.png";
-import whitePattern from "@/assets/LandingPage/White-Typography.png";
 
 const technologyTags = [
   "Generative AI",
@@ -45,10 +44,7 @@ const PracticesSection = () => {
       id="practices"
       className="relative overflow-hidden bg-[#F7F9FC] py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
-      {/* HEADER */}
       <div className="mx-auto mb-5 sm:mb-6 max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12 text-center sm:text-left">
-
-        {/* ✅ CENTER ON MOBILE */}
         <h2 className="relative max-w-[1120px] text-center sm:text-left text-[34px] sm:text-[48px] font-serif font-semibold leading-[1.2] text-[#0A1F44]">
           Two Practices on the <br className="sm:hidden" />
           Future of{" "}
@@ -64,20 +60,22 @@ const PracticesSection = () => {
           </span>
         </h2>
 
-        {/* ✅ CENTER PARAGRAPH */}
-        <p className="mt-2 sm:mt-3 max-w-[760px] text-center sm:text-left text-[20px] leading-[1.6] text-[#5A6B85]">
-          RESEARCHFABRIC™ operates through two focused research practices.
+        <p className="mt-2 sm:mt-3 max-w-[920px] text-center sm:text-left text-[20px] leading-[1.6] text-[#5A6B85]">
+          RESEARCHFABRIC™ operates through two focused research practices, each
+          designed to deliver deep, SME-led intelligence at different scales of
+          the technology landscape.
         </p>
       </div>
 
-      {/* GRID */}
-      <div className="mx-auto grid max-w-6xl items-stretch 
-      gap-4 md:gap-6 lg:gap-8 
-      px-4 sm:px-6 md:px-8 lg:px-12 
-      grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr">
-
-        <div className={`${cardBaseClass} overflow-hidden`}>
-          <img src={techImg} alt="Technology" className="h-full w-full object-cover" />
+      <div
+        className="mx-auto grid max-w-6xl auto-rows-fr grid-cols-1 items-stretch gap-4 px-4 sm:grid-cols-2 sm:px-6 md:gap-6 md:px-8 lg:grid-cols-3 lg:gap-8 lg:px-12"
+      >
+        <div className={`${cardBaseClass} overflow-hidden sm:col-span-2 lg:col-span-1`}>
+          <img
+            src={techImg}
+            alt="Technology"
+            className="h-full min-h-[260px] w-full object-cover sm:max-h-[360px] lg:max-h-none"
+          />
         </div>
 
         <div className={`${cardBaseClass} p-4 hover:bg-[#E6F2FF]`}>
@@ -133,7 +131,6 @@ const PracticesSection = () => {
             <ArrowRight size={14} />
           </Link>
         </div>
-
       </div>
     </section>
   );

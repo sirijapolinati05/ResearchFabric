@@ -2,24 +2,19 @@ import heroImg from "@/assets/LandingPage/home-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#081A34]">
-      <div className="absolute inset-0 h-full w-full bg-[#081A34]" />
+    <section className="relative bg-[#081A34] text-white">
 
-      {/* IMAGE + RIGHT TEXT */}
-      <div className="absolute top-0 right-0 w-full md:w-auto flex flex-col items-end">
+      {/* ================= DESKTOP IMAGE (UNCHANGED) ================= */}
+      <div className="hidden lg:flex absolute top-0 right-0 flex-col items-end z-10">
 
         <img
           src={heroImg}
           alt="Abstract 3D"
-          className="
-            w-full h-[45vh] object-cover
-            sm:h-[55vh]
-            md:h-auto md:w-[600px] lg:w-[750px]
-          "
+          className="lg:w-[750px] lg:h-auto object-cover"
         />
 
-        <div className="w-full md:w-[600px] lg:w-[750px] max-w-full md:-translate-x-6 px-4 sm:px-6 mt-3 sm:mt-4">
-          <p className="text-left text-[15px] sm:text-[17px] md:text-[20px] leading-relaxed text-white/70">
+        <div className="mt-3 w-[750px] -translate-x-6 px-4">
+          <p className="text-[20px] leading-relaxed text-white/70">
             RESEARCHFABRIC delivers practitioner-led Smart research on{" "}
             <strong className="text-white">Perpetuating Technologies</strong>{" "}
             and maps the <strong className="text-white">Micro-Markets</strong>{" "}
@@ -28,59 +23,118 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* MAIN CONTENT */}
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex flex-col px-4 sm:px-6 md:px-8 pt-24 sm:pt-28 md:pt-32 pb-10">
-        
-        <div className="max-w-xl sm:max-w-2xl mt-4 sm:mt-20">
+      {/* ================= MAIN ================= */}
+      <div className="relative z-20 mx-auto max-w-7xl px-4 pt-0 pb-10 sm:px-6 md:px-8 lg:min-h-screen lg:flex lg:flex-col lg:justify-between lg:pt-32">
 
-          <h1 className="mb-5 sm:mb-6 font-serif text-[36px] sm:text-[48px] md:text-[58px] font-semibold leading-none text-white">
-            <span className="block">Thought-Shaping</span>
-            <span className="block">Intelligence on</span>
+        {/* ================= MOBILE ================= */}
+        <div className="flex flex-col gap-6 lg:hidden">
 
-            <span className="block">
-              <span className="text-white">Pe</span>
-              <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
-                r
-              </span>
-              <span className="text-[#3CC8FF]">petuating</span>
-            </span>
+          <div className="relative w-screen -ml-4 -mt-2">
 
-            <span className="block">
-              <span className="text-white">Te</span>
-              <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
-                ch
-              </span>
-              <span className="text-[#3CC8FF]">nologies</span>
-            </span>
+            <img
+              src={heroImg}
+              alt="Abstract"
+              className="w-full h-[360px] sm:h-[420px] object-cover"
+            />
 
-            <span className="block">
-              <span className="text-white">and </span>
-              <span className="text-[#3CC8FF]">Micro-Markets</span>
-            </span>
-          </h1>
+            <div className="absolute inset-0 bg-black/40" />
 
-          {/* ✅ BUTTONS MOVED DOWN (MOBILE ONLY) */}
-          <div className="mt-52 flex w-full max-w-[360px] flex-row gap-3 sm:mt-28 sm:max-w-none sm:w-fit sm:gap-4 md:mt-12">
-            <a
-              href="#practices"
-              className="flex flex-1 items-center justify-center rounded-full bg-[#3CC8FF] px-3 py-2.5 text-center text-[13px] font-semibold text-[#081A34] transition hover:scale-105 sm:flex-none sm:px-5 sm:text-sm md:text-base"
-            >
+            <div className="absolute inset-0 flex flex-col justify-center px-6 pt-10">
+              <h1 className="font-serif text-[30px] sm:text-[34px] font-semibold leading-tight">
+                <span className="block">Thought-Shaping</span>
+                <span className="block">Intelligence on</span>
+
+                <span className="block">
+                  <span className="text-white">Pe</span>
+                  <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
+                    r
+                  </span>
+                  <span className="text-[#3CC8FF]">petuating</span>
+                </span>
+
+                <span className="block">
+                  <span className="text-white">Te</span>
+                  <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
+                    ch
+                  </span>
+                  <span className="text-[#3CC8FF]">nologies</span>
+                </span>
+
+                <span className="block">
+                  <span className="text-white">and </span>
+                  <span className="text-[#3CC8FF]">Micro-Markets</span>
+                </span>
+              </h1>
+            </div>
+
+          </div>
+
+          {/* BUTTONS */}
+          <div className="flex w-full max-w-[360px] gap-3">
+            <a className="flex flex-1 justify-center rounded-full bg-[#3CC8FF] px-4 py-3 text-sm font-semibold text-[#081A34]">
               Explore Our Practices
             </a>
 
-            <a
-              href="#cxo"
-              className="flex flex-1 items-center justify-center rounded-full bg-[#43E0B1] px-3 py-2.5 text-center text-[13px] font-semibold text-[#081A34] transition hover:scale-105 sm:flex-none sm:px-5 sm:text-sm md:text-base"
-            >
+            <a className="flex flex-1 justify-center rounded-full bg-[#43E0B1] px-4 py-3 text-sm font-semibold text-[#081A34]">
               CXO AI Research
             </a>
           </div>
 
+          <p className="text-[15px] leading-relaxed text-white/70">
+            RESEARCHFABRIC delivers practitioner-led Smart research on{" "}
+            <strong className="text-white">Perpetuating Technologies</strong>{" "}
+            and maps the <strong className="text-white">Micro-Markets</strong>{" "}
+            where these technologies create commercial value.
+          </p>
+
         </div>
 
-        {/* GRID */}
-        <div className="mt-4 sm:mt-28 md:mt-40 lg:mt-44 pt-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 text-center">
+        {/* ================= DESKTOP ================= */}
+        <div className="hidden lg:block">
+          <div className="mt-20 max-w-[42rem]">
+
+            <h1 className="mb-5 font-serif text-[58px] font-semibold leading-none text-white">
+              <span className="block">Thought-Shaping</span>
+              <span className="block">Intelligence on</span>
+
+              <span className="block">
+                <span className="text-white">Pe</span>
+                <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
+                  r
+                </span>
+                <span className="text-[#3CC8FF]">petuating</span>
+              </span>
+
+              <span className="block">
+                <span className="text-white">Te</span>
+                <span className="bg-gradient-to-r from-white via-[#3CC8FF] to-[#3CC8FF] bg-clip-text text-transparent">
+                  ch
+                </span>
+                <span className="text-[#3CC8FF]">nologies</span>
+              </span>
+
+              <span className="block">
+                <span className="text-white">and </span>
+                <span className="text-[#3CC8FF]">Micro-Markets</span>
+              </span>
+            </h1>
+
+            <div className="mt-12 flex gap-4">
+              <a className="rounded-full bg-[#3CC8FF] px-5 py-3 font-semibold text-[#081A34]">
+                Explore Our Practices
+              </a>
+
+              <a className="rounded-full bg-[#43E0B1] px-5 py-3 font-semibold text-[#081A34]">
+                CXO AI Research
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ================= GRID ================= */}
+        <div className="mt-8 pt-4 sm:mt-28 md:mt-20 lg:mt-44">
+          <div className="grid grid-cols-2 text-center lg:grid-cols-4">
             {[
               { title: "Technology", sub: "Deep Tech Capabilities" },
               { title: "Markets", sub: "B2B, B2C & B2G" },
@@ -89,8 +143,10 @@ const HeroSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`group cursor-pointer px-3 sm:px-4 py-5 sm:py-6 ${
-                  index !== 3 ? "border-r border-white/20" : ""
+                className={`group cursor-pointer px-3 py-5 sm:px-4 sm:py-6 ${
+                  index % 2 === 0 ? "border-r border-white/20" : ""
+                } ${index < 2 ? "border-b border-white/20 lg:border-b-0" : ""} ${
+                  index < 3 ? "lg:border-r lg:border-white/20" : "lg:border-r-0"
                 }`}
               >
                 <h3 className="font-serif text-[24px] sm:text-[30px] md:text-[35px] font-semibold text-[#5AE0BB]">

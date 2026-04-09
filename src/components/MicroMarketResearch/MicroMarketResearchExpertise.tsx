@@ -52,7 +52,7 @@ const MicroMarketResearchExpertise = () => {
 
       <div className="relative z-10 mx-auto max-w-[1180px]">
         <div className="mx-auto max-w-[900px] text-center">
-          <p className="text-sm sm:text-base md:text-[17px] lg:text-[17px] font-bold tracking-[0.01em] text-[#18afe5]">
+          <p className="text-[18px] md:text-[20px] font-bold tracking-normal text-[#18afe5]">
             <span className="inline-flex items-center gap-3">
               <span className="h-px w-6 sm:w-7 md:w-8 bg-[#18afe5]" />
               Our Expertise

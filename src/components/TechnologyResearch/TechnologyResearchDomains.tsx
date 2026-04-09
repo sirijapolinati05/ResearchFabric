@@ -54,8 +54,8 @@ const TechnologyResearchDomains = () => {
           <span className="h-[1px] w-4 sm:w-6 md:w-8 lg:w-6 bg-current opacity-40"></span>
 
           <p className="
-          text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl 2xl:text-[1.75rem]
-          font-bold tracking-[0.01em] text-[#202453] whitespace-nowrap">
+          text-[18px] md:text-[20px]
+          font-bold tracking-normal text-[#202453] whitespace-nowrap">
             Research Domains
           </p>
 

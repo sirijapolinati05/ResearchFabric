@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import methodologyImage from "@/assets/MicroMarketResearch/Pyramid.png";
 import whiteTypographyImg from "@/assets/LandingPage/White-Typography.png";
 
@@ -24,6 +26,23 @@ const methodCards = [
 ];
 
 const MicroMarketResearchMethodology = () => {
+  const [activeCardStep, setActiveCardStep] = useState<string | null>(null);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateMobileView = (event?: MediaQueryListEvent) => {
+      const matches = event ? event.matches : mediaQuery.matches;
+      setIsMobileView(matches);
+    };
+
+    updateMobileView();
+    mediaQuery.addEventListener("change", updateMobileView);
+
+    return () => mediaQuery.removeEventListener("change", updateMobileView);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-[#f8f7f3] px-4 sm:px-6 md:px-8 lg:pl-14 lg:pr-0 xl:pl-20 2xl:pl-28 py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12 text-[#141742]">
       
@@ -38,15 +57,19 @@ const MicroMarketResearchMethodology = () => {
 
       <div className="relative mx-auto max-w-[1440px] xl:max-w-[1400px] 2xl:max-w-[1600px]">
 
-        <p className="relative z-10 text-sm sm:text-base md:text-[16px] lg:text-[16px] font-bold tracking-[0.01em] text-[#1d214f]">
-          Methodology
-        </p>
+        <div className="relative z-10 flex items-center gap-2 sm:gap-3">
+          <span className="h-px w-4 bg-current opacity-40 sm:w-6 md:w-8" />
+          <p className="text-[18px] font-bold text-[#1d214f] md:text-[20px]">
+            Methodology
+          </p>
+          <span className="h-px w-4 bg-current opacity-40 sm:w-6 md:w-8" />
+        </div>
 
-        <h2 className="relative z-10 mt-3 text-3xl sm:text-4xl md:text-[3rem] lg:text-[3rem] font-bold leading-[1.05]">
+        <h2 className="relative z-10 mt-3 text-3xl sm:text-4xl md:text-[3rem] font-bold leading-[1.05]">
           The "Signal-to-Noise" Approach
         </h2>
 
-        <p className="relative z-10 mt-3 max-w-[720px] text-sm sm:text-base md:text-[16px] lg:text-[16px] leading-6 text-[#1d214f]/80">
+        <p className="relative z-10 mt-3 max-w-[720px] text-sm sm:text-base md:text-[16px] leading-6 text-[#1d214f]/80">
           In micro-markets, data is scarce and often unreliable. Our methodology is
           designed to synthesize fragmented data points into a coherent strategic picture.
         </p>
@@ -55,47 +78,53 @@ const MicroMarketResearchMethodology = () => {
 
           {/* CARDS */}
           <div className="grid items-start gap-5 sm:gap-6 md:grid-cols-2">
-            {methodCards.map((card) => (
-              <article
-                key={card.step}
-                className={`group relative h-full self-stretch border border-[#e6e8f0] bg-white px-4 sm:px-5 md:px-6 lg:px-5 pb-3 sm:pb-4 pt-5 
-                shadow-[0_8px_18px_rgba(0,0,0,0.08)] 
-                transition-all duration-300 ease-in-out
-                hover:-translate-y-2 hover:shadow-xl hover:border-transparent
-                ${card.className || ""}`}
-              >
+            {methodCards.map((card) => {
+              const isActive = activeCardStep === card.step;
 
-                {/* GRADIENT HOVER */}
-                <div className="absolute inset-0 rounded-lg z-0 
-                bg-gradient-to-br from-[#0b1f3a] via-[#1e3a8a] to-[#22d3ee]
-                opacity-0 group-hover:opacity-100 
-                transition duration-500" />
+              return (
+                <article
+                  key={card.step}
+                  onTouchStart={() => {
+                    if (isMobileView) setActiveCardStep(card.step);
+                  }}
+                  onTouchEnd={() => {
+                    if (isMobileView) setActiveCardStep(null);
+                  }}
+                  className={`group relative h-full border border-[#e6e8f0] bg-white px-4 pb-3 pt-5 shadow-[0_8px_18px_rgba(0,0,0,0.08)] transition-all duration-300 sm:px-5 sm:pb-4 md:px-6 lg:px-5 ${
+                    isActive ? "-translate-y-2 shadow-xl" : ""
+                  } ${card.className || ""}`}
+                >
 
-                {/* STEP */}
-                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full 
-                bg-[#64dfc6] text-xs sm:h-9 sm:w-9 sm:text-[13px] font-semibold text-[#141742] shadow
-                transition-all duration-300
-                group-hover:scale-110 group-hover:bg-white group-hover:text-[#0b1f3a]">
-                  {card.step}
-                </div>
+                  {/* GRADIENT */}
+                  <div className={`absolute inset-0 z-0 rounded-lg bg-gradient-to-br from-[#0b1f3a] via-[#1e3a8a] to-[#22d3ee] transition duration-500 
+                    ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+                  `} />
 
-                {/* CONTENT */}
-                <div className="relative z-10">
-                  <h3 className="text-xl sm:text-[1.3rem] md:text-[1.4rem] lg:text-[1.4rem] leading-[1.15] font-medium 
-                  transition-colors duration-300 
-                  group-hover:text-white">
-                    {card.title}
-                  </h3>
+                  {/* STEP */}
+                  <div className={`absolute left-0 top-0 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#64dfc6] text-xs font-semibold text-[#141742] shadow transition-all duration-300 sm:h-9 sm:w-9
+                    ${isActive ? "bg-white text-[#0b1f3a]" : "group-hover:bg-white group-hover:text-[#0b1f3a]"}
+                  `}>
+                    {card.step}
+                  </div>
 
-                  <p className="mt-2 text-sm sm:text-[14px] md:text-[14px] leading-6 text-[#141742]/75 
-                  transition-colors duration-300 
-                  group-hover:text-white/85">
-                    {card.description}
-                  </p>
-                </div>
+                  {/* CONTENT */}
+                  <div className="relative z-10">
+                    <h3 className={`text-xl font-medium leading-[1.15] transition-colors duration-300 sm:text-[1.3rem]
+                      ${isActive ? "text-white" : "group-hover:text-white"}
+                    `}>
+                      {card.title}
+                    </h3>
 
-              </article>
-            ))}
+                    <p className={`mt-2 text-sm leading-6 text-[#141742]/75 transition-colors duration-300
+                      ${isActive ? "text-white/85" : "group-hover:text-white/85"}
+                    `}>
+                      {card.description}
+                    </p>
+                  </div>
+
+                </article>
+              );
+            })}
           </div>
 
           {/* IMAGE */}

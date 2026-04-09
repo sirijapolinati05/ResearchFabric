@@ -47,7 +47,7 @@ const PartnersSection = () => {
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
-          <p className="text-black text-[24px] font-bold tracking-widest whitespace-nowrap">
+          <p className="text-black text-[18px] md:text-[20px] font-bold whitespace-nowrap">
             Research Partners
           </p>
 
@@ -55,14 +55,14 @@ const PartnersSection = () => {
         </div>
 
         {/* HEADING */}
-        <h2 className="mb-2 text-[32px] sm:text-[48px] font-bold leading-[1.1] tracking-tight 
+        <h2 className="mb-2 text-[32px] font-bold leading-[1.1] tracking-tight sm:text-[48px] md:text-[44px] lg:text-[48px]
           bg-gradient-to-r from-[#0B3F60] to-[#26A9E0] 
           bg-clip-text text-transparent">
           Renowned Minds, Rigorous Perspectives
         </h2>
 
         {/* SUBTEXT */}
-        <p className="mx-auto mb-5 max-w-xl text-[20px] text-muted-foreground sm:mb-7 sm:max-w-2xl">
+        <p className="mx-auto mb-5 max-w-xl text-[20px] text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl md:text-[18px] lg:text-[20px]">
           Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
         </p>
 
@@ -80,9 +80,13 @@ const PartnersSection = () => {
                 />
               )}
 
-              <div className="relative z-10 flex h-full min-h-[300px] flex-col rounded-xl bg-navy p-4 text-center">
+              {/* ✅ CARD (NO TEXT COLOR CHANGE) */}
+              <div className="group relative z-10 flex h-full min-h-[300px] flex-col rounded-xl bg-navy p-4 text-center md:min-h-[320px]
+              transition-all duration-300 ease-out
+              hover:scale-[0.96] hover:shadow-inner
+              active:scale-[0.94]">
 
-                {/* ✅ BIGGER CIRCLE */}
+                {/* IMAGE */}
                 <div
                   className="mx-auto mb-4 h-24 w-24 rounded-full overflow-hidden"
                   style={{
@@ -94,34 +98,37 @@ const PartnersSection = () => {
                   <img
                     src={partner.image}
                     alt={partner.name}
-                    className="h-full w-full object-cover rounded-full"
+                    className="h-full w-full object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
 
-                {/* ✅ BIGGER NAME */}
+                {/* NAME */}
                 <h4 className="text-lg font-bold text-white">
                   {partner.name}
                 </h4>
 
-                {/* ✅ BIGGER ROLE + SUBTITLE */}
+                {/* ROLE */}
                 <div className="mt-1 mb-2 flex flex-col">
                   <p className="text-sm font-medium text-[#38BDF8]">
                     {partner.role}
                   </p>
 
-                  <p className="mt-1 text-xs text-[#38BDF8]">
+                  <p className="mt-1 text-xs text-[#38BDF8] opacity-80">
                     {partner.subtitle}
                   </p>
 
                   <div className="mx-auto mt-3 h-[2px] w-20 bg-gray-400 opacity-70" />
                 </div>
 
+                {/* ICONS */}
                 <div className="mt-auto flex justify-center gap-3 pt-3">
-                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal">
+                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal
+                  transition-all duration-300 hover:scale-110 hover:bg-teal hover:text-white">
                     <Linkedin size={16} />
                   </a>
 
-                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal">
+                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal
+                  transition-all duration-300 hover:scale-110 hover:bg-teal hover:text-white">
                     <Mail size={16} />
                   </a>
                 </div>
@@ -135,7 +142,8 @@ const PartnersSection = () => {
         <div className="mt-6 flex justify-center">
           <Link
             to="/analyst-team"
-            className="inline-flex px-5 py-2.5 border border-[#203A72] bg-white text-[#0A1F44] rounded"
+            className="inline-flex px-5 py-2.5 border border-[#203A72] bg-white text-[#0A1F44] rounded
+            transition-all duration-300 hover:bg-[#0A1F44] hover:text-white hover:scale-95"
           >
             Meet the Analyst Team
           </Link>

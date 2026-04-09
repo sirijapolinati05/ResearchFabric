@@ -46,7 +46,7 @@ const ProcessSection = () => {
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
-          <p className="text-navy font-serif text-xs sm:text-sm font-bold tracking-widest whitespace-nowrap">
+          <p className="text-navy font-serif text-[18px] md:text-[20px] font-bold tracking-normal whitespace-nowrap">
             Our Process
           </p>
 
@@ -87,7 +87,7 @@ const ProcessSection = () => {
         </div>
 
         {/* CARDS */}
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-6 md:gap-6 lg:grid-cols-4 lg:gap-5 xl:gap-6">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-6 md:gap-5 lg:grid-cols-4 lg:gap-5 xl:gap-6">
           {steps.map((step, index) => (
             <div key={step.title} className="relative">
 
@@ -98,10 +98,10 @@ const ProcessSection = () => {
                   alt=""
                   aria-hidden="true"
                   className="pointer-events-none absolute 
-                  -right-10 sm:-right-32 md:-right-40 lg:-right-40 xl:-right-44 
-                  -top-12 sm:-top-28 md:-top-32 lg:-top-32 xl:-top-36 
-                  z-0 w-[180px] sm:w-[320px] md:w-[400px] lg:w-[400px] xl:w-[440px] 
-                  scale-[1.1] sm:scale-[1.5] md:scale-[1.6] lg:scale-[1.6] 
+                  -right-10 sm:-right-32 md:-right-24 lg:-right-40 xl:-right-44 
+                  -top-12 sm:-top-28 md:-top-20 lg:-top-32 xl:-top-36 
+                  z-0 w-[180px] sm:w-[320px] md:w-[260px] lg:w-[400px] xl:w-[440px] 
+                  scale-[1.1] sm:scale-[1.5] md:scale-[1.15] lg:scale-[1.6] 
                   opacity-80 invert brightness-0"
                 />
               )}
@@ -121,18 +121,19 @@ const ProcessSection = () => {
                 <img
                   src={step.image}
                   alt={step.title}
-                  className="mb-3 h-32 w-full object-cover sm:mb-4 sm:h-36 md:h-40 lg:h-36 xl:h-40"
+                  className="mb-3 h-32 w-full object-cover sm:mb-4 sm:h-36 md:h-32 lg:h-36 xl:h-40"
                 />
 
-                {/* TITLE */}
-                <h4 className="mb-2 font-serif text-base font-bold text-navy sm:text-lg md:text-xl lg:text-xl xl:text-2xl">
+                {/* ✅ TITLE → 22px */}
+                <h4 className="mb-2 font-serif text-[22px] font-bold text-navy leading-[28px]">
                   {step.title}
                 </h4>
 
-                {/* TEXT */}
-                <p className="text-navy/70 font-serif text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6">
+                {/* DESCRIPTION → 16px */}
+                <p className="text-navy/70 font-serif text-[16px] leading-[24px]">
                   {step.description}
                 </p>
+
               </button>
             </div>
           ))}

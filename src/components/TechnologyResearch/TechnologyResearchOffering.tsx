@@ -44,7 +44,7 @@ const TechnologyResearchOffering = () => {
           <div className="mb-3 flex items-center gap-3">
             <span className="h-[1px] w-6 bg-white/40"></span>
 
-            <p className="text-sm md:text-base lg:text-xl font-bold text-[#2fa7e8]">
+            <p className="text-[18px] md:text-[20px] font-bold tracking-normal text-[#2fa7e8]">
               Our Signature Offering
             </p>
 

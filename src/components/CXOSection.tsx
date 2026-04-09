@@ -11,7 +11,7 @@ const CXOSection = () => {
         <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
           <span className="w-4 sm:w-6 h-[1px] bg-white/40"></span>
 
-          <p className="text-white font-serif text-[24px] tracking-widest">
+          <p className="text-white font-serif text-[18px] md:text-[20px] tracking-normal">
             CXO AI Research
           </p>
 

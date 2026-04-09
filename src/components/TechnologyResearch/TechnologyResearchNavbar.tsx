@@ -1,13 +1,19 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+
 import logo from "@/assets/LandingPage/research-fabric-footer.png";
 
 const TechnologyResearchNavbar = () => {
   const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+
   const isTechnologyResearch = pathname === "/technology-research";
   const isMicroMarketResearch = pathname === "/micro-market-research";
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const navLinkClassName =
     "inline-flex items-center pb-1 text-[#0B1F3A] transition-colors hover:text-[#0B1F3A]";
@@ -17,41 +23,28 @@ const TechnologyResearchNavbar = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white text-[#0B1F3A] shadow-sm">
-      
-      <div className="
-      mx-auto flex items-center justify-between
-      max-w-[1440px] xl:max-w-[1400px] 2xl:max-w-[1600px]
-      pl-0 pr-3 sm:px-4 md:px-6 lg:px-4 xl:px-8 2xl:px-12
-      py-2 sm:py-3 md:py-3 lg:py-4 xl:py-4">
-
-        {/* LEFT */}
-        <div className="flex items-center gap-0">
-
-          {/* MENU BUTTON */}
+      <div
+        className="
+        mx-auto flex items-center justify-between
+        max-w-[1440px] xl:max-w-[1400px] 2xl:max-w-[1600px]
+        px-3 sm:px-4 md:px-6 lg:px-4 xl:px-8 2xl:px-12
+        py-2 sm:py-3 md:py-3 lg:py-4 xl:py-4"
+      >
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label="Open navigation"
-            className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 items-center justify-center text-[#0B1F3A]"
+            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileOpen}
+            aria-controls="technology-research-mobile-nav"
+            className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center text-[#0B1F3A] lg:hidden sm:h-10 sm:w-10 md:h-11 md:w-11"
           >
-            {mobileOpen ? (
-              <>
-                <X size={20} className="sm:hidden" />
-                <X size={22} className="hidden sm:block" />
-              </>
-            ) : (
-              <>
-                <Menu size={20} className="sm:hidden" />
-                <Menu size={22} className="hidden sm:block" />
-              </>
-            )}
+            <Menu size={22} />
           </button>
 
-          {/* ✅ FINAL LEFT PUSH */}
           <Link
             to="/"
             className="
-            -ml-4 sm:-ml-3 md:-ml-5 lg:-ml-7 xl:-ml-9
             block overflow-hidden
             h-[42px] w-[145px]
             sm:h-[53px] sm:w-[190px]
@@ -68,12 +61,12 @@ const TechnologyResearchNavbar = () => {
           </Link>
         </div>
 
-        {/* NAV LINKS */}
-        <nav className="
-        hidden lg:flex items-center
-        gap-5 lg:gap-6 xl:gap-8 2xl:gap-10
-        text-sm md:text-[15px] lg:text-[15px] xl:text-base 2xl:text-lg font-medium">
-
+        <nav
+          className="
+          hidden lg:flex items-center
+          gap-5 lg:gap-6 xl:gap-8 2xl:gap-10
+          text-sm md:text-[15px] lg:text-[15px] xl:text-base 2xl:text-lg font-medium"
+        >
           <Link
             to="/technology-research"
             className={`${navLinkClassName} ${
@@ -107,19 +100,22 @@ const TechnologyResearchNavbar = () => {
           </a>
         </nav>
 
-        {/* RIGHT */}
         <div className="flex items-center">
-          <span className="
-          text-xs sm:text-sm md:text-sm lg:text-[13px] xl:text-sm 2xl:text-base
-          text-[#0B1F3A] cursor-pointer hover:text-[#0B1F3A] transition-colors">
+          <span
+            className="
+            text-xs sm:text-sm md:text-sm lg:text-[13px] xl:text-sm 2xl:text-base
+            text-[#0B1F3A] cursor-pointer hover:text-[#0B1F3A] transition-colors"
+          >
             Subscribe
           </span>
         </div>
-
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 py-3 shadow-sm lg:hidden">
+        <div
+          id="technology-research-mobile-nav"
+          className="border-t border-slate-200 bg-white px-4 py-3 shadow-sm lg:hidden"
+        >
           <nav className="flex flex-col gap-1 text-sm font-medium text-[#0B1F3A]">
             <Link
               to="/technology-research"

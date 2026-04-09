@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/LandingPage/research-fabric.png";
@@ -18,10 +18,18 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(navItems[0].href);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navRef = useRef(null);
 
   const isHomePage = pathname === "/";
   const showLightNavbar = isScrolled || !isHomePage;
+  const mobileHeaderActive = mobileOpen || showLightNavbar;
+
+  const toggleMobileMenu = () => {
+    setMobileOpen((previousState) => !previousState);
+  };
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isHomePage) {
@@ -91,14 +99,19 @@ const Navbar = () => {
     "absolute -left-8 sm:-left-10 h-[190%] sm:h-[200%] w-auto object-contain transition-all duration-500 " +
     (showLightNavbar ? "opacity-100 translate-y-2" : "opacity-0");
 
-  const mobileNavbarOpen = mobileOpen || showLightNavbar;
+  const mobileDarkLogoClass =
+    "absolute left-0 -top-2 h-[125%] w-auto object-contain transition-all duration-500 " +
+    (mobileHeaderActive ? "opacity-0 translate-y-1" : "opacity-100");
+
+  const mobileLightLogoClass =
+    "absolute -left-8 sm:-left-10 h-[190%] sm:h-[200%] w-auto object-contain transition-all duration-500 " +
+    (mobileHeaderActive ? "opacity-100 translate-y-2" : "opacity-0");
 
   return (
     <nav
-      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        mobileNavbarOpen || showLightNavbar
-          ? "bg-white shadow-sm backdrop-blur-md"
+        mobileHeaderActive
+          ? "bg-white shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -107,24 +120,21 @@ const Navbar = () => {
         {/* MOBILE */}
         <div className="flex items-center gap-3 lg:hidden">
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-1 ${
-              mobileNavbarOpen ? "text-[#0B1F3A]" : "text-white"
+            type="button"
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            onClick={toggleMobileMenu}
+            className={`relative z-[60] p-1 text-xl ${
+              mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
             }`}
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            <Menu size={20} />
           </button>
 
           <Link to="/" className={`flex items-center ${logoFrameClass}`}>
-            <img src={logo} alt="logo" className={darkLogoClass} />
-            <img
-              src={lightLogo}
-              alt="logo"
-              className={
-                "absolute -left-8 sm:-left-10 h-[190%] sm:h-[200%] w-auto object-contain transition-all duration-500 " +
-                (mobileNavbarOpen ? "opacity-100 translate-y-2" : "opacity-0")
-              }
-            />
+            <img src={logo} alt="logo" className={mobileDarkLogoClass} />
+            <img src={lightLogo} alt="logo" className={mobileLightLogoClass} />
           </Link>
         </div>
 
@@ -184,7 +194,10 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {mobileOpen && (
-        <div className="bg-white px-4 pb-4 sm:px-6 lg:hidden">
+        <div
+          id="mobile-navigation"
+          className="bg-white px-4 pb-4 sm:px-6 lg:hidden"
+        >
           {navItems.map((item) => {
             const isActive = activeSection === item.href;
 
