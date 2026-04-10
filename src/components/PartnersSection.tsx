@@ -1,10 +1,11 @@
-import { Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import ashwinImg from "@/assets/LandingPage/Ashwin-Gaidhani.png";
 import tapatiImg from "@/assets/LandingPage/Tapati-Bandhopadhyay.png";
 import markImg from "@/assets/LandingPage/Mark-Purdy.png";
 import gaurangImg from "@/assets/LandingPage/Gaurang-Padgi.png";
+import gmailLogo from "@/assets/ResearchTeam/Gmail-Logo.png";
+import linkedInLogo from "@/assets/ResearchTeam/LinkedIn-Logo.png";
 import whiteTypographyImg from "@/assets/LandingPage/White-Typography.png";
 import circleBg from "@/assets/ResearchTeam/ResearchTeam-Background.jpeg";
 
@@ -43,7 +44,7 @@ const PartnersSection = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center">
 
-        {/* TOP LABEL */}
+        {/* Heading */}
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
@@ -54,39 +55,44 @@ const PartnersSection = () => {
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
         </div>
 
-        {/* HEADING */}
         <h2 className="mb-2 text-[32px] font-bold leading-[1.1] tracking-tight sm:text-[40px] md:text-[44px] lg:text-[48px]
           bg-gradient-to-r from-[#0B3F60] to-[#26A9E0] 
           bg-clip-text text-transparent">
           Renowned Minds, Rigorous Perspectives
         </h2>
 
-        {/* SUBTEXT */}
         <p className="mx-auto mb-5 max-w-xl text-[16px] text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl md:text-[18px] lg:text-[20px]">
           Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
         </p>
 
-        {/* GRID */}
+        {/* Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 
           {partners.map((partner) => (
             <div key={partner.name} className="relative h-full">
 
+              {/* ✅ Typography Image (Mobile Fixed) */}
               {partner.name === "Ashwin Gaidhani" && (
                 <img
                   src={whiteTypographyImg}
                   alt=""
-                  className="pointer-events-none absolute -left-20 -top-28 z-0 w-[180px] opacity-90"
+                  className="pointer-events-none absolute 
+                  -left-20 -top-16 
+                  sm:-left-28 sm:-top-20 
+                  lg:-left-36 lg:-top-72 
+                  z-0 
+                  w-[180px] sm:w-[260px] lg:w-[900px] 
+                  opacity-90"
                 />
               )}
 
-              {/* ✅ CARD (NO TEXT COLOR CHANGE) */}
+              {/* Card */}
               <div className="group relative z-10 flex h-full min-h-[300px] flex-col rounded-xl bg-navy p-4 text-center md:min-h-[320px]
               transition-all duration-300 ease-out
               hover:scale-[0.96] hover:shadow-inner
               active:scale-[0.94]">
 
-                {/* IMAGE */}
+                {/* Profile Image */}
                 <div
                   className="mx-auto mb-4 h-24 w-24 rounded-full overflow-hidden"
                   style={{
@@ -102,12 +108,12 @@ const PartnersSection = () => {
                   />
                 </div>
 
-                {/* NAME */}
+                {/* Name */}
                 <h4 className="text-[20px] font-bold text-white">
                   {partner.name}
                 </h4>
 
-                {/* ROLE */}
+                {/* Role */}
                 <div className="mt-1 mb-2 flex flex-col">
                   <p className="text-[16px] font-medium text-[#38BDF8]">
                     {partner.role}
@@ -120,16 +126,30 @@ const PartnersSection = () => {
                   <div className="mx-auto mt-3 h-[2px] w-20 bg-gray-400 opacity-70" />
                 </div>
 
-                {/* ICONS */}
-                <div className="mt-auto flex justify-center gap-3 pt-3">
-                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal
-                  transition-all duration-300 hover:scale-110 hover:bg-teal hover:text-white">
-                    <Linkedin size={16} />
+                {/* Icons */}
+                <div className="mt-auto flex justify-center gap-5 pt-3">
+                  <a
+                    className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
+                    aria-label={`${partner.name} LinkedIn`}
+                  >
+                    <img
+                      src={linkedInLogo}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-7 w-7 object-contain"
+                    />
                   </a>
 
-                  <a className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-teal
-                  transition-all duration-300 hover:scale-110 hover:bg-teal hover:text-white">
-                    <Mail size={16} />
+                  <a
+                    className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
+                    aria-label={`${partner.name} email`}
+                  >
+                    <img
+                      src={gmailLogo}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-7 w-7 object-contain"
+                    />
                   </a>
                 </div>
 
@@ -138,7 +158,7 @@ const PartnersSection = () => {
           ))}
         </div>
 
-        {/* BUTTON */}
+        {/* Button */}
         <div className="mt-6 flex justify-center">
           <Link
             to="/analyst-team"

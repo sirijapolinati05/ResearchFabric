@@ -6,10 +6,9 @@ import research4 from "../assets/LandingPage/Agentic-Enterprise1.png";
 
 const ResearchSection = () => {
   return (
-    <section className="bg-[#F7F9FC] py-8">
+    <section id="latest-research" className="scroll-mt-24 bg-[#F7F9FC] py-8">
       <div className="mx-auto max-w-6xl px-4">
 
-        {/* ✅ ADDED HEADING (SAME AS OUR PROCESS) */}
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
@@ -39,7 +38,8 @@ const ResearchSection = () => {
               </p>
 
               <div className="mt-1 flex items-center justify-between">
-                <p className="text-[14px] font-bold text-gray-600 group-hover:text-white/80">
+                {/* ✅ CHANGED TO 10px */}
+                <p className="text-[10px] font-bold text-gray-600 group-hover:text-white/80">
                   FEB 2026 · Thought Shaping Paper
                 </p>
 
@@ -63,16 +63,15 @@ const ResearchSection = () => {
               <img src={research2} className="h-40 w-full object-cover" />
 
               <div className="absolute inset-0 flex flex-col bg-black/60 p-2.5 text-left">
-
                 <span className="text-[12px] text-white bg-gradient-to-r from-[#0A0E33] to-[#25A6DD] px-2 py-[2px] rounded-full w-fit">
                   Chipset
                 </span>
 
-                <h4 className="mt-1 text-[22px] text-white font-semibold leading-[26px]">
+                <h4 className="mt-1 text-[20px] text-white font-semibold leading-[22px]">
                   Beyond Moore: The Custom Silicon Arms Race in AI Infrastructure
                 </h4>
 
-                <p className="mt-1 text-[16px] leading-[24px] text-white/70">
+                <p className="mt-1 text-[15px] leading-[20px] text-white/70">
                   How hyperscalers' in-house chip programs are reshaping the semiconductor landscape.
                 </p>
 
@@ -82,14 +81,13 @@ const ResearchSection = () => {
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
                   </span>
                 </div>
-
               </div>
             </div>
 
             {/* QUANTUM CARD */}
             <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md hover:scale-[1.05] hover:bg-[#0A1F44]">
 
-              <img src={research3} className="h-32 w-full object-contain" />
+              <img src={research3} className="h-32 w-full object-cover" />
 
               <div className="p-3 text-left flex flex-col">
                 <span className="text-[12px] text-white bg-gradient-to-r from-[#0A0E33] to-[#25A6DD] px-2 py-[2px] rounded-full w-fit">
@@ -132,7 +130,8 @@ const ResearchSection = () => {
               </p>
 
               <div className="mt-1 flex items-center justify-between">
-                <p className="text-[14px] font-bold text-gray-600 group-hover:text-white/80">
+                {/* ✅ CHANGED TO 10px */}
+                <p className="text-[10px] font-bold text-gray-600 group-hover:text-white/80">
                   FEB 2026 · Thought Shaping Paper
                 </p>
 

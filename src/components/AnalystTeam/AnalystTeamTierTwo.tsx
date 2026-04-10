@@ -1,10 +1,10 @@
-import { Linkedin, Mail } from "lucide-react";
-
 import lalithaImg from "@/assets/ResearchTeam/Lalitha-Yanamandra.png";
 import meghnaImg from "@/assets/ResearchTeam/Meghna-Dodke.png";
 import sameenImg from "@/assets/ResearchTeam/Sameen-Siddique.png";
 import sauravImg from "@/assets/ResearchTeam/Saurav-Patra.png";
 import johnBurnellImg from "@/assets/ResearchTeam/John-Burnell.png";
+import gmailLogo from "@/assets/ResearchTeam/Gmail-Logo.png";
+import linkedInLogo from "@/assets/ResearchTeam/LinkedIn-Logo.png";
 import AnalystTeamAvatar from "@/components/AnalystTeam/AnalystTeamAvatar";
 
 const leadAnalysts = [
@@ -61,20 +61,21 @@ const TierTwoCard = ({
 
     <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/35" />
 
-    <div className="mt-4 flex items-center justify-center gap-4">
+    <div className="mt-4 flex items-center justify-center gap-5">
       <button
         type="button"
         aria-label={`${name} LinkedIn`}
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+        className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
       >
-        <Linkedin size={16} strokeWidth={2.2} />
+        <img src={linkedInLogo} alt="" className="h-7 w-7 object-contain" />
       </button>
+
       <button
         type="button"
         aria-label={`${name} email`}
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+        className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
       >
-        <Mail size={16} strokeWidth={2.2} />
+        <img src={gmailLogo} alt="" className="h-7 w-7 object-contain" />
       </button>
     </div>
   </article>
@@ -86,10 +87,8 @@ const AnalystTeamTierTwo = () => {
       id="tier-2"
       className="relative overflow-hidden bg-[#33a9da] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20 py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]"
     >
-      {/* background circles unchanged */}
-
       <div className="relative z-10 mx-auto max-w-[1120px] xl:max-w-[1400px] 2xl:max-w-[1600px]">
-        
+
         {/* HEADER */}
         <div className="max-w-[660px]">
           <p className="text-[18px] md:text-[20px] font-semibold leading-none text-[#111948]">
@@ -107,11 +106,11 @@ const AnalystTeamTierTwo = () => {
 
         <div className="mt-8 sm:mt-10 md:mt-14 grid gap-y-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-x-16 xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-x-20">
           
-          {/* LEFT CONTENT */}
+          {/* LEFT */}
           <div className="grid gap-y-6 sm:gap-y-8 lg:grid-cols-[150px_minmax(0,1fr)] lg:gap-x-8">
 
             <div className="flex items-center">
-              <p className="text-[18px] md:text-[20px] leading-none text-[#101535]">
+              <p className="text-[18px] md:text-[20px] text-[#101535]">
                 Lead Analysts
               </p>
             </div>
@@ -123,7 +122,7 @@ const AnalystTeamTierTwo = () => {
             </div>
 
             <div className="flex items-center">
-              <p className="text-[18px] md:text-[20px] leading-none text-[#101535]">
+              <p className="text-[18px] md:text-[20px] text-[#101535]">
                 Business Analyst
               </p>
             </div>
@@ -137,29 +136,29 @@ const AnalystTeamTierTwo = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
           <div className="grid grid-cols-1 sm:grid-cols-[40px_minmax(0,1fr)] items-center gap-x-6">
 
-            {/* ✅ LINE REMOVED IN MOBILE */}
+            {/* ✅ FIXED LINE + DOTS */}
             <div className="hidden sm:flex h-full justify-center lg:translate-x-16 xl:translate-x-20">
               <div className="relative flex h-full min-h-[320px] md:min-h-[360px] items-center justify-center">
                 
-                <div className="h-full w-px rounded-full bg-[linear-gradient(180deg,transparent_0px,transparent_12px,rgba(255,255,255,0.85)_12px,rgba(255,255,255,0.85)_calc(100%-12px),transparent_calc(100%-12px),transparent_100%)]" />
-                
-                <div className="absolute top-1/2 h-3 w-3 -translate-y-[calc(160px-50%)] md:-translate-y-[calc(180px-50%)] rounded-full border border-[#5e677d] bg-white" />
-                
-                <div className="absolute top-1/2 h-3 w-3 translate-y-[calc(160px-50%)] md:translate-y-[calc(180px-50%)] rounded-full border border-[#5e677d] bg-white" />
-              
+                {/* LINE */}
+                <div className="absolute h-full w-px bg-white" />
+
+                {/* TOP DOT */}
+                <div className="absolute top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#5e677d] bg-white" />
+
+                {/* BOTTOM DOT */}
+                <div className="absolute bottom-0 h-3 w-3 translate-y-1/2 rounded-full border border-[#5e677d] bg-white" />
+
               </div>
             </div>
 
-            {/* FEATURED CARD */}
+            {/* FEATURED */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 sm:mb-8">
-                <h3 className="text-[18px] sm:text-[20px] text-[#101535]">
-                  {featuredAnalyst.name}
-                </h3>
-                <p className="mt-1 text-[16px] sm:text-[18px] text-[#101535]">
+                <p className="text-[16px] sm:text-[18px] text-[#101535]">
                   {featuredAnalyst.subtitle}
                 </p>
               </div>

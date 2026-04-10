@@ -45,7 +45,7 @@ const TechnologyResearchNavbar = () => {
           <Link
             to="/"
             className="
-            block overflow-hidden
+            block overflow-hidden -ml-5 sm:-ml-4 md:-ml-5 lg:-ml-2
             h-[42px] w-[145px]
             sm:h-[53px] sm:w-[190px]
             md:h-[58px] md:w-[220px]
@@ -56,7 +56,7 @@ const TechnologyResearchNavbar = () => {
             <img
               src={logo}
               alt="Research Fabric"
-              className="h-full w-full max-w-full origin-left scale-[2.05] sm:scale-[2.1] md:scale-[2.15] object-contain object-left"
+              className="h-full w-full max-w-full origin-left scale-[2.05] sm:scale-[2.1] md:scale-[2.15] object-contain object-left -translate-x-2 sm:-translate-x-1 md:-translate-x-2"
             />
           </Link>
         </div>

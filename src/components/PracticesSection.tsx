@@ -30,10 +30,10 @@ const microMarketTags = [
 ];
 
 const tagClassName =
-  "rounded-full border border-[#C7D2E2] bg-white px-3 py-[6px] text-[14px] sm:text-[15px] md:text-[16px] leading-none text-[#0A1F44]";
+  "rounded-full border border-[#C7D2E2] bg-white px-3 py-[6px] text-[14px] sm:text-[15px] md:px-2.5 md:py-[5px] md:text-[14px] lg:px-2 lg:py-[4px] lg:text-[13px] leading-none text-[#0A1F44]";
 
 const buttonClassName =
-  "mt-auto inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-[#111B4D] px-4 sm:px-5 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-white shadow-[0_8px_18px_rgba(17,27,77,0.18)]";
+  "mt-auto inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-[#111B4D] px-4 sm:px-5 text-[14px] sm:text-[15px] md:text-[15px] font-medium text-white shadow-[0_8px_18px_rgba(17,27,77,0.18)]";
 
 const cardBaseClass =
   "h-full min-h-[300px] flex flex-col rounded-[10px] border border-[#E2E6EE] bg-white shadow-[0_10px_24px_rgba(17,27,77,0.10)] transition-all duration-300 hover:scale-[0.95] hover:z-10";
@@ -67,18 +67,17 @@ const PracticesSection = () => {
         </p>
       </div>
 
-      <div
-        className="mx-auto grid max-w-6xl auto-rows-fr grid-cols-1 items-stretch gap-4 px-4 sm:grid-cols-2 sm:px-6 md:gap-6 md:px-8 lg:grid-cols-3 lg:gap-8 lg:px-12"
-      >
-        <div className={`${cardBaseClass} overflow-hidden sm:col-span-2 lg:col-span-1`}>
+      <div className="mx-auto grid max-w-6xl auto-rows-fr grid-cols-1 items-stretch gap-4 px-4 sm:grid-cols-2 sm:px-6 md:grid-cols-2 md:gap-6 md:px-8 lg:grid-cols-3 lg:gap-8 lg:px-12">
+        
+        <div className={`${cardBaseClass} overflow-hidden sm:col-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-1`}>
           <img
             src={techImg}
             alt="Technology"
-            className="h-full min-h-[260px] w-full object-cover sm:max-h-[360px] lg:max-h-none"
+            className="h-full min-h-[260px] w-full object-cover sm:max-h-[360px] md:max-h-none"
           />
         </div>
 
-        <div className={`${cardBaseClass} p-4 hover:bg-[#E6F2FF]`}>
+        <div className={`${cardBaseClass} p-4 md:min-h-[280px] hover:bg-[#E6F2FF]`}>
           <div className="flex flex-1 flex-col">
             <img src={tickImg} alt="tick" className="mb-3 h-7 w-7" />
 
@@ -105,7 +104,7 @@ const PracticesSection = () => {
           </Link>
         </div>
 
-        <div className={`${cardBaseClass} p-4 hover:bg-[#E6F2FF]`}>
+        <div className={`${cardBaseClass} p-4 md:min-h-[280px] hover:bg-[#E6F2FF]`}>
           <div className="flex flex-1 flex-col">
             <img src={microIcon} alt="icon" className="mb-3 h-7 w-7" />
 

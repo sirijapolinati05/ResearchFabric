@@ -1,9 +1,9 @@
-import { Linkedin, Mail } from "lucide-react";
-
 import ashwinImg from "@/assets/LandingPage/Ashwin-Gaidhani.png";
 import tapatiImg from "@/assets/LandingPage/Tapati-Bandhopadhyay.png";
 import markImg from "@/assets/LandingPage/Mark-Purdy.png";
 import gaurangImg from "@/assets/LandingPage/Gaurang-Padgi.png";
+import gmailLogo from "@/assets/ResearchTeam/Gmail-Logo.png";
+import linkedInLogo from "@/assets/ResearchTeam/LinkedIn-Logo.png";
 import AnalystTeamAvatar from "@/components/AnalystTeam/AnalystTeamAvatar";
 
 const partnerCards = [
@@ -24,7 +24,7 @@ const partnerCards = [
   },
   {
     name: "Gaurang Pagdi",
-    subtitle: "Global Capability Centers(GCC) & BPO Services",
+    subtitle: "GCC & BPO Services",
     image: gaurangImg,
   },
 ];
@@ -68,6 +68,11 @@ const AnalystTeamTierOne = () => {
 
                 <p
                   className={`mt-1 min-h-[36px] text-[14px] sm:text-[16px] leading-[1.25] text-[#5ab5eb] transition-colors duration-300 group-hover:text-white/85 ${
+                    member.subtitle === "Forbes Tech Council Member" ||
+                    member.subtitle === "Board-Level Strategy Advisor"
+                      ? "mx-auto max-w-[148px] text-[13px] sm:text-[14px] leading-[1.2]"
+                      : ""
+                  } ${
                     member.name === "Gaurang Pagdi"
                       ? "mx-auto max-w-[150px]"
                       : ""
@@ -78,20 +83,30 @@ const AnalystTeamTierOne = () => {
 
                 <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/35" />
 
-                <div className="mt-4 flex items-center justify-center gap-4">
+                <div className="mt-4 flex items-center justify-center gap-5">
                   <button
                     type="button"
                     aria-label={`${member.name} LinkedIn`}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+                    className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
                   >
-                    <Linkedin size={16} strokeWidth={2.2} />
+                    <img
+                      src={linkedInLogo}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-7 w-7 object-contain"
+                    />
                   </button>
                   <button
                     type="button"
                     aria-label={`${member.name} email`}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+                    className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
                   >
-                    <Mail size={16} strokeWidth={2.2} />
+                    <img
+                      src={gmailLogo}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-7 w-7 object-contain"
+                    />
                   </button>
                 </div>
               </article>

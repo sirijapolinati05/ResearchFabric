@@ -64,7 +64,7 @@ const AnalystTeamPage = () => (
 );
 
 const MicroMarketResearchPage = () => (
-  <div className="min-h-screen bg-[#f8f7f3] pt-[78px] lg:pt-[84px]">
+  <div className="min-h-screen bg-[#15203c] lg:bg-[#f8f7f3] lg:pt-[84px]">
     <TechnologyResearchNavbar />
     <MicroMarketResearchHero />
     <MicroMarketResearchExpertise />
@@ -75,7 +75,7 @@ const MicroMarketResearchPage = () => (
 );
 
 const TechnologyResearchPage = () => (
-  <div className="min-h-screen bg-[#f8f7f3] pt-[78px] lg:pt-[84px]">
+  <div className="min-h-screen bg-[#080f43] lg:bg-[#f8f7f3] lg:pt-[84px]">
     <TechnologyResearchNavbar />
     <TechnologyResearchHero />
     <TechnologyResearchDomains />

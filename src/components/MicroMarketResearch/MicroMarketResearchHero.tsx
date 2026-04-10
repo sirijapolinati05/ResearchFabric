@@ -1,3 +1,5 @@
+import heroImage from "@/assets/MicroMarketResearch/micro-market-research-hero.jpeg";
+
 const heroStats = [
   ["10+", "Niche Markets", "Tracked"],
   ["95%", "Forecast", "Accuracy"],
@@ -10,6 +12,15 @@ const MicroMarketResearchHero = () => {
       
       {/* BACKGROUNDS */}
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#1e3158_0%,#132443_28%,#1c58c2_28%,#1c58c2_36%,#1a2747_36%,#15203c_46%,#1d5fd0_46%,#1d5fd0_52%,#17315d_52%,#132443_60%,#0f1d37_100%)] opacity-95" />
+      <div className="absolute inset-y-0 right-0 w-full sm:w-[78%] md:w-[64%] lg:w-[56%] xl:w-[52%] opacity-30 sm:opacity-40">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-[center_10%] sm:object-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(21,32,60,0.88)_0%,rgba(21,32,60,0.42)_48%,rgba(21,32,60,0.18)_100%)]" />
+      </div>
       <div className="absolute inset-0 bg-[repeating-linear-gradient(123deg,transparent_0px,transparent_42px,rgba(43,114,255,0.88)_42px,rgba(43,114,255,0.88)_66px,transparent_66px,transparent_132px)] opacity-45" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,10,22,0.3),rgba(6,10,22,0.04),rgba(6,10,22,0.3))]" />
 

@@ -15,10 +15,7 @@ const HeroSection = () => {
 
         <div className="mt-3 w-[750px] -translate-x-6 px-4">
           <p className="text-[18px] leading-relaxed text-white/70">
-            RESEARCHFABRIC delivers practitioner-led Smart research on{" "}
-            <strong className="text-white">Perpetuating Technologies</strong>{" "}
-            and maps the <strong className="text-white">Micro-Markets</strong>{" "}
-            where these technologies create commercial value.
+            RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
           </p>
         </div>
       </div>
@@ -69,22 +66,19 @@ const HeroSection = () => {
 
           </div>
 
-          {/* BUTTONS */}
+          {/* BUTTONS (MOBILE REDUCED SIZE) */}
           <div className="flex w-full max-w-[360px] gap-3">
-            <a className="flex flex-1 justify-center rounded-full bg-[#3CC8FF] px-4 py-3 text-[16px] font-semibold text-[#081A34]">
+            <a className="flex flex-1 justify-center rounded-full bg-[#3CC8FF] px-3 py-2 text-[14px] font-semibold text-[#081A34]">
               Explore Our Practices
             </a>
 
-            <a className="flex flex-1 justify-center rounded-full bg-[#43E0B1] px-4 py-3 text-[16px] font-semibold text-[#081A34]">
+            <a className="flex flex-1 justify-center rounded-full bg-[#43E0B1] px-3 py-2 text-[14px] font-semibold text-[#081A34]">
               CXO AI Research
             </a>
           </div>
 
           <p className="text-[16px] leading-relaxed text-white/70">
-            RESEARCHFABRIC delivers practitioner-led Smart research on{" "}
-            <strong className="text-white">Perpetuating Technologies</strong>{" "}
-            and maps the <strong className="text-white">Micro-Markets</strong>{" "}
-            where these technologies create commercial value.
+            RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
           </p>
 
         </div>
@@ -133,7 +127,7 @@ const HeroSection = () => {
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="mt-8 pt-4 sm:mt-28 md:mt-20 lg:mt-44">
+        <div className="mt-4 pt-2 sm:mt-16 md:mt-14 lg:mt-64 xl:mt-72">
           <div className="grid grid-cols-2 text-center lg:grid-cols-4">
             {[
               { title: "Technology", sub: "Deep Tech Capabilities" },
@@ -143,7 +137,7 @@ const HeroSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`group cursor-pointer px-3 py-5 sm:px-4 sm:py-6 ${
+                className={`group cursor-pointer px-3 pt-4 pb-3 sm:px-4 sm:pt-6 lg:pt-8 sm:pb-4 ${
                   index % 2 === 0 ? "border-r border-white/20" : ""
                 } ${index < 2 ? "border-b border-white/20 lg:border-b-0" : ""} ${
                   index < 3 ? "lg:border-r lg:border-white/20" : "lg:border-r-0"
@@ -160,7 +154,7 @@ const HeroSection = () => {
             ))}
           </div>
 
-          <div className="mt-[-1px] border-t border-white/20 text-center pt-3 sm:pt-4">
+          <div className="mt-[-1px] border-t border-white/20 text-center pt-6 sm:pt-8 lg:pt-6">
             <h3 className="font-serif text-[28px] sm:text-[32px] md:text-[36px] font-semibold text-[#5AE0BB]">
               Practices
             </h3>

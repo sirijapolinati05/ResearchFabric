@@ -81,7 +81,18 @@ const TechnologyResearchPapers = () => {
         <div className="mt-4 flex justify-center sm:mt-5">
           <button
             type="button"
-            className="w-full sm:w-auto rounded-lg border border-[#18204e] bg-white px-6 sm:px-8 md:px-10 lg:px-8 py-2.5 sm:py-3 text-[16px] sm:text-[17px] md:text-[18px] lg:text-[18px] font-semibold text-[#111741] shadow-[0_8px_18px_rgba(17,23,65,0.1)] transition-transform hover:-translate-y-0.5"
+            className="
+            inline-flex items-center justify-center
+            rounded-lg border border-[#18204e] bg-white
+            
+            px-4 sm:px-8 md:px-10
+            py-2 sm:py-3
+            
+            text-[14px] sm:text-[17px] md:text-[18px]
+            font-semibold text-[#111741]
+            
+            shadow-[0_8px_18px_rgba(17,23,65,0.1)]
+            transition-transform hover:-translate-y-0.5"
           >
             Load More
           </button>

@@ -1,7 +1,7 @@
-import { Linkedin, Mail } from "lucide-react";
-
 import arnabImg from "@/assets/ResearchTeam/Arnab-Das.png";
 import apoorvaImg from "@/assets/ResearchTeam/Apoorva-Rao.png";
+import gmailLogo from "@/assets/ResearchTeam/Gmail-Logo.png";
+import linkedInLogo from "@/assets/ResearchTeam/LinkedIn-Logo.png";
 import sachinImg from "@/assets/ResearchTeam/Sachin-Birajdar.png";
 import shatakshiImg from "@/assets/ResearchTeam/Shatakshi-Singh.png";
 import virajImg from "@/assets/ResearchTeam/Viraj-Narvekar.png";
@@ -60,20 +60,30 @@ const TierThreeCard = ({
 
     <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/35" />
 
-    <div className="mt-4 flex items-center justify-center gap-4">
+    <div className="mt-4 flex items-center justify-center gap-5">
       <button
         type="button"
         aria-label={`${name} LinkedIn`}
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+        className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
       >
-        <Linkedin size={16} strokeWidth={2.2} />
+        <img
+          src={linkedInLogo}
+          alt=""
+          aria-hidden="true"
+          className="h-7 w-7 object-contain"
+        />
       </button>
       <button
         type="button"
         aria-label={`${name} email`}
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-[#58dec5] text-[#0d173f] transition-all duration-300 group-hover:bg-white group-hover:text-[#0d4f96] hover:-translate-y-1"
+        className="flex items-center justify-center p-1 transition-transform duration-300 hover:-translate-y-1"
       >
-        <Mail size={16} strokeWidth={2.2} />
+        <img
+          src={gmailLogo}
+          alt=""
+          aria-hidden="true"
+          className="h-7 w-7 object-contain"
+        />
       </button>
     </div>
   </article>
