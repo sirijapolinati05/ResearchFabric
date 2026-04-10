@@ -62,8 +62,7 @@ const PartnersSection = () => {
         </h2>
 
         <p className="mx-auto mb-5 max-w-xl text-[16px] text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl md:text-[18px] lg:text-[20px]">
-          Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
-        </p>
+          Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.</p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">

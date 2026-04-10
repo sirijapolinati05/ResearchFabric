@@ -9,6 +9,7 @@ const ResearchSection = () => {
     <section id="latest-research" className="scroll-mt-24 bg-[#F7F9FC] py-8">
       <div className="mx-auto max-w-6xl px-4">
 
+        {/* SMALL HEADING */}
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
@@ -19,6 +20,18 @@ const ResearchSection = () => {
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
         </div>
 
+        {/* MAIN HEADING (NOW BELOW) */}
+        <h2 className="mb-2 text-center text-[32px] font-bold leading-[1.1] tracking-tight sm:text-[40px] md:text-[44px] lg:text-[48px]
+          bg-gradient-to-r from-[#0B3F60] to-[#26A9E0] 
+          bg-clip-text text-transparent">
+          Fresh from the ResearchFabric
+        </h2>
+
+        {/* PARAGRAPH */}
+        <p className="mx-auto mb-6 text-center max-w-xl text-[16px] text-muted-foreground sm:max-w-2xl md:max-w-3xl md:text-[18px] lg:text-[20px]">
+          Our most recent Thought Shaping Papers and strategic briefings.</p>
+
+        {/* CARDS */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 
           {/* FIRST CARD */}
@@ -38,7 +51,6 @@ const ResearchSection = () => {
               </p>
 
               <div className="mt-1 flex items-center justify-between">
-                {/* ✅ CHANGED TO 10px */}
                 <p className="text-[10px] font-bold text-gray-600 group-hover:text-white/80">
                   FEB 2026 · Thought Shaping Paper
                 </p>
@@ -130,7 +142,6 @@ const ResearchSection = () => {
               </p>
 
               <div className="mt-1 flex items-center justify-between">
-                {/* ✅ CHANGED TO 10px */}
                 <p className="text-[10px] font-bold text-gray-600 group-hover:text-white/80">
                   FEB 2026 · Thought Shaping Paper
                 </p>

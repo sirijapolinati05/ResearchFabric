@@ -14,7 +14,7 @@ const features = [
     icon: starIcon,
     title: "Narrative-First Methodology",
     description:
-      "Each paper pairs our research team with a recognized industry analyst, ensuring credibility and depth.",
+      "Every paper is crafted to shape industry narratives, making complex ideas clear, compelling, and influential.",
   },
   {
     icon: bookIcon,
@@ -52,7 +52,8 @@ const TechnologyResearchOffering = () => {
           </div>
 
           {/* HEADING */}
-          <h2 className="
+          <h2
+            className="
             mt-3
             text-[32px] sm:text-[40px] md:text-[44px] lg:text-[48px] xl:text-[50px]
             font-bold leading-[1.1]"
@@ -64,10 +65,11 @@ const TechnologyResearchOffering = () => {
           </h2>
 
           {/* SUBTEXT */}
-          <p className="
+          <p
+            className="
             mt-4
             max-w-[750px]
-            text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px]
+            text-[16px] md:text-[18px] lg:text-[20px]
             text-white/85"
           >
             Our Thought Shaping Papers are co-authored with renowned industry analysts and
@@ -77,28 +79,30 @@ const TechnologyResearchOffering = () => {
           </p>
         </div>
 
-        {/* 🔥 BOXES + IMAGE */}
-        <div className="
+        {/* BOXES + IMAGE */}
+        <div
+          className="
           flex flex-col lg:flex-row
           items-start lg:items-center
-          gap-8 lg:gap-7
-        ">
-          
+          gap-8 lg:gap-7"
+        >
           {/* LEFT → 3 BOXES */}
-          <div className="
+          <div
+            className="
             grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-            gap-6 w-full lg:w-[70%]
-          ">
+            gap-6 w-full lg:w-[70%]"
+          >
             {features.map((feature) => (
               <div
                 key={feature.title}
                 className="
                 flex flex-col items-start text-left
                 min-h-[170px]
-                rounded-[12px] bg-[#f8f7f3]
+                rounded-[12px] bg-white
                 px-6 py-5 text-[#0d1440]
                 shadow-[0_10px_25px_rgba(0,0,0,0.12)]
-                transition-all duration-300 hover:scale-[1.02] hover:bg-[#cfe8ff]"
+                transition-all duration-300 
+                hover:scale-[1.02] hover:bg-[#e6f2ff]"
               >
                 <div className="flex items-center gap-3">
                   <img
@@ -119,11 +123,12 @@ const TechnologyResearchOffering = () => {
             ))}
           </div>
 
-          {/* RIGHT → BIGGER IMAGE */}
-          <div className="
+          {/* RIGHT → IMAGE */}
+          <div
+            className="
             w-full lg:w-[30%]
-            flex justify-center lg:justify-end
-          ">
+            flex justify-center lg:justify-end"
+          >
             <img
               src={researchImage}
               alt="Technology strategy workshop"
@@ -131,11 +136,9 @@ const TechnologyResearchOffering = () => {
               w-full 
               max-w-[260px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]
               object-contain
-              drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)]
-              "
+              drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
             />
           </div>
-
         </div>
       </div>
     </section>
