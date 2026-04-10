@@ -95,19 +95,16 @@ const MicroMarketResearchMethodology = () => {
                   } ${card.className || ""}`}
                 >
 
-                  {/* GRADIENT */}
                   <div className={`absolute inset-0 z-0 rounded-lg bg-gradient-to-br from-[#0b1f3a] via-[#1e3a8a] to-[#22d3ee] transition duration-500 
                     ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
                   `} />
 
-                  {/* STEP */}
                   <div className={`absolute left-0 top-0 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#64dfc6] text-sm font-semibold text-[#141742] shadow transition-all duration-300 sm:h-9 sm:w-9
                     ${isActive ? "bg-white text-[#0b1f3a]" : "group-hover:bg-white group-hover:text-[#0b1f3a]"}
                   `}>
                     {card.step}
                   </div>
 
-                  {/* CONTENT */}
                   <div className="relative z-10">
                     <h3 className={`text-[20px] font-medium leading-[1.15] transition-colors duration-300 sm:text-[22px]
                       ${isActive ? "text-white" : "group-hover:text-white"}
@@ -128,11 +125,11 @@ const MicroMarketResearchMethodology = () => {
           </div>
 
           {/* IMAGE */}
-          <div className="relative -mt-1 sm:-mt-2 md:-mt-3 flex items-start justify-center lg:justify-end">
+          <div className="relative mt-[2px] sm:mt-1 md:mt-1 flex items-start justify-center lg:justify-start lg:pl-12">
             <img
               src={methodologyImage}
               alt="Micro-market methodology"
-              className="h-[220px] sm:h-[280px] md:h-[320px] lg:h-[360px] w-auto max-w-full object-contain transition-transform duration-500 hover:scale-105"
+              className="h-[200px] sm:h-[250px] md:h-[290px] lg:h-[330px] w-auto max-w-full object-contain transition-transform duration-500 hover:scale-105"
             />
           </div>
 
