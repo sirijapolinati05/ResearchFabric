@@ -86,11 +86,11 @@ const TechnologyResearchDomains = () => {
               className="
               group relative w-full flex flex-col h-full
               p-3 sm:p-4 md:p-5 lg:p-6
-              rounded-xl
+              bg-white
               transition-all duration-300 ease-in-out
-              hover:scale-[1.04] hover:bg-[#4EC9F3] hover:shadow-xl"
+              hover:-translate-y-1 hover:scale-[1.02] hover:bg-[#26A9E0] hover:shadow-[0_18px_42px_rgba(18,43,86,0.14)]"
             >
-              <div className="aspect-[1.02/0.72] overflow-hidden bg-[#11153b] rounded-lg">
+              <div className="aspect-[1.02/0.72] overflow-hidden bg-[#11153b]">
                 <img
                   src={domain.image}
                   alt={domain.title}
@@ -103,8 +103,9 @@ const TechnologyResearchDomains = () => {
               max-w-[240px]
               text-[20px] sm:text-[22px] md:text-[24px]
               leading-tight
+              text-[#111111]
               transition-colors duration-300
-              group-hover:text-white">
+              group-hover:text-[#111111]">
                 {domain.title}
               </h3>
 
@@ -115,7 +116,7 @@ const TechnologyResearchDomains = () => {
               leading-5 sm:leading-6 md:leading-7
               text-[#202453]/88 flex-grow
               transition-colors duration-300
-              group-hover:text-white/90">
+              group-hover:text-[#202453]/88">
                 {domain.description}
               </p>
 
@@ -125,12 +126,12 @@ const TechnologyResearchDomains = () => {
                 mt-3 inline-flex items-center gap-2
                 text-[14px] sm:text-[15px] md:text-[16px]
                 font-semibold uppercase tracking-[0.02em]
-                text-[#161a46]
+                text-[#111111]
                 transition-all duration-300
-                group-hover:text-white group-hover:gap-3"
+                group-hover:text-[#111111] group-hover:gap-3"
               >
                 Explore Research
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </a>
             </article>
           ))}

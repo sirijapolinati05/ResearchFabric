@@ -6,7 +6,6 @@ import markImg from "@/assets/LandingPage/Mark-Purdy.png";
 import gaurangImg from "@/assets/LandingPage/Gaurang-Padgi.png";
 import gmailLogo from "@/assets/ResearchTeam/Gmail-Logo.png";
 import linkedInLogo from "@/assets/ResearchTeam/LinkedIn-Logo.png";
-import whiteTypographyImg from "@/assets/LandingPage/White-Typography.png";
 import circleBg from "@/assets/ResearchTeam/ResearchTeam-Background.jpeg";
 
 const partners = [
@@ -62,7 +61,8 @@ const PartnersSection = () => {
         </h2>
 
         <p className="mx-auto mb-5 max-w-xl text-[16px] text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl md:text-[18px] lg:text-[20px]">
-          Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.</p>
+          Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
+        </p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
@@ -70,23 +70,8 @@ const PartnersSection = () => {
           {partners.map((partner) => (
             <div key={partner.name} className="relative h-full">
 
-              {/* ✅ Typography Image (Mobile Fixed) */}
-              {partner.name === "Ashwin Gaidhani" && (
-                <img
-                  src={whiteTypographyImg}
-                  alt=""
-                  className="pointer-events-none absolute 
-                  -left-20 -top-16 
-                  sm:-left-28 sm:-top-20 
-                  lg:-left-36 lg:-top-72 
-                  z-0 
-                  w-[180px] sm:w-[260px] lg:w-[900px] 
-                  opacity-90"
-                />
-              )}
-
               {/* Card */}
-              <div className="group relative z-10 flex h-full min-h-[300px] flex-col rounded-xl bg-navy p-4 text-center md:min-h-[320px]
+              <div className="group relative flex h-full min-h-[300px] flex-col rounded-xl bg-navy p-4 text-center md:min-h-[320px]
               transition-all duration-300 ease-out
               hover:scale-[0.96] hover:shadow-inner
               active:scale-[0.94]">
