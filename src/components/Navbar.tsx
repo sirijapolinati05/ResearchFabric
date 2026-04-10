@@ -9,8 +9,8 @@ const navItems = [
   { label: "Our Practices", href: "#practices" },
   { label: "CXO AI Research", href: "#cxo" },
   { label: "Analysts", href: "#analysts" },
-  { label: "Latest Research", href: "#latest-research" },
   { label: "Process", href: "#process" },
+  { label: "Latest Research", href: "#latest-research" },
 ];
 
 const Navbar = () => {

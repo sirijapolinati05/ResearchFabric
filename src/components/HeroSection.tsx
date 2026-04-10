@@ -66,7 +66,7 @@ const HeroSection = () => {
 
           </div>
 
-          {/* BUTTONS (MOBILE REDUCED SIZE) */}
+          {/* BUTTONS */}
           <div className="flex w-full max-w-[360px] gap-3">
             <a className="flex flex-1 justify-center rounded-full bg-[#3CC8FF] px-3 py-2 text-[14px] font-semibold text-[#081A34]">
               Explore Our Practices
@@ -87,7 +87,8 @@ const HeroSection = () => {
         <div className="hidden lg:block">
           <div className="mt-20 max-w-[42rem]">
 
-            <h1 className="mb-5 font-serif text-[50px] font-semibold leading-none text-white">
+            {/* ✅ UPDATED TO 58px */}
+            <h1 className="mb-5 font-serif text-[58px] font-semibold leading-none text-white">
               <span className="block">Thought-Shaping</span>
               <span className="block">Intelligence on</span>
 
