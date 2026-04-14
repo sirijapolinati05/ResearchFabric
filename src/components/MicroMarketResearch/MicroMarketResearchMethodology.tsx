@@ -76,8 +76,8 @@ const MicroMarketResearchMethodology = () => {
 
         <div className="relative z-10 mt-5 grid items-start gap-6 sm:gap-8 lg:mt-4 lg:grid-cols-[1.05fr_1.2fr]">
 
-          {/* CARDS */}
-          <div className="grid items-start gap-5 sm:gap-6 md:grid-cols-2">
+          {/* ✅ Cards */}
+          <div className="mt-[6px] sm:mt-[8px] md:mt-[10px] grid items-start gap-5 sm:gap-6 md:grid-cols-2">
             {methodCards.map((card) => {
               const isActive = activeCardStep === card.step;
 
@@ -124,8 +124,8 @@ const MicroMarketResearchMethodology = () => {
             })}
           </div>
 
-          {/* IMAGE (extra strong right shift desktop) */}
-          <div className="relative mt-[-3px] sm:mt-[-1px] md:mt-[1px] flex items-start justify-center lg:justify-start pl-4 sm:pl-6 md:pl-8 lg:pl-40 xl:pl-52 2xl:pl-64">
+          {/* ✅ Image */}
+          <div className="relative mt-[6px] sm:mt-[8px] md:mt-[10px] flex items-start justify-center lg:justify-start pl-4 sm:pl-6 md:pl-8 lg:pl-40 xl:pl-52 2xl:pl-64">
             <img
               src={methodologyImage}
               alt="Micro-market methodology"

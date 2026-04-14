@@ -51,7 +51,8 @@ const AnalystTeamTierOne = () => {
         </div>
 
         <div className="mt-8 sm:mt-10 md:mt-14">
-          <div className="max-w-6xl mx-auto ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-20 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-4 md:gap-6 lg:gap-6">
+          {/* ✅ Slight right shift applied here */}
+          <div className="mx-auto grid max-w-6xl justify-items-center gap-4 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-6 md:px-4 lg:grid-cols-4 lg:gap-6 lg:px-0">
             {partnerCards.map((member) => (
               <article key={member.name} className={cardClassName}>
                 <AnalystTeamAvatar name={member.name} image={member.image} />
@@ -60,7 +61,6 @@ const AnalystTeamTierOne = () => {
                   {member.name}
                 </h3>
 
-                {/* ✅ EXTRA DARK SUBTITLE */}
                 <p
                   className={`mt-1 min-h-[36px] text-[14px] sm:text-[16px] leading-[1.25] text-[#1E4E8C] transition-colors duration-300 group-hover:text-white/85 ${
                     member.subtitle === "Forbes Tech Council Member" ||
@@ -91,7 +91,6 @@ const AnalystTeamTierOne = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
