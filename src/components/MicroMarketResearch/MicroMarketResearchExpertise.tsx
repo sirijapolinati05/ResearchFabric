@@ -73,13 +73,20 @@ const MicroMarketResearchExpertise = () => {
 
         {/* CARDS */}
         <div className="mt-7 grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 md:grid-cols-3 md:gap-x-8 lg:mt-6">
-          {expertiseItems.map((item) => {
+          {expertiseItems.map((item, index) => {
+            const desktopOffsetClass =
+              index % 3 === 1
+                ? "md:translate-x-5 lg:translate-x-8"
+                : index % 3 === 2
+                  ? "md:translate-x-10 lg:translate-x-16"
+                  : "";
+
             return (
               <article
                 key={item.title}
-                className="max-w-full md:max-w-[320px] p-3 sm:p-4 md:p-3 rounded-xl cursor-pointer
+                className={`max-w-full md:max-w-[320px] p-3 sm:p-4 md:p-3 rounded-xl cursor-pointer
                 transition-all duration-300 ease-in-out
-                hover:scale-105 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl"
+                hover:scale-105 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl ${desktopOffsetClass}`}
               >
                 {/* ICON */}
                 <div className="flex h-10 w-10 sm:h-[44px] sm:w-[44px] items-center justify-center">

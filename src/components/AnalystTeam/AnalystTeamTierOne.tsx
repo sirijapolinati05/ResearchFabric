@@ -52,7 +52,7 @@ const AnalystTeamTierOne = () => {
 
         <div className="mt-8 sm:mt-10 md:mt-14">
           {/* ✅ Slight right shift applied here */}
-          <div className="mx-auto grid max-w-6xl justify-items-center gap-4 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-6 md:px-4 lg:grid-cols-4 lg:gap-6 lg:px-0">
+          <div className="mx-auto grid max-w-6xl justify-items-center gap-10 sm:grid-cols-2 sm:gap-12 md:grid-cols-3 md:gap-16 md:px-4 lg:w-fit lg:grid-cols-[repeat(4,184px)] lg:gap-24 lg:px-0">
             {partnerCards.map((member) => (
               <article key={member.name} className={cardClassName}>
                 <AnalystTeamAvatar name={member.name} image={member.image} />

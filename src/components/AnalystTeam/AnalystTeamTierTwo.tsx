@@ -56,7 +56,6 @@ const TierTwoCard = ({
       {name}
     </h3>
 
-    {/* ✅ DARK COLOR APPLIED */}
     <p className="mt-1 min-h-[36px] text-[14px] sm:text-[16px] leading-[1.25] text-[#1E4E8C] transition-colors duration-300 group-hover:text-white/85">
       {subtitle}
     </p>
@@ -83,7 +82,6 @@ const AnalystTeamTierTwo = () => {
     >
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* HEADER */}
         <div className="max-w-[660px]">
           <p className="text-[18px] md:text-[20px] font-semibold leading-none text-[#111948]">
             <span className="inline-flex items-center gap-4">
@@ -141,7 +139,8 @@ const AnalystTeamTierTwo = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center text-center">
+            {/* ✅ RIGHT SHIFT APPLIED */}
+            <div className="flex flex-col items-center text-center lg:translate-x-8 xl:translate-x-12">
               <div className="mb-6 sm:mb-8">
                 <p className="text-[16px] sm:text-[18px] text-[#101535]">
                   {featuredAnalyst.subtitle}
