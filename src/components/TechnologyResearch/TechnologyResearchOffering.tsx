@@ -29,13 +29,13 @@ const TechnologyResearchOffering = () => {
     <section
       className="
       bg-[#0c1044] text-white
-      px-4 sm:px-6
+      px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6
       py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
       <div
         className="
         mx-auto
-        max-w-7xl
+        max-w-[1600px]
         flex flex-col gap-8 lg:gap-7 xl:gap-8"
       >
         {/* TOP CONTENT */}

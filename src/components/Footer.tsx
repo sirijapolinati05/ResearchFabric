@@ -15,16 +15,18 @@ const Footer = () => {
     <footer className="bg-background border-t border-border">
       
       {/* 🔥 MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6 py-6">
         <div className="grid grid-cols-1 gap-2 items-start sm:gap-4 md:grid-cols-3 md:gap-6">
 
-          {/* 🔥 Logo (Moved LEFT) */}
-          <div className="flex justify-start self-start -mt-6 sm:-mt-8 md:-mt-12 -ml-2 md:-ml-4">
-            <img 
-              src={logo} 
-              alt="Research Fabric" 
-              className="h-32 sm:h-36 md:h-44 object-contain"
-            />
+          {/* 🔥 Logo (Moved DOWN) */}
+          <div className="flex justify-start self-start -mt-6 sm:-mt-8 md:-mt-12">
+            <div className="relative h-16 w-[180px] overflow-visible -ml-1 sm:h-[72px] sm:w-[220px] sm:ml-0 lg:h-[88px] lg:w-[250px] lg:-ml-2">
+              <img
+                src={logo}
+                alt="Research Fabric"
+                className="absolute top-4 h-full w-full origin-left scale-[2.05] object-contain object-left -translate-x-2"
+              />
+            </div>
           </div>
 
           {/* Menu */}
@@ -86,7 +88,7 @@ const Footer = () => {
 
       {/* 🔥 BOTTOM BAR */}
       <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6 py-1.5
         flex flex-col gap-1 md:flex-row justify-between items-center text-center md:text-left">
           
           <p className="text-muted-foreground text-[14px]">

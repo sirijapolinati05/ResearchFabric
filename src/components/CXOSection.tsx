@@ -8,7 +8,7 @@ const CXOSection = () => {
       id="cxo"
       className="scroll-mt-24 bg-navy-dark py-10 sm:py-12 md:py-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6">
 
         {/* SMALL LINES + LEFT TEXT */}
         <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">

@@ -78,9 +78,9 @@ const AnalystTeamTierTwo = () => {
   return (
     <section
       id="tier-2"
-      className="relative overflow-hidden bg-[#33a9da] px-4 sm:px-6 py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]"
+      className="relative overflow-hidden bg-[#33a9da] px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6 py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]"
     >
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-[1600px]">
 
         <div className="max-w-[660px]">
           <p className="text-[18px] md:text-[20px] font-semibold leading-none text-[#111948]">

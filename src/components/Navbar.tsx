@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../assets/LandingPage/research-fabric.png";
 import lightLogo from "../assets/LandingPage/research-fabric-footer.png";
@@ -13,6 +13,12 @@ const navItems = [
   { label: "Latest Research", href: "#latest-research" },
 ];
 
+const pageItems = [
+  { label: "Technology Research", href: "/technology-research" },
+  { label: "Micro-Market Research", href: "/micro-market-research" },
+  { label: "Analyst Team", href: "/analyst-team" },
+];
+
 const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -23,9 +29,10 @@ const Navbar = () => {
   const isHomePage = pathname === "/";
   const showLightNavbar = isScrolled || !isHomePage;
   const mobileHeaderActive = mobileOpen || showLightNavbar;
+  const showLightLogo = mobileHeaderActive;
 
   const toggleMobileMenu = () => {
-    setMobileOpen((previousState) => !previousState);
+    setMobileOpen((prev) => !prev);
   };
 
   const handleLogoClick = () => {
@@ -61,41 +68,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
-  useEffect(() => {
-    if (!isHomePage) {
-      setActiveSection(navItems[0].href);
-      return;
-    }
-
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 100;
-      let current = navItems[0].href;
-
-      navItems.forEach((item) => {
-        const section = document.querySelector(item.href);
-        if (section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-
-          if (scrollPos >= top && scrollPos < top + height) {
-            current = item.href;
-          }
-        }
-      });
-
-      setActiveSection(current);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
-
-  const getTextClass = (isActive) => {
+  const getTextClass = (isActive: boolean) => {
     if (showLightNavbar) {
       return isActive
         ? "text-[#0B1F3A] font-semibold"
-        : "text-[#0B1F3A] hover:text-[#0B1F3A]";
+        : "text-[#0B1F3A]";
     }
 
     return isActive
@@ -104,72 +81,49 @@ const Navbar = () => {
   };
 
   const logoFrameClass =
-    "relative h-14 w-[180px] sm:h-16 sm:w-[220px] md:h-20 md:w-[250px]";
+    "relative h-16 w-[180px] sm:h-[72px] sm:w-[220px] lg:h-[88px] lg:w-[250px]";
 
+  // ✅ MOVED EVEN MORE RIGHT (left-8)
   const darkLogoClass =
-    "absolute left-0 -top-2 h-[125%] w-auto object-contain transition-all duration-500 " +
-    (showLightNavbar ? "opacity-0 translate-y-1" : "opacity-100");
+    "absolute left-2 -top-1 h-[110%] w-auto object-contain transition-all duration-500 sm:left-2 sm:top-0 sm:h-[110%] md:left-2 md:-top-1 md:h-[110%] lg:left-8 lg:top-1 lg:h-[118%] " +
+    (showLightLogo ? "opacity-0" : "opacity-100");
 
   const lightLogoClass =
-    "absolute -left-8 sm:-left-10 h-[190%] sm:h-[200%] w-auto object-contain transition-all duration-500 " +
-    (showLightNavbar ? "opacity-100 translate-y-2" : "opacity-0");
-
-  const mobileDarkLogoClass =
-    "absolute left-0 -top-2 h-[125%] w-auto object-contain transition-all duration-500 " +
-    (mobileHeaderActive ? "opacity-0 translate-y-1" : "opacity-100");
-
-  const mobileLightLogoClass =
-    "absolute -left-8 sm:-left-10 h-[190%] sm:h-[200%] w-auto object-contain transition-all duration-500 " +
-    (mobileHeaderActive ? "opacity-100 translate-y-2" : "opacity-0");
+    "absolute -left-6 top-2 h-full w-full origin-left scale-[2.02] object-contain object-left transition-all duration-500 sm:-left-6 sm:top-2 md:-left-6 md:top-2 lg:-left-2 lg:top-4 lg:scale-[2.05] lg:-translate-x-2 " +
+    (showLightLogo ? "opacity-100" : "opacity-0");
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        mobileHeaderActive
-          ? "bg-white shadow-sm"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        mobileHeaderActive ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1 flex items-center justify-between">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-6 py-1 flex items-center justify-between">
 
-        {/* MOBILE */}
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-0">
           <button
             type="button"
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-navigation"
             onClick={toggleMobileMenu}
-            className={`relative z-[60] p-1 text-xl ${
-              mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
+            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileOpen}
+            aria-controls="landing-mobile-nav"
+            className={`relative z-20 -mr-0.5 flex h-10 w-10 shrink-0 items-center justify-center lg:hidden ${
+              mobileOpen || showLightNavbar ? "text-[#0B1F3A]" : "text-white"
             }`}
           >
-            <Menu size={20} />
+            <Menu size={24} />
           </button>
 
           <button
             type="button"
             onClick={handleLogoClick}
-            className={`flex items-center border-0 bg-transparent p-0 ${logoFrameClass}`}
-          >
-            <img src={logo} alt="logo" className={mobileDarkLogoClass} />
-            <img src={lightLogo} alt="logo" className={mobileLightLogoClass} />
-          </button>
-        </div>
-
-        {/* DESKTOP */}
-        <div className="hidden lg:block">
-          <button
-            type="button"
-            onClick={handleLogoClick}
-            className={`ml-2 md:ml-5 flex items-center border-0 bg-transparent p-0 ${logoFrameClass}`}
+            className={`relative z-10 -ml-3 sm:-ml-3 md:-ml-3 lg:-ml-2 flex items-center border-0 bg-transparent p-0 ${logoFrameClass}`}
           >
             <img src={logo} alt="logo" className={darkLogoClass} />
             <img src={lightLogo} alt="logo" className={lightLogoClass} />
           </button>
         </div>
 
-        {/* NAV ITEMS */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navItems.map((item) => {
             const isActive = activeSection === item.href;
@@ -179,32 +133,20 @@ const Navbar = () => {
                 key={item.label}
                 href={isHomePage ? item.href : `/${item.href}`}
                 onClick={() => setActiveSection(item.href)}
-                className={`relative pb-2 text-[16px] md:text-[18px] transition-colors ${getTextClass(
-                  isActive
-                )}`}
+                className={`relative pb-2 text-[16px] md:text-[18px] ${getTextClass(isActive)}`}
               >
                 {item.label}
-
-                {/* ✅ ACTIVE UNDERLINE COLOR CHANGED */}
-                <span
-                  className={`absolute left-0 bottom-0 h-[2px] w-full transition-all duration-300 ${
-                    "bg-[#5AE0BB]"
-                  } ${
-                    isActive
-                      ? "opacity-100 scale-x-100"
-                      : "opacity-0 scale-x-0"
-                  }`}
-                />
               </a>
             );
           })}
         </div>
 
-        {/* RIGHT */}
         <div className="flex items-center gap-3 sm:gap-4">
           <span
-            className={`hidden sm:inline text-[14px] sm:text-[16px] ${
-              showLightNavbar ? "text-[#0B1F3A]" : "text-white"
+            className={`text-[14px] sm:text-[16px] ${
+              mobileHeaderActive
+                ? "inline text-[#0B1F3A]"
+                : "hidden sm:inline text-white"
             }`}
           >
             Subscribe
@@ -212,33 +154,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       {mobileOpen && (
         <div
-          id="mobile-navigation"
-          className="bg-white px-4 pb-4 sm:px-6 lg:hidden"
+          id="landing-mobile-nav"
+          className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden"
         >
-          {navItems.map((item) => {
-            const isActive = activeSection === item.href;
-
-            return (
+          <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
+            {pageItems.map((item) => (
               <a
-                key={item.label}
-                href={isHomePage ? item.href : `/${item.href}`}
-                onClick={() => {
-                  setActiveSection(item.href);
-                  setMobileOpen(false);
-                }}
-                className={`block py-2 text-[16px] ${
-                  isActive
-                    ? "text-[#0B1F3A] border-b border-[#5AE0BB]"
-                    : "text-[#0B1F3A] hover:text-[#0B1F3A]"
-                }`}
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-md px-3 py-3 transition-all duration-200 hover:bg-slate-100 hover:pl-4"
               >
                 {item.label}
               </a>
-            );
-          })}
+            ))}
+          </nav>
         </div>
       )}
     </nav>
@@ -246,4 +178,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-  

@@ -44,7 +44,7 @@ const PracticesSection = () => {
       id="practices"
       className="relative overflow-hidden scroll-mt-24 bg-[#F7F9FC] py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
-      <div className="mx-auto mb-5 max-w-7xl px-4 text-center sm:mb-6 sm:px-6 sm:text-left">
+      <div className="mx-auto mb-5 max-w-[1600px] px-4 text-center sm:mb-6 sm:px-6 sm:text-left lg:px-8 xl:px-10 2xl:px-6">
         <h2 className="relative max-w-[1120px] text-center sm:text-left text-[32px] sm:text-[40px] md:text-[46px] font-serif font-semibold leading-[1.2] text-[#0A1F44]">
           Two Practices on the <br className="sm:hidden" />
           Future of{" "}
@@ -67,9 +67,10 @@ const PracticesSection = () => {
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-7xl auto-rows-fr grid-cols-1 items-stretch gap-4 px-4 sm:grid-cols-2 sm:px-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
-        
-        <div className={`${cardBaseClass} overflow-hidden sm:col-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-1`}>
+      <div className="mx-auto grid max-w-[1600px] auto-rows-fr grid-cols-1 items-stretch gap-4 px-4 sm:grid-cols-2 sm:px-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8 lg:px-8 xl:px-10 2xl:px-6">
+        <div
+          className={`${cardBaseClass} overflow-hidden sm:col-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-1`}
+        >
           <img
             src={techImg}
             alt="Technology"

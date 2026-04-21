@@ -2,34 +2,44 @@ import heroImg from "@/assets/LandingPage/home-hero.png";
 
 const HeroSection = () => {
   const ctaBaseClass =
-    "flex justify-center rounded-full px-3 py-2 text-[14px] font-semibold text-[#081A34] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081A34] sm:px-5 sm:py-3 sm:text-[16px]";
+    "flex justify-center rounded-full px-3 py-2 text-[14px] font-semibold text-[#081A34] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081A34] sm:px-5 sm:py-3 sm:text-[16px] md:text-[14px] [@media_(max-width:340px)]:text-[12px]";
 
   return (
     <section id="hero" className="relative bg-[#081A34] text-white">
 
-      {/* ================= DESKTOP IMAGE (UNCHANGED) ================= */}
+      {/* ================= DESKTOP IMAGE + TEXT ================= */}
       <div className="hidden lg:flex absolute top-0 right-0 flex-col items-end z-10">
 
-        <img
-          src={heroImg}
-          alt="Abstract 3D"
-          className="lg:w-[750px] lg:h-auto object-cover"
-        />
+        <div className="
+          lg:w-[815px] 
+          [@media_(min-width:1400px)_and_(max-width:1500px)]:w-[775px]
+          [@media_(min-width:1800px)_and_(max-width:2100px)]:!w-[690px]
+          [@media_(min-width:2560px)]:w-[45vw] 
+          [@media_(min-width:1024px)_and_(max-width:1280px)]:w-[580px]
+        ">
 
-        <div className="mt-3 w-[750px] -translate-x-6 px-4">
-          <p className="text-[18px] leading-relaxed text-white/70">
-            RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
-          </p>
+          <img
+            src={heroImg}
+            alt="Abstract 3D"
+            className="w-full h-auto object-cover"
+          />
+
+          <div className="mt-3">
+            <p className="text-[18px] leading-relaxed text-white/70">
+              RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
+            </p>
+          </div>
+
         </div>
       </div>
 
       {/* ================= MAIN ================= */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 pt-0 pb-10 sm:px-6 md:px-8 lg:min-h-screen lg:flex lg:flex-col lg:justify-between lg:pt-32">
+      <div className="relative z-20 mx-auto max-w-[1600px] px-4 pt-0 pb-10 sm:px-6 md:px-8 lg:min-h-screen lg:flex lg:flex-col lg:justify-between lg:px-8 lg:pt-32 xl:px-10 2xl:px-6 [@media_(min-width:1024px)_and_(max-width:1280px)]:max-w-[1280px] [@media_(min-width:1024px)_and_(max-width:1280px)]:px-3 [@media_(min-width:1024px)_and_(max-width:1280px)]:pt-24">
 
         {/* ================= MOBILE ================= */}
         <div className="flex flex-col gap-6 lg:hidden">
 
-          <div className="relative w-screen -ml-4 -mt-2">
+          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen -mt-2">
 
             <img
               src={heroImg}
@@ -88,9 +98,9 @@ const HeroSection = () => {
 
         {/* ================= DESKTOP ================= */}
         <div className="hidden lg:block">
-          <div className="mt-20 max-w-[42rem]">
+          <div className="mt-20 max-w-[42rem] [@media_(min-width:1024px)_and_(max-width:1280px)]:max-w-[36rem]">
 
-            <h1 className="mb-5 font-serif text-[58px] font-semibold leading-none text-white">
+            <h1 className="mb-5 font-serif text-[58px] font-semibold leading-none text-white [@media_(min-width:1024px)_and_(max-width:1280px)]:text-[52px]">
               <span className="block">Thought-Shaping</span>
               <span className="block">Intelligence on</span>
 
@@ -130,7 +140,7 @@ const HeroSection = () => {
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="mt-4 pt-2 sm:mt-16 md:mt-14 lg:mt-64 xl:mt-72">
+        <div className="mt-4 pt-2 sm:mt-16 md:mt-8 lg:mt-64 xl:mt-72 [@media_(min-width:1024px)_and_(max-width:1280px)]:lg:mt-40">
           <div className="grid grid-cols-2 text-center lg:grid-cols-4">
             {[
               { title: "Technology", sub: "Deep Tech Capabilities" },

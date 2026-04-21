@@ -40,7 +40,7 @@ const ProcessSection = () => {
       id="process"
       className="overflow-hidden bg-process-blue py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
-      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
+      <div className="mx-auto max-w-[1600px] px-4 text-center sm:px-6 lg:px-8 xl:px-10 2xl:px-6">
 
         {/* TOP LABEL */}
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">

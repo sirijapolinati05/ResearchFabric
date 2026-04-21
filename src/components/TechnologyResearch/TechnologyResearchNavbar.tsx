@@ -26,18 +26,18 @@ const TechnologyResearchNavbar = () => {
       <div
         className="
         mx-auto flex items-center justify-between
-        max-w-[1440px] xl:max-w-[1400px] 2xl:max-w-[1600px]
-        px-3 sm:px-4 md:px-6 lg:px-4 xl:px-8 2xl:px-12
+        max-w-[1600px]
+        px-4 sm:px-6 md:px-6 lg:px-8 xl:px-10 2xl:px-6
         py-2 sm:py-3 md:py-3 lg:py-4 xl:py-4"
       >
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-0">
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={mobileOpen}
             aria-controls="technology-research-mobile-nav"
-            className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center text-[#0B1F3A] lg:hidden sm:h-10 sm:w-10 md:h-11 md:w-11"
+            className="relative z-20 -mr-0.5 flex h-9 w-9 shrink-0 items-center justify-center text-[#0B1F3A] lg:hidden sm:h-10 sm:w-10 md:h-11 md:w-11"
           >
             <Menu size={22} />
           </button>
@@ -45,18 +45,17 @@ const TechnologyResearchNavbar = () => {
           <Link
             to="/"
             className="
-            block overflow-hidden -ml-5 sm:-ml-4 md:-ml-5 lg:-ml-2
-            h-[42px] w-[145px]
-            sm:h-[53px] sm:w-[190px]
-            md:h-[58px] md:w-[220px]
-            lg:h-[63px] lg:w-[250px]
-            xl:h-[68px] xl:w-[270px]
-            2xl:h-[72px] 2xl:w-[290px]"
+            relative z-10 block overflow-hidden -ml-1 sm:ml-0 lg:-ml-2
+            h-14 w-[180px]
+            sm:h-16 sm:w-[220px]
+            lg:h-20 lg:w-[250px]
+            xl:h-20 xl:w-[250px]
+            2xl:h-20 2xl:w-[250px]"
           >
             <img
               src={logo}
               alt="Research Fabric"
-              className="h-full w-full max-w-full origin-left scale-[2.05] sm:scale-[2.1] md:scale-[2.15] object-contain object-left -translate-x-2 sm:-translate-x-1 md:-translate-x-2"
+              className="h-full w-full origin-left scale-[2.05] object-contain object-left -translate-x-2"
             />
           </Link>
         </div>
