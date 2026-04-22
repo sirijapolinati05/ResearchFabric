@@ -44,7 +44,7 @@ const cardClassName =
 
 const AnalystTeamTierOne = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8f7f3] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#141948]">
+    <section id="leadership" className="relative overflow-hidden bg-[#f8f7f3] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#141948]">
       
       <div className="page-shell relative z-10">
         {/* HEADER */}
@@ -84,6 +84,7 @@ const AnalystTeamTierOne = () => {
                 {/* IMAGE */}
                 <div
                   className="
+                    analyst-team-circle
                     mx-auto mb-6 rounded-full overflow-hidden
                     h-28 w-28
                     min-[425px]:h-28 min-[425px]:w-28

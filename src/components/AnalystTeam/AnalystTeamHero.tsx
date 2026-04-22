@@ -2,7 +2,7 @@ import heroImage from "@/assets/hero-3d.jpg";
 
 const AnalystTeamHero = () => {
   return (
-    <section className="relative overflow-hidden pb-10 text-white md:pb-12 lg:pb-12">
+    <section id="home" className="relative overflow-hidden pb-10 text-white md:pb-12 lg:pb-12">
       <div className="absolute inset-x-0 top-0 h-[360px] overflow-hidden sm:h-[390px] md:h-[460px]">
         <img
           src={heroImage}

@@ -49,6 +49,7 @@ const MicroMarketResearchMethodology = () => {
       className="relative overflow-hidden bg-[#f8f7f3] py-10 text-[#141742] sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
       
+      {/* Background */}
       <div className="pointer-events-none absolute right-[-18%] sm:right-[-12%] md:right-[-8%] lg:right-[-6%] -top-10 sm:-top-14 md:-top-20 z-0">
         <img
           src={whiteTypographyImg}
@@ -60,6 +61,7 @@ const MicroMarketResearchMethodology = () => {
 
       <div className="page-shell relative mx-auto">
 
+        {/* Header */}
         <div className="relative z-10 flex items-center gap-2 sm:gap-3">
           <span className="h-px w-4 bg-current opacity-40 sm:w-6 md:w-8" />
           <p className="text-[18px] font-bold text-[#1d214f] md:text-[20px]">
@@ -68,18 +70,21 @@ const MicroMarketResearchMethodology = () => {
           <span className="h-px w-4 bg-current opacity-40 sm:w-6 md:w-8" />
         </div>
 
+        {/* Title */}
         <h2 className="relative z-10 mt-3 text-[32px] sm:text-[40px] md:text-[46px] font-bold leading-[1.05]">
           The "Signal-to-Noise" Approach
         </h2>
 
+        {/* Description */}
         <p className="relative z-10 mt-3 max-w-[720px] text-[16px] sm:text-[18px] md:text-[18px] leading-6 text-[#1d214f]/80">
           In micro-markets, data is scarce and often unreliable. Our methodology is
           designed to synthesize fragmented data points into a coherent strategic picture.
         </p>
 
+        {/* Layout */}
         <div className="relative z-10 mt-5 grid items-start gap-6 sm:gap-8 lg:mt-4 lg:grid-cols-[1.05fr_1.2fr]">
 
-          {/* CARDS */}
+          {/* Cards */}
           <div className="grid items-start gap-5 sm:gap-6 md:grid-cols-2">
             {methodCards.map((card) => {
               const isActive = activeCardStep === card.step;
@@ -127,12 +132,23 @@ const MicroMarketResearchMethodology = () => {
             })}
           </div>
 
-          {/* IMAGE (extra strong right shift desktop) */}
-          <div className="relative mt-[-3px] sm:mt-[-1px] md:mt-[1px] flex items-start justify-center lg:justify-start pl-4 sm:pl-6 md:pl-8 lg:pl-40 xl:pl-52 2xl:pl-64">
+          {/* ✅ IMAGE (2px right shift FIXED) */}
+          <div className="
+            relative mt-[-3px] flex items-start justify-end
+            sm:mt-[-1px] md:mt-[1px]
+            pr-[2px]
+          ">
             <img
               src={methodologyImage}
               alt="Micro-market methodology"
-              className="h-[200px] sm:h-[250px] md:h-[290px] lg:h-[330px] w-auto max-w-full object-contain transition-transform duration-500 hover:scale-105"
+              className="
+                h-[195px] 
+                sm:h-[245px] 
+                md:h-[285px] 
+                lg:h-[305px]
+                w-auto max-w-full object-contain
+                transition-transform duration-500 hover:scale-105
+              "
             />
           </div>
 

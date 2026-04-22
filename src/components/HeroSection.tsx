@@ -2,11 +2,11 @@ import heroImg from "@/assets/LandingPage/home-hero.png";
 
 const HeroSection = () => {
   const ctaBaseClass =
-    "flex justify-center items-center whitespace-nowrap rounded-full px-3 py-2 text-[14px] font-semibold text-[#081A34] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081A34] sm:px-5 sm:py-3 sm:text-[16px] md:text-[14px] [@media_(max-width:340px)]:text-[12px] " +
+    "flex justify-center items-center whitespace-nowrap rounded-full px-4 py-2.5 text-[15px] font-semibold text-[#081A34] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081A34] sm:px-6 sm:py-3 sm:text-[17px] md:px-7 md:py-3.5 md:text-[17px] [@media_(max-width:340px)]:text-[12px] " +
 
-    "[@media_(min-width:2560px)]:!px-24 " +
-    "[@media_(min-width:2560px)]:!py-8 " +
-    "[@media_(min-width:2560px)]:!text-[26px] " +
+    "[@media_(min-width:2560px)]:!px-28 " +
+    "[@media_(min-width:2560px)]:!py-9 " +
+    "[@media_(min-width:2560px)]:!text-[28px] " +
     "[@media_(min-width:2560px)]:!gap-5 " +
     "[@media_(min-width:2560px)]:scale-100";
 

@@ -13,9 +13,9 @@ const researchSpecialists = [
 ];
 
 const researchAnalysts = [
-  { name: "Shatakshi Singh", image: shatakshiImg },
-  { name: "Arnab Das", image: arnabImg },
   { name: "Apoorva Rao", image: apoorvaImg },
+  { name: "Arnab Das", image: arnabImg },
+  { name: "Shatakshi Singh", image: shatakshiImg },
 ];
 
 const cardClassName =
@@ -35,7 +35,7 @@ const TierThreeCard = ({ name, image }) => (
     <div
       className="
         mx-auto mb-6 rounded-full overflow-hidden flex items-center justify-center
-        h-28 w-28   /* ✅ increased for 320px */
+        analyst-team-circle h-28 w-28   /* ✅ increased for 320px */
         min-[425px]:h-28 min-[425px]:w-28
         [@media_(min-width:1440px)_and_(max-width:2200px)]:h-36
         [@media_(min-width:1440px)_and_(max-width:2200px)]:w-36
@@ -103,7 +103,7 @@ const TierThreeCard = ({ name, image }) => (
 
 const AnalystTeamTierThree = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8f7f3] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]">
+    <section id="research-team" className="relative overflow-hidden bg-[#f8f7f3] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]">
       <div className="page-shell relative z-10">
         <div className="max-w-[760px]">
           <p className="text-[18px] md:text-[20px] font-semibold text-[#20254d]">

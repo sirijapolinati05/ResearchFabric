@@ -84,14 +84,14 @@ const MicroMarketResearchHero = () => {
             type="button"
             className="mt-6 w-fit mx-auto sm:mx-0 rounded-full 
             bg-[linear-gradient(180deg,#31b9ee_0%,#249fd8_100%)] 
-            px-5 sm:px-8 md:px-10 
-            py-2.5 sm:py-3 
-            text-[16px] sm:text-[17px] md:text-[18px] lg:text-[18px] 
+            px-3.5 sm:px-4.5 md:px-6 
+            py-2 sm:py-2.5 
+            text-[14px] sm:text-[14px] md:text-[15px] lg:text-[15px] 
             font-semibold !text-black
             shadow-[0_10px_22px_rgba(18,130,193,0.42)]
             transition-all duration-300 ease-in-out
             hover:scale-105 hover:-translate-y-1 
-            hover:shadow-[0_15px_35px_rgba(18,130,193,0.6)]"
+            hover:shadow-none"
           >
             Explore Capabilities
           </button>

@@ -24,9 +24,9 @@ const CTASection = () => {
             className="w-fit text-center bg-teal text-navy font-serif font-semibold 
             px-3 sm:px-6 py-2 md:py-3 rounded-full text-[14px] sm:text-[16px] md:text-[18px]
             transition-all duration-300 ease-in-out
-            hover:scale-105 sm:hover:scale-110 hover:-translate-y-1
+            hover:scale-[1.02]
             hover:bg-teal-light
-            hover:shadow-[0_10px_25px_rgba(45,212,191,0.5)]
+            hover:shadow-none
             active:scale-95"
           >
             Download Approach Note
@@ -38,9 +38,9 @@ const CTASection = () => {
             className="w-fit text-center border border-primary-foreground/40 text-primary-foreground font-serif font-semibold 
             px-3 sm:px-6 py-2 md:py-3 rounded-full text-[14px] sm:text-[16px] md:text-[18px]
             transition-all duration-300 ease-in-out
-            hover:scale-105 sm:hover:scale-110 hover:-translate-y-1
+            hover:scale-[1.02]
             hover:bg-primary-foreground/10
-            hover:shadow-[0_10px_25px_rgba(255,255,255,0.2)]
+            hover:shadow-none
             active:scale-95"
           >
             Get in Touch

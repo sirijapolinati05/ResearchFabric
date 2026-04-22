@@ -311,6 +311,10 @@
     padding-right: 40px !important;
   }
 
+  .methodology-image-1920 {
+    padding-left: 8rem !important;
+  }
+
   .partners-circle {
     width: 5.5rem !important;
     height: 5.5rem !important;
@@ -319,6 +323,11 @@
   .partners-badge-icon {
     width: 2rem !important;
     height: 2rem !important;
+  }
+
+  .analyst-team-circle {
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   .research-meta-row {

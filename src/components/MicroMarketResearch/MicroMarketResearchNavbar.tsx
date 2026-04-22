@@ -27,6 +27,27 @@ const MicroMarketResearchNavbar = () => {
   const showLightNavbar = isScrolled;
   const showLightLogo = mobileHeaderActive;
 
+  const scrollToSection = (hash: string) => {
+    const target = document.querySelector(hash);
+
+    if (!target) {
+      return;
+    }
+
+    const headerOffset = 92;
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: Math.max(targetTop, 0),
+      behavior: "smooth",
+    });
+
+    window.history.replaceState(null, "", hash);
+    setActiveSection(hash);
+    setMobileOpen(false);
+  };
+
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -135,6 +156,10 @@ const MicroMarketResearchNavbar = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className={`relative pb-1 text-[16px] md:text-[18px] ${getLinkClassName(isActive)}`}
               >
                 {item.label}
@@ -166,7 +191,10 @@ const MicroMarketResearchNavbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className={`rounded-md px-3 py-3 transition-all duration-200 hover:bg-slate-100 hover:pl-4 ${
                   activeSection === item.href ? "bg-slate-100 font-semibold" : ""
                 }`}

@@ -19,6 +19,13 @@ const pageItems = [
   { label: "Analyst Team", href: "/analyst-team" },
 ];
 
+const analystTeamNavItems = [
+  { label: "Leadership", href: "#leadership" },
+  { label: "Analysts", href: "#analysts" },
+  { label: "Research Team", href: "#research-team" },
+  { label: "Download Approach Note", href: "#cta" },
+];
+
 const brandLogoShellClass =
   "relative h-9 w-[112px] sm:h-10 sm:w-[118px] lg:h-10 lg:w-[122px]";
 const brandLogoImageClass =
@@ -28,13 +35,39 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(navItems[0].href);
+  const [activeSection, setActiveSection] = useState(
+    pathname === "/analyst-team" ? analystTeamNavItems[0].href : navItems[0].href
+  );
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLogoTransitioning, setIsLogoTransitioning] = useState(false);
 
   const isHomePage = pathname === "/";
+  const isAnalystTeamPage = pathname === "/analyst-team";
+  const currentNavItems = isAnalystTeamPage ? analystTeamNavItems : navItems;
   const showLightNavbar = isScrolled || !isHomePage;
   const mobileHeaderActive = mobileOpen || showLightNavbar;
   const showLightLogo = mobileHeaderActive;
+
+  const scrollToSection = (hash: string) => {
+    const target = document.querySelector(hash);
+
+    if (!target) {
+      return;
+    }
+
+    const headerOffset = 92;
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: Math.max(targetTop, 0),
+      behavior: "smooth",
+    });
+
+    window.history.replaceState(null, "", hash);
+    setActiveSection(hash);
+    setMobileOpen(false);
+  };
 
   const toggleMobileMenu = () => {
     setMobileOpen((prev) => !prev);
@@ -42,7 +75,7 @@ const Navbar = () => {
 
   const handleLogoClick = () => {
     setMobileOpen(false);
-    setActiveSection(navItems[0].href);
+    setActiveSection(currentNavItems[0].href);
 
     if (isHomePage) {
       const heroSection = document.querySelector("#hero");
@@ -51,7 +84,10 @@ const Navbar = () => {
       return;
     }
 
-    navigate("/#hero");
+    setIsLogoTransitioning(true);
+    window.setTimeout(() => {
+      navigate("/");
+    }, 180);
   };
 
   useEffect(() => {
@@ -59,7 +95,29 @@ const Navbar = () => {
   }, [pathname]);
 
   useEffect(() => {
-    if (!isHomePage) {
+    setActiveSection(
+      isAnalystTeamPage ? analystTeamNavItems[0].href : navItems[0].href
+    );
+  }, [isAnalystTeamPage]);
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      return;
+    }
+
+    if (!isLogoTransitioning) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setIsLogoTransitioning(false);
+    }, 160);
+
+    return () => window.clearTimeout(timer);
+  }, [pathname, isLogoTransitioning]);
+
+  useEffect(() => {
+    if (!isHomePage && !isAnalystTeamPage) {
       setIsScrolled(true);
       return;
     }
@@ -71,18 +129,18 @@ const Navbar = () => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, isAnalystTeamPage]);
 
   useEffect(() => {
-    if (!isHomePage) {
+    if (!isHomePage && !isAnalystTeamPage) {
       return;
     }
 
     const updateActiveSection = () => {
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-      let currentSection = navItems[0].href;
+      let currentSection = currentNavItems[0].href;
 
-      navItems.forEach((item) => {
+      currentNavItems.forEach((item) => {
         const sectionElement = document.querySelector(item.href);
 
         if (!sectionElement) {
@@ -108,7 +166,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
     };
-  }, [isHomePage]);
+  }, [currentNavItems, isHomePage, isAnalystTeamPage]);
 
   const getTextClass = (isActive: boolean) => {
     const activeLineClass =
@@ -141,6 +199,13 @@ const Navbar = () => {
         mobileHeaderActive ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
+      <div
+        aria-hidden="true"
+        className={`fixed inset-0 z-[45] bg-[#f8f7f3] transition-opacity duration-300 ease-in-out ${
+          isLogoTransitioning ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
       <div className="page-shell flex items-center justify-between py-4 sm:py-5">
         <div className="flex items-center gap-0">
           <button
@@ -167,14 +232,22 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-4 lg:ml-28 lg:flex lg:translate-y-[6px] xl:ml-32 xl:gap-6">
-          {navItems.map((item) => {
+          {currentNavItems.map((item) => {
             const isActive = activeSection === item.href;
 
             return (
               <a
                 key={item.label}
-                href={isHomePage ? item.href : `/${item.href}`}
-                onClick={() => setActiveSection(item.href)}
+                href={item.href.startsWith("#") ? item.href : item.href}
+                onClick={(event) => {
+                  if (item.href.startsWith("#")) {
+                    event.preventDefault();
+                    scrollToSection(item.href);
+                    return;
+                  }
+
+                  setActiveSection(item.href);
+                }}
                 className={`relative pb-1 text-[16px] md:text-[18px] ${getTextClass(isActive)}`}
               >
                 {item.label}
@@ -202,11 +275,19 @@ const Navbar = () => {
           className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden"
         >
           <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
-            {pageItems.map((item) => (
+            {(isAnalystTeamPage ? analystTeamNavItems : pageItems).map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => {
+                  if (item.href.startsWith("#")) {
+                    event.preventDefault();
+                    scrollToSection(item.href);
+                    return;
+                  }
+
+                  setMobileOpen(false);
+                }}
                 className="rounded-md px-3 py-3 transition-all duration-200 hover:bg-slate-100 hover:pl-4"
               >
                 {item.label}

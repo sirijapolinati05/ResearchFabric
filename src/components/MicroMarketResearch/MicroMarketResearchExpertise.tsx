@@ -50,7 +50,7 @@ const MicroMarketResearchExpertise = () => {
       <div className="absolute bottom-[-26px] right-[-26px] h-[100px] w-[100px] sm:bottom-[-34px] sm:right-[-34px] sm:h-[132px] sm:w-[132px] md:bottom-[-44px] md:right-[-44px] md:h-[168px] md:w-[168px] rounded-full border border-white/20" />
       <div className="absolute bottom-[-16px] right-[-16px] h-[80px] w-[80px] sm:bottom-[-22px] sm:right-[-22px] sm:h-[106px] sm:w-[106px] md:bottom-[-28px] md:right-[-28px] md:h-[136px] md:w-[136px] rounded-full border border-white/20" />
 
-      <div className="page-shell relative z-10 mx-auto">
+      <div className="page-shell relative z-10">
         <div className="mx-auto max-w-[900px] text-center">
           <p className="text-[18px] md:text-[20px] font-bold tracking-normal text-[#18afe5]">
             <span className="inline-flex items-center gap-3">
@@ -72,21 +72,14 @@ const MicroMarketResearchExpertise = () => {
         </div>
 
         {/* CARDS */}
-        <div className="mt-7 grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 md:grid-cols-3 md:gap-x-8 lg:mt-6">
-          {expertiseItems.map((item, index) => {
-            const desktopOffsetClass =
-              index % 3 === 1
-                ? "md:translate-x-5 lg:translate-x-8"
-                : index % 3 === 2
-                  ? "md:translate-x-10 lg:translate-x-16"
-                  : "";
-
+        <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:gap-8 lg:mt-6">
+          {expertiseItems.map((item) => {
             return (
               <article
                 key={item.title}
-                className={`max-w-full md:max-w-[320px] p-3 sm:p-4 md:p-3 rounded-xl cursor-pointer
+                className="w-full max-w-[380px] justify-self-center p-3 rounded-xl cursor-pointer
                 transition-all duration-300 ease-in-out
-                hover:scale-105 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl ${desktopOffsetClass}`}
+                hover:scale-105 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl sm:p-4 md:p-3"
               >
                 {/* ICON */}
                 <div className="flex h-10 w-10 sm:h-[44px] sm:w-[44px] items-center justify-center">

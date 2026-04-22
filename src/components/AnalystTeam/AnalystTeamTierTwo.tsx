@@ -38,7 +38,7 @@ const TierTwoCard = ({ name, subtitle, image }) => (
     <div
       className="
       mx-auto mb-4 rounded-full overflow-hidden flex items-center justify-center
-      h-28 w-28   /* ✅ increased for 320px */
+      analyst-team-circle h-28 w-28   /* ✅ increased for 320px */
       min-[425px]:h-28 min-[425px]:w-28
       [@media_(min-width:1440px)_and_(max-width:2200px)]:h-36
       [@media_(min-width:1440px)_and_(max-width:2200px)]:w-36
@@ -112,7 +112,7 @@ const TierTwoCard = ({ name, subtitle, image }) => (
 
 const AnalystTeamTierTwo = () => {
   return (
-    <section className="relative overflow-hidden bg-[#33a9da] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]">
+    <section id="analysts" className="relative overflow-hidden bg-[#33a9da] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]">
 
       <div className="page-shell relative z-10">
 
