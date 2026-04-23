@@ -71,7 +71,7 @@ const TechnologyResearchNavbar = () => {
     const activeLineClass =
       "after:absolute after:bottom-[1px] after:left-0 after:h-[2px] after:w-full after:origin-left after:rounded-full after:bg-[#63d3c5] after:transition-transform after:duration-300";
 
-    return `relative pb-1 text-[16px] md:text-[17px] lg:text-[18px] transition-colors ${activeLineClass} ${
+    return `relative pb-1 text-[16px] md:text-[18px] transition-colors ${activeLineClass} ${
       showLightNavbar
         ? isActive
           ? "text-[#0B1F3A] font-semibold after:scale-x-100"
