@@ -19,10 +19,10 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-background">
       <div className="page-shell mx-auto py-6 sm:py-7">
-        <div className="grid grid-cols-1 items-start gap-8 sm:gap-6 md:grid-cols-3 md:gap-6">
+        <div className="footer-top-grid grid grid-cols-1 items-start gap-8 sm:gap-6 md:grid-cols-3 md:gap-6">
           
           {/* Logo */}
-          <div className="flex items-center justify-center md:justify-start">
+          <div className="flex items-center justify-start pl-10 lg:pl-0">
             <button
               type="button"
               className={`relative z-10 flex items-center border-0 bg-transparent p-0 ${footerLogoShellClass}`}
@@ -56,12 +56,12 @@ const Footer = () => {
           </div>
 
           {/* Subscribe */}
-          <div className="self-start text-center md:text-left">
+          <div className="footer-subscribe self-start text-center md:text-left">
             <h4 className="mb-2 text-[16px] font-bold text-foreground">
               Subscribe
             </h4>
 
-            <div className="group mx-auto flex w-full max-w-md md:mx-0">
+            <div className="footer-subscribe-field group mx-auto flex w-full max-w-md md:mx-0">
               <input
                 type="email"
                 placeholder="Email Address"

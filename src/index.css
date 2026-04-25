@@ -183,6 +183,11 @@
 }
 
 @media (min-width: 2560px) {
+  .page-shell {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
   .max-w-7xl {
     max-width: 96rem;
   }
@@ -351,6 +356,110 @@
   }
 }
 
+@media (width: 1440px) {
+  .partners-grid {
+    grid-auto-rows: 1fr !important;
+    align-items: stretch !important;
+  }
+
+  .partners-card-shell {
+    height: 100% !important;
+  }
+
+  .partners-card {
+    min-height: 410px !important;
+    height: 410px !important;
+  }
+
+  .partners-card-name {
+    min-height: 4.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+  }
+
+  .partners-card-meta {
+    min-height: 5.5rem !important;
+  }
+}
+
+@media (width: 2560px) {
+  .page-shell {
+    max-width: 2320px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .process-shell {
+    max-width: 2320px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .process-shell .process-step-image {
+    height: 18rem !important;
+  }
+
+  .research-chipset-card {
+    height: 320px !important;
+  }
+
+  .research-ai-card-image {
+    height: 280px !important;
+  }
+
+  .research-quantum-card-image {
+    height: 180px !important;
+  }
+
+  .research-linkedin-text {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .partners-card {
+    min-height: 560px !important;
+    height: 560px !important;
+  }
+
+  .partners-grid {
+    grid-auto-rows: 1fr !important;
+    align-items: stretch !important;
+  }
+
+  .partners-card-shell {
+    height: 100% !important;
+  }
+
+  .partners-card-circle {
+    width: 14rem !important;
+    height: 14rem !important;
+  }
+
+  .partners-card-icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto !important;
+  }
+
+  .footer-subscribe {
+    justify-self: end !important;
+    width: 420px !important;
+    text-align: left !important;
+  }
+
+  .footer-subscribe-field {
+    width: 420px !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+}
+
 @media (min-width: 421px) and (max-width: 430px) {
   .process-step-image {
     height: 18rem !important;
@@ -400,6 +509,30 @@
   }
 }
 
+@media (width: 360px) {
+  .process-step-card {
+    padding: 0.85rem 0.85rem 1rem !important;
+  }
+
+  .process-step-image {
+    height: 10.75rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.9rem !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  .process-step-card h4 {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .process-step-card p {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+}
+
 @media (width: 425px) {
   .process-step-card {
     padding-top: 0.1rem !important;
@@ -418,7 +551,7 @@
   }
 
   .process-step-card-tablet img {
-    height: 150px !important;
+    height: 190px !important;
     margin-bottom: 0.5rem !important;
   }
 

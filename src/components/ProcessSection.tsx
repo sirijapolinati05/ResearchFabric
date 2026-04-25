@@ -40,7 +40,7 @@ const ProcessSection = () => {
       id="process"
       className="overflow-hidden bg-process-blue py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
     >
-      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
+      <div className="process-shell mx-auto max-w-7xl px-4 text-center sm:px-6">
 
         {/* TOP LABEL */}
         <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">
@@ -111,7 +111,7 @@ const ProcessSection = () => {
                 onClick={() => setActiveStep(index)}
                 onMouseEnter={() => setActiveStep(index)}
                 onMouseLeave={() => setActiveStep(null)}
-                className={`process-step-card relative z-10 group p-3 text-left transition-all duration-300 sm:p-4 ${
+                className={`process-step-card process-step-card-tablet relative z-10 group p-3 text-left transition-all duration-300 sm:p-4 ${
                   activeStep === index
                     ? "bg-white shadow-[0_18px_40px_rgba(10,31,68,0.16)]"
                     : "hover:bg-white hover:shadow-[0_18px_40px_rgba(10,31,68,0.16)]"

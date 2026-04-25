@@ -63,12 +63,13 @@ const PartnersSection = () => {
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <div className="partners-grid grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 
           {partners.map((partner) => (
-            <div key={partner.name} className="relative h-full">
+            <div key={partner.name} className="partners-card-shell relative h-full">
 
               <div className="
+                partners-card
                 group relative flex h-full flex-col rounded-xl bg-navy p-4 text-center
                 min-h-[300px] md:min-h-[320px]
                 transition-all duration-300 ease-out
@@ -79,6 +80,7 @@ const PartnersSection = () => {
                 {/* 🔽 CIRCLE SIZE DECREASED */}
                 <div
                   className="
+                    partners-card-circle
                     mx-auto mb-4 rounded-full overflow-hidden
                     h-20 w-20
                     sm:h-22 sm:w-22
@@ -98,11 +100,11 @@ const PartnersSection = () => {
                   />
                 </div>
 
-                <h4 className="text-[20px] font-bold text-white">
+                <h4 className="partners-card-name text-[20px] font-bold text-white">
                   {partner.name}
                 </h4>
 
-                <div className="mt-1 mb-2 flex flex-col">
+                <div className="partners-card-meta mt-1 mb-2 flex flex-col">
                   <p className="text-[16px] font-medium text-[#38BDF8]">
                     {partner.role}
                   </p>
@@ -119,13 +121,13 @@ const PartnersSection = () => {
                   <img 
                     src={linkedInLogo} 
                     alt="LinkedIn"
-                    className="h-8 w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 object-contain" 
+                    className="partners-card-icon h-8 w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 object-contain" 
                   />
 
                   <img 
                     src={gmailLogo} 
                     alt="Gmail"
-                    className="h-8 w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 object-contain" 
+                    className="partners-card-icon h-8 w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 object-contain" 
                   />
                 </div>
 

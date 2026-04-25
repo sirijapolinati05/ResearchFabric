@@ -32,7 +32,7 @@ const ResearchSection = () => {
 
             <img
               src={research1}
-              className="w-full h-[240px] object-cover"
+              className="research-ai-card-image w-full h-[240px] object-cover"
             />
 
             <div className="p-4 text-left">
@@ -56,7 +56,7 @@ const ResearchSection = () => {
 
                 <div className="flex items-center gap-1 text-gray-600 group-hover:text-white/80">
                   <img src={linkedinIcon} className="h-3 w-3" />
-                  <span className="text-[12px]">
+                  <span className="research-linkedin-text text-[12px]">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
                   </span>
                 </div>
@@ -68,7 +68,7 @@ const ResearchSection = () => {
           <div className="flex flex-col gap-4">
 
             {/* CHIPSET CARD */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-md h-[200px] max-[320px]:h-[260px]">
+            <div className="research-chipset-card group relative overflow-hidden rounded-2xl shadow-md h-[200px] max-[320px]:h-[260px]">
               <img src={research2} className="absolute inset-0 h-full w-full object-cover" />
 
               <div className="absolute inset-0 flex flex-col bg-black/60 p-4 text-left">
@@ -87,7 +87,7 @@ const ResearchSection = () => {
 
                 <div className="mt-auto flex items-center gap-1 text-white">
                   <img src={linkedinIcon} className="h-3 w-3" />
-                  <span className="text-[12px]">
+                  <span className="research-linkedin-text text-[12px]">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
                   </span>
                 </div>
@@ -97,7 +97,7 @@ const ResearchSection = () => {
 
             {/* QUANTUM CARD */}
             <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md hover:bg-[#0A1F44]">
-              <img src={research3} className="h-[130px] w-full object-cover" />
+              <img src={research3} className="research-quantum-card-image h-[130px] w-full object-cover" />
 
               <div className="p-4 text-left">
 
@@ -115,7 +115,7 @@ const ResearchSection = () => {
 
                 <div className="mt-auto flex items-center gap-1 text-gray-600 group-hover:text-white/80">
                   <img src={linkedinIcon} className="h-3 w-3" />
-                  <span className="text-[12px]">
+                  <span className="research-linkedin-text text-[12px]">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
                   </span>
                 </div>
@@ -130,7 +130,7 @@ const ResearchSection = () => {
 
             <img
               src={research4}
-              className="w-full h-[210px] object-cover"
+              className="research-ai-card-image w-full h-[210px] object-cover"
             />
 
             <div className="p-4 text-left">
@@ -154,7 +154,7 @@ const ResearchSection = () => {
 
                 <div className="flex items-center gap-1 text-gray-600 group-hover:text-white/80">
                   <img src={linkedinIcon} className="h-3 w-3" />
-                  <span className="text-[12px]">
+                  <span className="research-linkedin-text text-[12px]">
                     Releasing soon on <span className="font-semibold">LinkedIn</span>
                   </span>
                 </div>
