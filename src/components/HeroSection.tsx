@@ -12,8 +12,9 @@ const HeroSection = () => {
         <div className="w-full">
           <img src={heroImg} alt="Abstract 3D" className="w-full h-auto object-cover" />
 
+          {/* ✅ FIXED TEXT */}
           <div className="mt-3 pb-6">
-            <p className="text-[18px] leading-relaxed text-white/70 whitespace-normal break-words">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] leading-relaxed text-white/70 whitespace-normal break-words">
               RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
             </p>
           </div>
@@ -33,7 +34,6 @@ const HeroSection = () => {
               className="w-full h-[360px] sm:h-[420px] md:h-[600px] object-cover"
             />
 
-            {/* Overlay Text */}
             <div className="absolute inset-0 z-10 flex items-center px-5 sm:px-8 md:px-12">
               <h1 className="font-serif leading-tight text-[26px] sm:text-[34px] md:text-[44px]">
 
@@ -64,9 +64,9 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Description */}
+          {/* ✅ FIXED MOBILE TEXT */}
           <div className="px-5 sm:px-8 md:px-12">
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed text-white/70">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed text-white/70 whitespace-normal break-words">
               RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
             </p>
           </div>
@@ -74,9 +74,9 @@ const HeroSection = () => {
         </div>
 
         {/* ================= DESKTOP TEXT ================= */}
-        <div className="hidden lg:block mt-20 2xl:mt-[300px] max-w-[42rem]">
+        <div className="hidden lg:block mt-20 2xl:mt-[200px] max-w-[42rem]">
 
-          <h1 className="text-[58px] font-serif leading-none">
+          <h1 className="font-serif leading-none text-[58px] 2xl:text-[64px]">
 
             <span className="block 2xl:whitespace-nowrap">
               Thought-Shaping
@@ -86,7 +86,7 @@ const HeroSection = () => {
               Intelligence on
             </span>
 
-            <span className="block whitespace-nowrap">
+            <span className="block">
               <span className="text-white">P</span>
               <span className="bg-gradient-to-r from-white to-[#00A9F4] bg-clip-text text-transparent">
                 erpe
@@ -118,8 +118,8 @@ const HeroSection = () => {
 
         </div>
 
-        {/* ================= GRID (⬇️ MOVED DOWN PROPERLY) ================= */}
-        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-36 xl:mt-48 2xl:mt-64">
+        {/* ================= GRID ================= */}
+        <div className="mt-20 sm:mt-24 md:mt-28 lg:mt-44 xl:mt-60 2xl:mt-[600px]">
 
           <div className="grid grid-cols-2 text-center lg:grid-cols-4 auto-rows-fr">
             {[
@@ -140,7 +140,7 @@ const HeroSection = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-white/60 whitespace-nowrap">
+                <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-white/60 whitespace-normal break-words">
                   {item.sub}
                 </p>
               </div>
@@ -152,7 +152,7 @@ const HeroSection = () => {
               Practices
             </h3>
 
-            <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-white/60 whitespace-nowrap">
+            <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-white/60 whitespace-normal break-words">
               Research Engineering
             </p>
           </div>
