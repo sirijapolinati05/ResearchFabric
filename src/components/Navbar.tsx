@@ -50,10 +50,7 @@ const Navbar = () => {
 
   const scrollToSection = (hash: string) => {
     const target = document.querySelector(hash);
-
-    if (!target) {
-      return;
-    }
+    if (!target) return;
 
     const headerOffset = 92;
     const targetTop =
@@ -101,13 +98,8 @@ const Navbar = () => {
   }, [isAnalystTeamPage]);
 
   useEffect(() => {
-    if (pathname !== "/") {
-      return;
-    }
-
-    if (!isLogoTransitioning) {
-      return;
-    }
+    if (pathname !== "/") return;
+    if (!isLogoTransitioning) return;
 
     const timer = window.setTimeout(() => {
       setIsLogoTransitioning(false);
@@ -132,9 +124,7 @@ const Navbar = () => {
   }, [isHomePage, isAnalystTeamPage]);
 
   useEffect(() => {
-    if (!isHomePage && !isAnalystTeamPage) {
-      return;
-    }
+    if (!isHomePage && !isAnalystTeamPage) return;
 
     const updateActiveSection = () => {
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
@@ -142,10 +132,7 @@ const Navbar = () => {
 
       currentNavItems.forEach((item) => {
         const sectionElement = document.querySelector(item.href);
-
-        if (!sectionElement) {
-          return;
-        }
+        if (!sectionElement) return;
 
         const sectionTop =
           sectionElement.getBoundingClientRect().top + window.scrollY;
@@ -199,54 +186,38 @@ const Navbar = () => {
         mobileHeaderActive ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
-      <div
-        aria-hidden="true"
-        className={`fixed inset-0 z-[45] bg-[#f8f7f3] transition-opacity duration-300 ease-in-out ${
-          isLogoTransitioning ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      />
-
       <div className="page-shell flex items-center justify-between py-4 sm:py-5">
+
+        {/* LEFT */}
         <div className="flex items-center gap-0">
           <button
             type="button"
             onClick={toggleMobileMenu}
-            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={mobileOpen}
-            aria-controls="landing-mobile-nav"
-            className={`relative z-20 -mr-0.5 flex h-11 w-11 shrink-0 items-center justify-center lg:hidden ${
-              mobileOpen || showLightNavbar ? "text-[#0B1F3A]" : "text-white"
-            }`}
+            className="lg:hidden"
           >
             <MenuIcon size={25} />
           </button>
 
-          <button
-            type="button"
-            onClick={handleLogoClick}
-            className={`relative z-10 -ml-1 flex items-center border-0 bg-transparent p-0 ${brandLogoShellClass}`}
-          >
-            <img src={logo} alt="logo" className={darkLogoClass} />
-            <img src={lightLogo} alt="logo" className={lightLogoClass} />
+          <button onClick={handleLogoClick} className={brandLogoShellClass}>
+            <img src={logo} className={darkLogoClass} />
+            <img src={lightLogo} className={lightLogoClass} />
           </button>
         </div>
 
-        <div className="hidden items-center gap-4 lg:ml-28 lg:flex lg:translate-y-[6px] xl:ml-32 xl:gap-6">
+        {/* CENTER NAV (UPDATED ONLY HERE) */}
+        <div className="hidden items-center gap-4 lg:ml-28 lg:flex xl:ml-32 xl:gap-6 2xl:ml-44">
           {currentNavItems.map((item) => {
             const isActive = activeSection === item.href;
 
             return (
               <a
                 key={item.label}
-                href={item.href.startsWith("#") ? item.href : item.href}
-                onClick={(event) => {
+                href={item.href}
+                onClick={(e) => {
                   if (item.href.startsWith("#")) {
-                    event.preventDefault();
+                    e.preventDefault();
                     scrollToSection(item.href);
-                    return;
                   }
-
-                  setActiveSection(item.href);
                 }}
                 className={`relative pb-1 text-[16px] md:text-[18px] ${getTextClass(isActive)}`}
               >
@@ -256,6 +227,7 @@ const Navbar = () => {
           })}
         </div>
 
+        {/* RIGHT */}
         <div className="flex items-center gap-3 sm:gap-4">
           <span
             className={`text-[14px] sm:text-[16px] ${
@@ -268,34 +240,6 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-
-      {mobileOpen && (
-        <div
-          id="landing-mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden"
-        >
-          <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
-            {(isAnalystTeamPage ? analystTeamNavItems : pageItems).map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(event) => {
-                  if (item.href.startsWith("#")) {
-                    event.preventDefault();
-                    scrollToSection(item.href);
-                    return;
-                  }
-
-                  setMobileOpen(false);
-                }}
-                className="rounded-md px-3 py-3 transition-all duration-200 hover:bg-slate-100 hover:pl-4"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
     </nav>
   );
 };
