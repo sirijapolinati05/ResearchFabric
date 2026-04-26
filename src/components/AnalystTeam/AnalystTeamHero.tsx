@@ -17,8 +17,8 @@ const AnalystTeamHero = () => {
         className="
         absolute inset-x-0 top-0 overflow-hidden
 
-        h-[320px]
-        sm:h-[380px]
+        h-[400px]
+        sm:h-[420px]
         md:h-[460px]
         lg:h-[520px]
         xl:h-[560px]
@@ -65,17 +65,17 @@ const AnalystTeamHero = () => {
         page-shell relative z-10 flex justify-center text-center
 
         /* 🔥 MOVED UP */
-        pt-[80px]
-        sm:pt-[100px]
-        md:pt-[120px]
-        lg:pt-[140px]
-        xl:pt-[160px]
-        2xl:pt-[180px]
+        pt-[74px]
+        sm:pt-[88px]
+        md:pt-[108px]
+        lg:pt-[128px]
+        xl:pt-[148px]
+        2xl:pt-[168px]
 
-        -translate-y-4
-        sm:-translate-y-6
-        md:-translate-y-8
-        lg:-translate-y-10
+        -translate-y-6
+        sm:-translate-y-5
+        md:-translate-y-9
+        lg:-translate-y-11
       "
       >
         <div className="max-w-4xl px-4">

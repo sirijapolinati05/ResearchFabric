@@ -39,10 +39,10 @@ const AnalystTeamTierOne = () => {
 
         {/* HEADER */}
         <div className="max-w-[760px]">
-          <p className="text-[18px] md:text-[20px] font-bold text-[#20254d] flex items-center gap-4">
-            <span className="h-px w-10 bg-[#20254d]" />
+          <p className="flex items-center gap-2 whitespace-nowrap text-[15px] font-bold text-[#20254d] sm:gap-3 sm:text-[17px] md:gap-4 md:text-[20px]">
+            <span className="h-px w-6 bg-[#20254d] sm:w-8 md:w-10" />
             Core Leadership Team
-            <span className="h-px w-10 bg-[#20254d]" />
+            <span className="h-px w-6 bg-[#20254d] sm:w-8 md:w-10" />
           </p>
 
           {/* 🔥 FIXED HEADING */}
@@ -83,14 +83,19 @@ const AnalystTeamTierOne = () => {
             md:gap-14
             xl:gap-20
             2xl:gap-40
+            justify-items-center sm:justify-items-stretch
           "
           >
             {partnerCards.map((member) => (
               <article
                 key={member.name}
                 className="
-                flex flex-col items-center text-center
-                bg-white border rounded-xl shadow-md
+                group flex flex-col items-center text-center
+                w-full max-w-[240px] sm:max-w-none
+                rounded-xl border border-[#dfe4ea] bg-white
+                shadow-[0_4px_10px_rgba(8,18,59,0.15)]
+                transition-all duration-300
+                hover:-translate-y-2 hover:border-navy hover:bg-navy hover:shadow-[0_20px_34px_rgba(8,18,59,0.24)]
 
                 px-6 py-6
 
@@ -135,6 +140,7 @@ const AnalystTeamTierOne = () => {
 
                   font-medium
                   text-[#17204c]
+                  group-hover:text-white
                   leading-snug
                   break-words
                 "
@@ -152,6 +158,7 @@ const AnalystTeamTierOne = () => {
                   2xl:text-[15px]
 
                   text-[#1E4E8C]
+                  group-hover:text-white/85
                   leading-snug
                 "
                 >
@@ -159,7 +166,7 @@ const AnalystTeamTierOne = () => {
                 </p>
 
                 {/* DIVIDER */}
-                <div className="mt-auto w-full h-px bg-[#c8ccd5]" />
+                <div className="mt-auto h-px w-full bg-[#c8ccd5] group-hover:bg-white/35" />
 
                 {/* ICONS */}
                 <div className="mt-8 flex gap-8">
