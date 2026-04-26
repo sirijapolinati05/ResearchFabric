@@ -149,7 +149,7 @@ const Navbar = () => {
   };
 
   const desktopNavClassName = isHomePage
-    ? "hidden gap-6 lg:absolute lg:left-[37.5%] lg:top-1/2 lg:flex lg:-translate-y-1/2 xl:gap-7"
+    ? "hidden gap-6 lg:absolute lg:left-[36.5%] lg:top-1/2 lg:flex lg:-translate-y-1/2 xl:gap-7"
     : "hidden gap-6 lg:flex";
 
   return (
