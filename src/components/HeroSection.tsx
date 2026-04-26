@@ -13,7 +13,7 @@ const HeroSection = () => {
           <img src={heroImg} alt="Abstract 3D" className="w-full h-auto object-cover" />
 
           <div className="mt-3 pb-6">
-            <p className="text-[18px] leading-relaxed text-white/70 whitespace-normal break-words">
+            <p className="text-[18px] leading-relaxed text-white/70">
               RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
             </p>
           </div>
@@ -25,13 +25,55 @@ const HeroSection = () => {
 
         {/* ================= MOBILE ================= */}
         <div className="flex flex-col gap-6 lg:hidden w-full">
+
+          {/* ✅ IMAGE CONTAINER MADE RELATIVE */}
           <div className="relative w-screen -ml-[50vw] left-1/2 -mt-2">
+
             <img src={heroImg} className="w-full h-[360px] object-cover" />
+
+            {/* ✅ ADDED OVERLAY TEXT (THIS IS YOUR FIX) */}
+            <div className="absolute inset-0 z-10 flex items-center px-5 sm:px-8 md:px-12">
+              <h1 className="font-serif leading-tight
+                text-[26px]
+                sm:text-[34px]
+                md:text-[44px]
+              ">
+                <span className="block">Thought-Shaping</span>
+                <span className="block">Intelligence on</span>
+
+                <span className="block">
+                  <span className="text-white">P</span>
+                  <span className="bg-gradient-to-r from-white to-[#00A9F4] bg-clip-text text-transparent">
+                    erpe
+                  </span>
+                  <span className="text-[#00A9F4]">tuating</span>
+                </span>
+
+                <span className="block text-[#00A9F4]">
+                  Technologies
+                </span>
+
+                <span className="block">
+                  <span className="text-white">Micro-</span>
+                  <span className="bg-gradient-to-r from-white to-[#00A9F4] bg-clip-text text-transparent">
+                    Markets
+                  </span>
+                </span>
+              </h1>
+            </div>
+
           </div>
+
+          {/* ✅ EXISTING MOBILE DESCRIPTION (UNCHANGED) */}
+          <div className="px-5 sm:px-8 md:px-12">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed text-white/70">
+              RESEARCHFABRIC™ delivers practitioner-led Smart research on Perpetuating Technologies and maps the Micro-Markets where these technologies create commercial value. We identify high-growth segments, forecast competitive dynamics, and deliver decision-grade intelligence for enterprise strategy and investment.
+            </p>
+          </div>
+
         </div>
 
         {/* ================= DESKTOP TEXT ================= */}
-        {/* ✅ EXTREME DOWN SHIFT */}
         <div className="hidden lg:block mt-20 2xl:mt-[500px] max-w-[42rem]">
 
           <h1 className="text-[58px] font-serif leading-none">
