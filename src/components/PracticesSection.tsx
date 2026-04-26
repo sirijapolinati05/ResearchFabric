@@ -80,7 +80,6 @@ const PracticesSection = () => {
           </span>
         </h2>
 
-        {/* 🔥 FIXED FULL TEXT */}
         <p className="mt-2 sm:mt-3 max-w-[920px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.6] text-[#5A6B85]">
           RESEARCHFABRIC™ operates through two focused research practices, each designed to deliver deep, SME-led intelligence at different scales of the technology landscape.
         </p>
@@ -125,7 +124,8 @@ const PracticesSection = () => {
               Granular analysis of high-growth market segments.
             </p>
 
-            <div className="mb-4 flex flex-wrap gap-3">
+            {/* ✅ ONLY 2560px FIX */}
+            <div className="mb-4 flex flex-wrap gap-3 [@media_(width:2560px)]:mt-5">
               {microMarketTags.map((tag) => (
                 <span key={tag} className={tagClassName}>{tag}</span>
               ))}

@@ -115,7 +115,7 @@ const HeroSection = () => {
               <span className="block">
                 <span className="text-white">P</span>
                 <span className="bg-gradient-to-r from-white to-[#00A9F4] bg-clip-text text-transparent">erpe</span>
-                <span className="text-[#00A9F4]">tuating</span>
+                <span className="text-[#00A9F4]">erputuating</span>
               </span>
 
               <span className="block">
