@@ -588,10 +588,6 @@
 }
 
 @media (width: 1440px) {
-  .hero-stats-grid {
-    margin-top: 9rem !important;
-  }
-
   .partners-grid {
     grid-auto-rows: 1fr !important;
     align-items: stretch !important;
@@ -616,12 +612,6 @@
 
   .partners-card-meta {
     min-height: 5.5rem !important;
-  }
-}
-
-@media (min-width: 1280px) and (max-width: 1680px) {
-  .hero-stats-grid {
-    margin-top: clamp(8rem, 10vw, 11.5rem) !important;
   }
 }
 
