@@ -59,7 +59,10 @@ const TierThreeCard = ({ name, image }) => (
 
 const AnalystTeamTierThree = () => {
   return (
-    <section className="bg-[#f8f7f3] py-12 text-[#111948]">
+    <section
+      id="research-team"
+      className="bg-[#f8f7f3] py-12 text-[#111948]"
+    >
       <div className="page-shell px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
 
         {/* 🔥 SUPPORT LEADS LABEL (TOP) */}

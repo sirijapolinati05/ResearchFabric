@@ -31,7 +31,10 @@ const partnerCards = [
 
 const AnalystTeamTierOne = () => {
   return (
-    <section className="bg-[#f8f7f3] py-16 xl:py-20 text-[#141948]">
+    <section
+      id="leadership"
+      className="bg-[#f8f7f3] py-16 xl:py-20 text-[#141948]"
+    >
       <div className="px-6">
 
         {/* HEADER */}

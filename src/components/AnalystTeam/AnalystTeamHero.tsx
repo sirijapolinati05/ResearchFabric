@@ -3,9 +3,11 @@ import heroImage from "@/assets/hero-3d.jpg";
 const AnalystTeamHero = () => {
   return (
     <section
-      id="home"
+      id="hero"
       className="
       relative overflow-hidden text-white
+
+      -mt-[92px] pt-[92px]
 
       pb-8 sm:pb-10 md:pb-12 lg:pb-14
       "
@@ -51,59 +53,24 @@ const AnalystTeamHero = () => {
       </div>
 
       {/* CURVES */}
-      <div className="
-        absolute bottom-0 right-0
-        h-[140px] w-[160px]
-        sm:h-[180px] sm:w-[210px]
-        md:h-[220px] md:w-[260px]
-        lg:h-[260px] lg:w-[300px]
-        xl:h-[300px] xl:w-[340px]
-        2xl:h-[360px] 2xl:w-[420px]
+      <div className="absolute bottom-0 right-0 h-[140px] w-[160px] sm:h-[180px] sm:w-[210px] md:h-[220px] md:w-[260px] lg:h-[260px] lg:w-[300px] xl:h-[300px] xl:w-[340px] 2xl:h-[360px] 2xl:w-[420px] rounded-tl-[80px] sm:rounded-tl-[110px] md:rounded-tl-[140px] xl:rounded-tl-[180px] border-l border-t border-[#2A49A5]/60 opacity-80" />
 
-        rounded-tl-[80px] sm:rounded-tl-[110px] md:rounded-tl-[140px] xl:rounded-tl-[180px]
+      <div className="absolute bottom-0 right-0 h-[120px] w-[140px] sm:h-[150px] sm:w-[180px] md:h-[190px] md:w-[220px] lg:h-[220px] lg:w-[260px] xl:h-[250px] xl:w-[300px] 2xl:h-[300px] 2xl:w-[360px] rounded-tl-[70px] sm:rounded-tl-[100px] md:rounded-tl-[120px] xl:rounded-tl-[150px] border-l border-t border-[#2A49A5]/60 opacity-70" />
 
-        border-l border-t border-[#2A49A5]/60 opacity-80
-      " />
-
-      <div className="
-        absolute bottom-0 right-0
-        h-[120px] w-[140px]
-        sm:h-[150px] sm:w-[180px]
-        md:h-[190px] md:w-[220px]
-        lg:h-[220px] lg:w-[260px]
-        xl:h-[250px] xl:w-[300px]
-        2xl:h-[300px] 2xl:w-[360px]
-
-        rounded-tl-[70px] sm:rounded-tl-[100px] md:rounded-tl-[120px] xl:rounded-tl-[150px]
-
-        border-l border-t border-[#2A49A5]/60 opacity-70
-      " />
-
-      <div className="
-        absolute bottom-0 right-0
-        h-[100px] w-[120px]
-        sm:h-[130px] sm:w-[150px]
-        md:h-[160px] md:w-[190px]
-        lg:h-[190px] lg:w-[220px]
-        xl:h-[210px] xl:w-[260px]
-        2xl:h-[260px] 2xl:w-[300px]
-
-        rounded-tl-[60px] sm:rounded-tl-[80px] md:rounded-tl-[100px] xl:rounded-tl-[130px]
-
-        border-l border-t border-[#2A49A5]/60 opacity-60
-      " />
+      <div className="absolute bottom-0 right-0 h-[100px] w-[120px] sm:h-[130px] sm:w-[150px] md:h-[160px] md:w-[190px] lg:h-[190px] lg:w-[220px] xl:h-[210px] xl:w-[260px] 2xl:h-[260px] 2xl:w-[300px] rounded-tl-[60px] sm:rounded-tl-[80px] md:rounded-tl-[100px] xl:rounded-tl-[130px] border-l border-t border-[#2A49A5]/60 opacity-60" />
 
       {/* CONTENT */}
       <div
         className="
         page-shell relative z-10 flex justify-center text-center
 
-        pt-[90px]
-        sm:pt-[110px]
-        md:pt-[140px]
-        lg:pt-[160px]
-        xl:pt-[180px]
-        2xl:pt-[220px]
+        /* 🔥 MOVED UP */
+        pt-[80px]
+        sm:pt-[100px]
+        md:pt-[120px]
+        lg:pt-[140px]
+        xl:pt-[160px]
+        2xl:pt-[180px]
 
         -translate-y-4
         sm:-translate-y-6
@@ -125,7 +92,6 @@ const AnalystTeamHero = () => {
             xl:text-[52px]
             2xl:text-[60px]
 
-            /* prevent overflow issues */
             break-words
           "
           >

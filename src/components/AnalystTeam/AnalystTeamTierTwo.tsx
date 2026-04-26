@@ -81,7 +81,10 @@ const TierTwoCard = ({ name, subtitle, image }) => (
 
 const AnalystTeamTierTwo = () => {
   return (
-    <section className="bg-[#33a9da] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]">
+    <section
+      id="analysts"
+      className="bg-[#33a9da] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 text-[#111948]"
+    >
       <div className="page-shell px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
 
         {/* 🔥 HEADER */}
