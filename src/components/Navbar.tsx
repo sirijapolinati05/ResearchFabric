@@ -13,12 +13,6 @@ const navItems = [
   { label: "Latest Research", href: "#latest-research" },
 ];
 
-const pageItems = [
-  { label: "Technology Research", href: "/technology-research" },
-  { label: "Micro-Market Research", href: "/micro-market-research" },
-  { label: "Analyst Team", href: "/analyst-team" },
-];
-
 const analystTeamNavItems = [
   { label: "Leadership", href: "#leadership" },
   { label: "Analysts", href: "#analysts" },
@@ -34,19 +28,22 @@ const brandLogoImageClass =
 const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(
-    pathname === "/analyst-team" ? analystTeamNavItems[0].href : navItems[0].href
-  );
+  const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLogoTransitioning, setIsLogoTransitioning] = useState(false);
 
   const isHomePage = pathname === "/";
   const isAnalystTeamPage = pathname === "/analyst-team";
   const currentNavItems = isAnalystTeamPage ? analystTeamNavItems : navItems;
+
   const showLightNavbar = isScrolled || !isHomePage;
   const mobileHeaderActive = mobileOpen || showLightNavbar;
   const showLightLogo = mobileHeaderActive;
+
+  // ✅ FINAL FIX: hamburger color ONLY based on scroll
+  const menuIconColor = showLightNavbar ? "#0B1F3A" : "#FFFFFF";
 
   const scrollToSection = (hash: string) => {
     const target = document.querySelector(hash);
@@ -72,7 +69,7 @@ const Navbar = () => {
 
   const handleLogoClick = () => {
     setMobileOpen(false);
-    setActiveSection(currentNavItems[0].href);
+    setActiveSection("");
 
     if (isHomePage) {
       const heroSection = document.querySelector("#hero");
@@ -92,9 +89,7 @@ const Navbar = () => {
   }, [pathname]);
 
   useEffect(() => {
-    setActiveSection(
-      isAnalystTeamPage ? analystTeamNavItems[0].href : navItems[0].href
-    );
+    setActiveSection("");
   }, [isAnalystTeamPage]);
 
   useEffect(() => {
@@ -123,12 +118,26 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage, isAnalystTeamPage]);
 
+  // ✅ HERO + ACTIVE SECTION FIX
   useEffect(() => {
     if (!isHomePage && !isAnalystTeamPage) return;
 
     const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-      let currentSection = currentNavItems[0].href;
+      const scrollY = window.scrollY;
+
+      const heroSection = document.querySelector("#hero");
+      if (heroSection) {
+        const heroBottom =
+          heroSection.getBoundingClientRect().bottom + window.scrollY;
+
+        if (scrollY + 120 < heroBottom) {
+          setActiveSection("");
+          return;
+        }
+      }
+
+      const scrollPosition = scrollY + window.innerHeight * 0.35;
+      let currentSection = "";
 
       currentNavItems.forEach((item) => {
         const sectionElement = document.querySelector(item.href);
@@ -146,6 +155,7 @@ const Navbar = () => {
     };
 
     updateActiveSection();
+
     window.addEventListener("scroll", updateActiveSection, { passive: true });
     window.addEventListener("resize", updateActiveSection);
 
@@ -195,7 +205,7 @@ const Navbar = () => {
             onClick={toggleMobileMenu}
             className="lg:hidden"
           >
-            <MenuIcon size={25} />
+            <MenuIcon size={25} color={menuIconColor} />
           </button>
 
           <button onClick={handleLogoClick} className={brandLogoShellClass}>
@@ -204,7 +214,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* CENTER NAV (UPDATED ONLY HERE) */}
+        {/* CENTER NAV */}
         <div className="hidden items-center gap-4 lg:ml-28 lg:flex xl:ml-32 xl:gap-6 2xl:ml-44">
           {currentNavItems.map((item) => {
             const isActive = activeSection === item.href;

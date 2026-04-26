@@ -38,15 +38,15 @@ const ProcessSection = () => {
   return (
     <section
       id="process"
-      className="overflow-hidden bg-process-blue py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
+      className="overflow-hidden bg-process-blue py-10 sm:py-12 md:py-14 lg:py-12 xl:py-14 2xl:py-16"
     >
       <div className="process-shell mx-auto max-w-7xl px-4 text-center sm:px-6">
 
         {/* TOP LABEL */}
-        <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 lg:mb-3">
+        <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
           <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
-          <p className="text-navy font-serif text-[18px] md:text-[20px] font-bold tracking-normal whitespace-nowrap">
+          <p className="text-navy font-serif text-[18px] sm:text-[20px] md:text-[22px] font-bold whitespace-nowrap">
             Our Process
           </p>
 
@@ -54,12 +54,19 @@ const ProcessSection = () => {
         </div>
 
         {/* HEADING */}
-        <h2 className="mb-2 text-[32px] font-bold text-navy sm:text-[38px] md:text-[44px] lg:text-[46px] xl:text-[48px] 2xl:text-[50px]">
+        <h2 className="
+          mb-2 font-bold text-navy
+          text-[28px] sm:text-[34px] md:text-[40px] lg:text-[42px] xl:text-[48px] 2xl:text-[50px]
+        ">
           From Inquiry to Industry Narrative
         </h2>
 
         {/* SUBTEXT */}
-        <p className="mx-auto mb-6 max-w-xl font-serif text-[16px] text-navy/70 sm:mb-8 sm:max-w-2xl sm:text-[17px] md:text-[18px] lg:mb-7 lg:text-[19px] xl:text-[20px] 2xl:text-[20px]">
+        <p className="
+          mx-auto mb-6 max-w-xl font-serif text-navy/70
+          text-[14px] sm:text-[16px] md:text-[17px] lg:text-[16px] xl:text-[20px]
+          sm:mb-8 sm:max-w-2xl md:max-w-3xl
+        ">
           Every Thought Shaping Paper follows a rigorous four-phase methodology that ensures depth, accuracy, and strategic relevance.
         </p>
 
@@ -67,16 +74,16 @@ const ProcessSection = () => {
         <div className="relative">
           <div className="hidden lg:block absolute top-[12px] left-0 right-0 h-[2px] bg-navy/30 z-0" />
 
-          <div className="relative z-10 mb-4 hidden grid-cols-4 lg:grid">
-            {steps.map((step, index) => (
-              <div key={step.title} className="flex justify-center">
+          <div className="relative z-10 mb-4 hidden lg:grid grid-cols-4">
+            {steps.map((_, index) => (
+              <div key={index} className="flex justify-center">
                 <button
                   type="button"
                   onClick={() => setActiveStep(index)}
-                  className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-process-blue transition-transform duration-300 hover:scale-110"
+                  className="flex h-6 w-6 items-center justify-center rounded-full bg-process-blue"
                 >
                   <div
-                    className={`h-5 w-5 sm:h-6 sm:w-6 rounded-full border border-navy/20 transition-colors duration-300 ${
+                    className={`h-6 w-6 rounded-full border border-navy/20 ${
                       activeStep === index ? "bg-white" : "bg-navy/30"
                     }`}
                   />
@@ -87,22 +94,22 @@ const ProcessSection = () => {
         </div>
 
         {/* CARDS */}
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-6 md:gap-5 lg:grid-cols-4 lg:gap-5 xl:gap-6">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
+
           {steps.map((step, index) => (
             <div key={step.title} className="relative">
 
-              {/* TYPO IMAGE FIX */}
+              {/* TYPO BG */}
               {index === 3 && (
                 <img
                   src={typographicImg}
                   alt=""
-                  aria-hidden="true"
-                  className="pointer-events-none absolute 
-                  -right-10 sm:-right-32 md:-right-24 lg:-right-40 xl:-right-44 
-                  -top-12 sm:-top-28 md:-top-20 lg:-top-32 xl:-top-36 
-                  z-0 w-[180px] sm:w-[320px] md:w-[260px] lg:w-[400px] xl:w-[440px] 
-                  scale-[1.1] sm:scale-[1.5] md:scale-[1.15] lg:scale-[1.6] 
-                  opacity-80 invert brightness-0"
+                  className="
+                  pointer-events-none absolute z-0 opacity-80 invert brightness-0
+                  -right-10 sm:-right-24 md:-right-20 lg:-right-32 xl:-right-40
+                  -top-10 sm:-top-24 md:-top-20 lg:-top-28 xl:-top-32
+                  w-[160px] sm:w-[280px] md:w-[240px] lg:w-[360px] xl:w-[420px]
+                "
                 />
               )}
 
@@ -111,30 +118,43 @@ const ProcessSection = () => {
                 onClick={() => setActiveStep(index)}
                 onMouseEnter={() => setActiveStep(index)}
                 onMouseLeave={() => setActiveStep(null)}
-                className={`process-step-card process-step-card-tablet relative z-10 group p-3 text-left transition-all duration-300 sm:p-4 ${
+                className={`relative z-10 group p-3 sm:p-4 text-left transition-all duration-300 ${
                   activeStep === index
                     ? "bg-white shadow-[0_18px_40px_rgba(10,31,68,0.16)]"
                     : "hover:bg-white hover:shadow-[0_18px_40px_rgba(10,31,68,0.16)]"
                 }`}
               >
-                {/* ✅ IMAGE HEIGHT INCREASED */}
+
+                {/* IMAGE */}
                 <img
                   src={step.image}
                   alt={step.title}
-                  className="process-step-image mb-3 h-40 w-full object-cover sm:mb-4 sm:h-44 md:h-40 lg:h-44 xl:h-52 [@media_(width:540px)]:h-60 [@media_(width:912px)]:h-48"
+                  className="mb-3 w-full object-cover
+                  h-36 sm:h-40 md:h-40 lg:h-44 xl:h-52 2xl:h-56"
                 />
 
-                <h4 className="mb-2 font-serif text-[24px] font-bold leading-[30px] text-navy">
+                {/* TITLE */}
+                <h4 className="
+                  mb-2 font-serif font-bold text-navy
+                  text-[20px] sm:text-[22px] md:text-[24px] lg:text-[22px] xl:text-[26px]
+                  leading-tight
+                ">
                   {step.title}
                 </h4>
 
-                <p className="font-serif text-[16px] leading-[24px] text-navy/70">
+                {/* DESC */}
+                <p className="
+                  font-serif text-navy/70
+                  text-[14px] sm:text-[15px] md:text-[16px] lg:text-[14px] xl:text-[16px]
+                  leading-relaxed
+                ">
                   {step.description}
                 </p>
 
               </button>
             </div>
           ))}
+
         </div>
       </div>
     </section>

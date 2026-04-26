@@ -34,8 +34,8 @@ const deliverables = [
 
 const DeliverSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#031126] py-10 sm:py-12 md:py-14">
-      
+    <section className="relative overflow-hidden bg-[#031126] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
+
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -45,42 +45,62 @@ const DeliverSection = () => {
         />
       </div>
 
-      {/* ✅ Slight width increase only */}
       <div className="page-shell relative z-10">
-        
-        <h3 className="mb-5 sm:mb-6 inline-block border-b border-white/40 pb-2 
-        text-[28px] sm:text-[34px] md:text-[40px] font-serif text-white">
+
+        {/* HEADING */}
+        <h3
+          className="
+          mb-5 sm:mb-6 inline-block border-b border-white/40 pb-2
+          text-[26px] sm:text-[30px] md:text-[34px] lg:text-[36px] xl:text-[40px]
+          font-serif text-white
+        ">
           What We Deliver
         </h3>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {/* GRID */}
+        <div className="grid gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+
           {deliverables.map((item) => (
             <div
               key={item.title}
-              className="relative rounded-xl bg-white p-4 sm:p-5 
-              border border-[#E6ECF5] 
-              shadow-[0_15px_40px_rgba(0,0,0,0.12)] 
-              hover:shadow-[0_25px_60px_rgba(0,0,0,0.20)] 
-              hover:bg-[#D6E9FF] 
-              hover:scale-105
-              transition-all duration-300 ease-in-out"
+              className="
+              relative rounded-xl bg-white
+              p-4 sm:p-5 lg:p-5
+              border border-[#E6ECF5]
+              shadow-[0_15px_40px_rgba(0,0,0,0.12)]
+              hover:shadow-[0_25px_60px_rgba(0,0,0,0.20)]
+              hover:bg-[#D6E9FF]
+              hover:scale-[1.03]
+              transition-all duration-300
+            "
             >
-              
+
               <img
                 src={item.icon}
                 alt={item.title}
-                className="mb-3 sm:mb-4 h-7 w-7 sm:h-8 sm:w-8 object-contain"
+                className="mb-3 sm:mb-4 h-7 w-7 sm:h-8 sm:w-8"
               />
 
-              <h4 className="mb-2 text-[24px] sm:text-[26px] md:text-[28px] leading-tight font-bold text-[#0A1F44] font-serif">
+              <h4
+                className="
+                mb-2 font-bold text-[#0A1F44] font-serif
+                text-[20px] sm:text-[22px] md:text-[24px] lg:text-[22px] xl:text-[26px]
+                leading-tight
+              ">
                 {item.title}
               </h4>
 
-              <p className="font-serif text-[16px] leading-6 text-[#5A6B85]">
+              <p
+                className="
+                font-serif text-[#5A6B85]
+                text-[14px] sm:text-[15px] md:text-[16px] lg:text-[14px] xl:text-[16px]
+                leading-relaxed
+              ">
                 {item.description}
               </p>
             </div>
           ))}
+
         </div>
       </div>
     </section>

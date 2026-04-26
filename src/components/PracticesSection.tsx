@@ -29,79 +29,101 @@ const microMarketTags = [
   "Competitive Landscaping",
 ];
 
+
+// ✅ UPDATED TAGS (tablet + laptop optimized)
 const tagClassName =
   "rounded-full border border-[#C7D2E2] bg-white " +
-  "px-4 py-[8px] text-[15px] sm:text-[16px] md:text-[16px] lg:text-[15px] " +
-  "[@media_(min-width:768px)_and_(max-width:900px)]:!px-2.5 " +
-  "[@media_(min-width:768px)_and_(max-width:900px)]:!py-[4px] " +
-  "[@media_(min-width:768px)_and_(max-width:900px)]:!text-[12px] " +
-  "[@media_(max-width:380px)]:!px-1.5 " +
-  "[@media_(max-width:380px)]:!py-[2px] " +
-  "[@media_(max-width:380px)]:!text-[10px] " +
-  "[@media_(min-width:381px)_and_(max-width:430px)]:!px-2 " +
-  "[@media_(min-width:381px)_and_(max-width:430px)]:!py-[3px] " +
-  "[@media_(min-width:381px)_and_(max-width:430px)]:!text-[11px] " +
-  "[@media_(width:1024px)]:!px-2 " +
-  "[@media_(width:1024px)]:!py-[2px] " +
-  "[@media_(width:1024px)]:!text-[9px] " +
-  "[@media_(width:1024px)]:!leading-tight " +
-  "[@media_(min-width:1920px)]:!px-7 " +
-  "[@media_(min-width:1920px)]:!py-[14px] " +
-  "[@media_(min-width:1920px)]:!text-[22px] " +
-  "[@media_(min-width:1920px)]:leading-tight " +
+  "px-2 py-1 text-xs " +                // mobile
+  "sm:px-3 sm:py-1.5 sm:text-sm " +    // >=640
+  "md:px-2 md:py-1 md:text-[12px] " +  // 👈 tablet FIX
+  "lg:px-2 lg:py-1 lg:text-[12px] " +  // 👈 laptop FIX
+  "xl:px-4 xl:py-2 xl:text-base " +
+  "2xl:px-5 2xl:py-2.5 2xl:text-lg " +
   "leading-none text-[#0A1F44]";
 
+
+// ✅ BUTTON FIX (already good)
 const buttonClassName =
-  "mt-auto inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-[#111B4D] px-4 sm:px-5 text-[14px] sm:text-[15px] md:text-[15px] font-medium text-white shadow-[0_8px_18px_rgba(17,27,77,0.18)]";
+  "mt-auto inline-flex items-center justify-center gap-2 rounded-full " +
+  "h-9 sm:h-10 lg:h-8 " +
+  "px-4 sm:px-5 lg:px-3 " +
+  "text-sm sm:text-base lg:text-[13px] " +
+  "whitespace-nowrap " +
+  "font-medium text-white bg-[#111B4D] shadow-[0_8px_18px_rgba(17,27,77,0.18)]";
+
 
 const cardBaseClass =
-  "h-full min-h-[300px] flex flex-col rounded-[10px] border border-[#E2E6EE] bg-white shadow-[0_10px_24px_rgba(17,27,77,0.10)] transition-all duration-300 hover:scale-[0.95] hover:z-10";
+  "h-full min-h-[300px] flex flex-col rounded-[10px] border border-[#E2E6EE] " +
+  "bg-white shadow-[0_10px_24px_rgba(17,27,77,0.10)] " +
+  "transition-all duration-300 hover:scale-[0.97]";
+
 
 const PracticesSection = () => {
   return (
     <section
       id="practices"
-      className="relative overflow-hidden scroll-mt-24 bg-[#F7F9FC] py-10 sm:py-12 md:py-14 lg:py-8 xl:py-10 2xl:py-12"
+      className="relative overflow-hidden scroll-mt-24 bg-[#F7F9FC]
+      py-10 sm:py-12 md:py-14 lg:py-12 xl:py-14 2xl:py-16"
     >
-      <div className="page-shell mx-auto mb-5 text-center sm:mb-6 sm:text-left">
 
-        <h2 className="relative max-w-[1120px] text-center sm:text-left text-[32px] sm:text-[40px] md:text-[46px] font-serif font-semibold leading-[1.2] text-[#0A0E33]">
+      {/* HEADER */}
+      <div className="page-shell mx-auto mb-6 text-center sm:text-left">
+
+        <h2 className="relative max-w-[1120px]
+        text-[30px] sm:text-[36px] md:text-[42px] lg:text-[40px] xl:text-[48px]
+        font-serif font-semibold leading-[1.2] text-[#0A0E33]">
+
           Two Practices on the <br className="sm:hidden" />
           Future of{" "}
+
           <span className="relative inline-block">
             <img
               src={patternImg}
               alt=""
-              className="pointer-events-none absolute right-[-10%] top-1/2 h-[200%] -translate-y-[56%] opacity-40"
+              className="absolute right-[-10%] top-1/2 h-[200%] -translate-y-1/2 opacity-40"
             />
+
             <span className="relative z-10 bg-gradient-to-r from-[#0A0E33] to-[#26A9E0] bg-clip-text text-transparent">
               Technology and Markets
             </span>
           </span>
         </h2>
 
-        <p className="mt-2 sm:mt-3 max-w-[920px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.6] text-[#5A6B85]">
-          RESEARCHFABRIC™ operates through two focused research practices, each designed to deliver deep, SME-led intelligence at different scales of the technology landscape.
+        <p className="mt-3 max-w-[920px]
+        text-sm sm:text-base md:text-lg lg:text-[15px] xl:text-xl
+        text-[#5A6B85]">
+
+          RESEARCHFABRIC™ operates through two focused research practices.
         </p>
       </div>
 
-      <div className="page-shell mx-auto grid auto-rows-fr grid-cols-1 items-stretch gap-4 sm:grid-cols-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
-        
+      {/* GRID */}
+      <div className="page-shell mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+
+        {/* IMAGE */}
         <div className={`${cardBaseClass} overflow-hidden`}>
           <img src={techImg} className="h-full min-h-[260px] w-full object-cover" />
         </div>
 
+        {/* TECHNOLOGY */}
         <div className={`${cardBaseClass} p-5 hover:bg-[#E6F2FF]`}>
           <div className="flex flex-1 flex-col">
+
             <img src={tickImg} className="mb-4 h-8 w-8" />
-            <h3 className="mb-3 text-[20px] md:text-[22px] font-serif font-semibold text-[#0A1F44]">
+
+            <h3 className="mb-3
+            text-lg sm:text-xl md:text-2xl lg:text-[20px]
+            font-serif font-semibold text-[#0A1F44]">
               Technology Research
             </h3>
-            <p className="mb-4 text-[17px] text-[#5A6B85]">
+
+            <p className="mb-4
+            text-sm sm:text-base md:text-lg lg:text-[14px]
+            text-[#5A6B85]">
               Macro-level research on Generative AI, Quantum Computing.
             </p>
 
-            <div className="mb-4 flex flex-wrap gap-3">
+            <div className="mb-4 flex flex-wrap gap-2 sm:gap-3">
               {technologyTags.map((tag) => (
                 <span key={tag} className={tagClassName}>{tag}</span>
               ))}
@@ -114,18 +136,25 @@ const PracticesSection = () => {
           </Link>
         </div>
 
+        {/* MICRO MARKET */}
         <div className={`${cardBaseClass} p-5 hover:bg-[#E6F2FF]`}>
           <div className="flex flex-1 flex-col">
+
             <img src={microIcon} className="mb-4 h-8 w-8" />
-            <h3 className="mb-3 text-[20px] md:text-[22px] font-serif font-semibold text-[#0A1F44]">
+
+            <h3 className="mb-3
+            text-lg sm:text-xl md:text-2xl lg:text-[20px]
+            font-serif font-semibold text-[#0A1F44]">
               Micro-Market Research
             </h3>
-            <p className="mb-4 min-h-[56px] text-[17px] text-[#5A6B85]">
+
+            <p className="mb-4
+            text-sm sm:text-base md:text-lg lg:text-[14px]
+            text-[#5A6B85]">
               Granular analysis of high-growth market segments.
             </p>
 
-            {/* ✅ ONLY 2560px FIX */}
-            <div className="mb-4 flex flex-wrap gap-3 [@media_(width:2560px)]:mt-5">
+            <div className="mb-4 flex flex-wrap gap-2 sm:gap-3">
               {microMarketTags.map((tag) => (
                 <span key={tag} className={tagClassName}>{tag}</span>
               ))}
@@ -137,6 +166,7 @@ const PracticesSection = () => {
             <ArrowRightIcon size={14} />
           </Link>
         </div>
+
       </div>
     </section>
   );
