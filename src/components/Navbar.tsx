@@ -6,6 +6,7 @@ import lightLogo from "../assets/LandingPage/research-fabric-footer.png";
 import { MenuIcon } from "@/components/ui/Icons";
 
 const NAVBAR_HEIGHT = 92;
+
 const logoShellClass =
   "relative h-9 w-[112px] sm:h-10 sm:w-[118px] lg:h-10 lg:w-[122px]";
 const logoImageClass =
@@ -48,14 +49,14 @@ const Navbar = () => {
   const showLightNavbar = isScrolled;
   const mobileHeaderActive = mobileOpen || showLightNavbar;
   const showLightLogo = mobileHeaderActive;
-  const hasMobileNavbarStrip = isScrolled || mobileOpen;
-  const mobileMenuIconColor = hasMobileNavbarStrip ? "#0B1F3A" : "#FFFFFF";
+
+  const mobileMenuIconColor = mobileHeaderActive ? "#0B1F3A" : "#FFFFFF";
+
   const darkLogoClass =
     `${logoImageClass} ${showLightLogo ? "opacity-0" : "opacity-100"}`;
   const lightLogoClass =
     `${logoImageClass} ${showLightLogo ? "opacity-100" : "opacity-0"}`;
 
-  // ✅ SCROLL FUNCTION
   const scrollToSection = (hash: string) => {
     const target = document.querySelector(hash);
     if (!target) return;
@@ -65,18 +66,13 @@ const Navbar = () => {
       window.scrollY -
       NAVBAR_HEIGHT;
 
-    window.scrollTo({
-      top: targetTop,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
 
     setActiveSection(hash);
     setMobileOpen(false);
   };
 
-  const toggleMobileMenu = () => {
-    setMobileOpen((prev) => !prev);
-  };
+  const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
 
   const handleLogoClick = () => {
     setMobileOpen(false);
@@ -90,7 +86,6 @@ const Navbar = () => {
     navigate("/");
   };
 
-  // ✅ SCROLL STYLE
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -107,7 +102,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage, isAnalystTeamPage]);
 
-  // ✅ ACTIVE SECTION TRACKING
   useEffect(() => {
     if (!isHomePage && !isAnalystTeamPage) return;
 
@@ -133,99 +127,55 @@ const Navbar = () => {
     };
 
     updateActiveSection();
-
     window.addEventListener("scroll", updateActiveSection);
     return () =>
       window.removeEventListener("scroll", updateActiveSection);
   }, [currentNavItems, isHomePage, isAnalystTeamPage]);
 
-  const getTextClass = (isActive: boolean) => {
-    return `
-      relative pb-1
-      after:absolute after:bottom-[1px] after:left-0
-      after:h-[2px] after:w-full
-      after:bg-[#63d3c5]
-      after:transition-transform after:duration-300
-      ${isActive ? "after:scale-x-100" : "after:scale-x-0"}
-      ${
-        showLightNavbar
-          ? "text-[#0B1F3A]"
-          : "text-white"
-      }
-    `;
-  };
-
-  const desktopNavClassName = isHomePage
-    ? "hidden gap-6 lg:absolute lg:left-[36.5%] lg:top-1/2 lg:flex lg:-translate-y-1/2 xl:gap-7"
-    : "hidden gap-6 lg:flex";
+  const getTextClass = (isActive: boolean) => `
+    relative pb-1
+    after:absolute after:bottom-[1px] after:left-0
+    after:h-[2px] after:w-full
+    after:bg-[#63d3c5]
+    after:transition-transform after:duration-300
+    ${isActive ? "after:scale-x-100" : "after:scale-x-0"}
+    ${showLightNavbar ? "text-[#0B1F3A]" : "text-white"}
+  `;
 
   return (
-    <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-        mobileHeaderActive
-          ? "border-b border-slate-200 bg-white/85 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md"
-          : "border-b border-transparent bg-transparent shadow-none backdrop-blur-0"
-      }`}
-    >
-      <div className="page-shell relative flex items-center justify-between py-4">
+    <div>
+      <nav
+        className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+          mobileHeaderActive
+            ? "border-b border-slate-200 bg-white/85 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
+        }`}
+      >
 
-        <div className="flex items-center gap-0">
-          <button
-            type="button"
-            onClick={toggleMobileMenu}
-            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={mobileOpen}
-            aria-controls="primary-mobile-nav"
-            className="relative z-20 -mr-1 flex h-11 w-11 items-center justify-center lg:hidden"
-          >
-            <MenuIcon size={25} color={mobileMenuIconColor} />
-          </button>
+        <div className="page-shell relative flex items-center justify-between py-4">
 
-          <button
-            type="button"
-            onClick={handleLogoClick}
-            className={`relative -ml-1 ${logoShellClass}`}
-          >
-            <img src={logo} alt="Research Fabric" className={darkLogoClass} />
-            <img src={lightLogo} alt="Research Fabric" className={lightLogoClass} />
-          </button>
-        </div>
+          {/* LEFT */}
+          <div className="flex items-center gap-0">
 
-        <div className={desktopNavClassName}>
-          {currentNavItems.map((item) => {
-            const isActive = activeSection === item.href;
+            <button
+              onClick={toggleMobileMenu}
+              className="lg:hidden flex h-11 w-11 items-center justify-center"
+            >
+              <MenuIcon size={25} color={mobileMenuIconColor} />
+            </button>
 
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className={getTextClass(isActive)}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-        </div>
+            <button
+              onClick={handleLogoClick}
+              className={`relative ${logoShellClass}`}
+            >
+              <img src={logo} className={darkLogoClass} />
+              <img src={lightLogo} className={lightLogoClass} />
+            </button>
 
-        <span
-          className={`text-[14px] transition-colors sm:text-[16px] ${
-            mobileHeaderActive ? "text-black" : "hidden text-white sm:inline"
-          }`}
-        >
-          Subscribe
-        </span>
-      </div>
+          </div>
 
-      {mobileOpen && (
-        <div
-          id="primary-mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden"
-        >
-          <div className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
+          {/* ✅ DESKTOP NAV (SHIFTED RIGHT) */}
+          <div className="hidden lg:flex gap-6 ml-10 xl:ml-16">
             {currentNavItems.map((item) => {
               const isActive = activeSection === item.href;
 
@@ -237,16 +187,54 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className={getMobileItemClassName(isActive)}
+                  className={getTextClass(isActive)}
                 >
                   {item.label}
                 </a>
               );
             })}
           </div>
+
+          {/* RIGHT */}
+          <span
+            className={`text-[14px] sm:text-[16px] ${
+              mobileHeaderActive ? "text-black" : "hidden sm:inline text-white"
+            }`}
+          >
+            Subscribe
+          </span>
+
         </div>
-      )}
-    </nav>
+
+        {/* MOBILE MENU */}
+        {mobileOpen && (
+          <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden">
+            <div className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
+
+              {currentNavItems.map((item) => {
+                const isActive = activeSection === item.href;
+
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.href);
+                    }}
+                    className={getMobileItemClassName(isActive)}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+
+            </div>
+          </div>
+        )}
+
+      </nav>
+    </div>
   );
 };
 

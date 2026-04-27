@@ -37,139 +37,139 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section
-      id="analysts"
-      className="overflow-hidden bg-background py-10 sm:py-12 md:py-14 lg:py-12 xl:py-14 2xl:py-16 font-serif"
-    >
-      <div className="page-shell mx-auto text-center">
+    <div> {/* ✅ FULL WRAPPER */}
 
-        {/* Heading */}
-        <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
-          <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
+      <section
+        id="analysts"
+        className="overflow-hidden bg-background py-10 sm:py-12 md:py-14 lg:py-12 xl:py-14 2xl:py-16 font-serif"
+      >
+        <div className="page-shell mx-auto text-center">
 
-          <p className="text-black text-[18px] sm:text-[20px] md:text-[22px] font-bold whitespace-nowrap">
-            Research Partners
-          </p>
+          {/* ✅ HEADING WRAPPER */}
+          <div>
 
-          <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
-        </div>
+            <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
+              <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
-        <h2 className="
-          mb-2 font-bold leading-[1.1] tracking-tight
-          text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]
-          bg-gradient-to-r from-[#0B3F60] to-[#26A9E0]
-          bg-clip-text text-transparent
-        ">
-          Renowned Minds, Rigorous Perspectives
-        </h2>
+              <p className="text-black text-[18px] sm:text-[20px] md:text-[22px] font-bold whitespace-nowrap">
+                Research Partners
+              </p>
 
-        <p className="
-          mx-auto mb-5 max-w-xl
-          text-[14px] sm:text-[16px] md:text-[17px] lg:text-[16px] xl:text-[20px]
-          text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl
-        ">
-          Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
-        </p>
+              <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
+            </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+            <h2 className="
+              mb-2 font-bold leading-[1.1] tracking-tight
+              text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]
+              bg-gradient-to-r from-[#0B3F60] to-[#26A9E0]
+              bg-clip-text text-transparent
+            ">
+              Renowned Minds, Rigorous Perspectives
+            </h2>
 
-          {partners.map((partner) => (
-            <div key={partner.name} className="relative h-full">
+            <p className="
+              mx-auto mb-5 max-w-xl
+              text-[14px] sm:text-[16px] md:text-[17px] lg:text-[16px] xl:text-[20px]
+              text-muted-foreground sm:mb-7 sm:max-w-2xl md:max-w-3xl
+            ">
+              Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
+            </p>
 
-              <div className="
-                group relative flex h-full flex-col rounded-xl bg-navy p-4 text-center
-                min-h-[280px] sm:min-h-[300px] md:min-h-[320px]
-                transition-all duration-300
-                hover:scale-[0.96] hover:shadow-inner
-              ">
+          </div>
 
-                {/* PROFILE IMAGE */}
-                <div
-                  className="
-                    mx-auto mb-4 rounded-full overflow-hidden
-                    h-20 w-20
-                    sm:h-24 sm:w-24
-                    md:h-28 md:w-28
-                    lg:h-24 lg:w-24
-                    xl:h-32 xl:w-32
-                    2xl:h-36 2xl:w-36
-                  "
-                  style={{
-                    backgroundImage: `url(${circleBg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className="h-full w-full object-cover rounded-full"
-                  />
-                </div>
+          {/* ✅ CARDS WRAPPER (FLEX + GRID) */}
+          <div className="flex justify-center">
+            <div className="w-full">
 
-                {/* NAME */}
-                <h4 className="
-                  text-white font-bold
-                  text-[18px] sm:text-[20px] md:text-[22px] lg:text-[20px] xl:text-[22px]
-                ">
-                  {partner.name}
-                </h4>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 
-                {/* META */}
-                <div className="mt-1 mb-2 flex flex-col">
-                  <p className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[14px] text-[#38BDF8] font-medium">
-                    {partner.role}
-                  </p>
+                {partners.map((partner) => (
+                  <div key={partner.name} className="relative h-full">
 
-                  <p className="mt-1 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[13px] text-[#38BDF8]">
-                    {partner.subtitle}
-                  </p>
+                    <div className="
+                      group relative flex h-full flex-col rounded-xl bg-navy p-4 text-center
+                      min-h-[280px] sm:min-h-[300px] md:min-h-[320px]
+                      transition-all duration-300
+                      hover:scale-[0.96] hover:shadow-inner
+                    ">
 
-                  <div className="mx-auto mt-3 h-[2px] w-20 bg-gray-400 opacity-70" />
-                </div>
+                      {/* IMAGE */}
+                      <div
+                        className="
+                          mx-auto mb-4 rounded-full overflow-hidden
+                          h-20 w-20
+                          sm:h-24 sm:w-24
+                          md:h-28 md:w-28
+                          lg:h-24 lg:w-24
+                          xl:h-32 xl:w-32
+                          2xl:h-36 2xl:w-36
+                        "
+                        style={{
+                          backgroundImage: `url(${circleBg})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                      >
+                        <img
+                          src={partner.image}
+                          alt={partner.name}
+                          className="h-full w-full object-cover rounded-full"
+                        />
+                      </div>
 
-                {/* ICONS */}
-                <div className="mt-auto flex justify-center gap-8 pt-6">
+                      {/* NAME */}
+                      <h4 className="text-white font-bold text-[18px] sm:text-[20px] md:text-[22px]">
+                        {partner.name}
+                      </h4>
 
-                  <img
-                    src={linkedInLogo}
-                    alt="LinkedIn"
-                    className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-7 lg:w-7 xl:h-9 xl:w-9"
-                  />
+                      {/* META */}
+                      <div className="mt-1 mb-2 flex flex-col">
+                        <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#38BDF8] font-medium">
+                          {partner.role}
+                        </p>
 
-                  <img
-                    src={gmailLogo}
-                    alt="Gmail"
-                    className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-7 lg:w-7 xl:h-9 xl:w-9"
-                  />
-                </div>
+                        <p className="mt-1 text-[13px] sm:text-[14px] md:text-[15px] text-[#38BDF8]">
+                          {partner.subtitle}
+                        </p>
+
+                        <div className="mx-auto mt-3 h-[2px] w-20 bg-gray-400 opacity-70" />
+                      </div>
+
+                      {/* ICONS */}
+                      <div className="mt-auto flex justify-center gap-8 pt-6">
+                        <img src={linkedInLogo} className="h-7 w-7" />
+                        <img src={gmailLogo} className="h-7 w-7" />
+                      </div>
+
+                    </div>
+                  </div>
+                ))}
 
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* BUTTON */}
+          <div className="mt-6 flex justify-center">
+            <Link
+              to="/analyst-team"
+              className="
+              inline-flex px-4 sm:px-5 py-2.5
+              text-[14px] sm:text-[16px]
+              border border-[#203A72] bg-white text-[#0A1F44]
+              rounded transition-all duration-300
+              hover:bg-[#0A1F44] hover:text-white hover:scale-95
+              whitespace-nowrap
+              "
+            >
+              Meet the Analyst Team
+            </Link>
+          </div>
 
         </div>
+      </section>
 
-        {/* BUTTON */}
-        <div className="mt-6 flex justify-center">
-          <Link
-            to="/analyst-team"
-            className="
-            inline-flex px-4 sm:px-5 py-2.5
-            text-[14px] sm:text-[16px]
-            border border-[#203A72] bg-white text-[#0A1F44]
-            rounded transition-all duration-300
-            hover:bg-[#0A1F44] hover:text-white hover:scale-95
-            whitespace-nowrap
-            "
-          >
-            Meet the Analyst Team
-          </Link>
-        </div>
-
-      </div>
-    </section>
+    </div>
   );
 };
 

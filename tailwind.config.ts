@@ -9,15 +9,25 @@ export default {
     "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
+
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "3xl": "1600px",   // ✅ added
+        "4xl": "2000px",   // ✅ added (for ultra-wide control)
       },
     },
+
     extend: {
+      // ✅ NEW BREAKPOINTS (MAIN FIX)
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
+
       fontFamily: {
         serif: ["'Abhaya Libre'", "serif"],
         sans: ["'Abhaya Libre'", "serif"],
@@ -115,5 +125,6 @@ export default {
       },
     },
   },
+
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

@@ -34,76 +34,87 @@ const deliverables = [
 
 const DeliverSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#031126] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
+    <div> {/* ✅ FULL WRAPPER */}
 
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src={cxoBg}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        />
-      </div>
+      <section className="relative overflow-hidden bg-[#031126] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
 
-      <div className="page-shell relative z-10">
+        {/* BACKGROUND */}
+        <div className="absolute inset-0">
+          <img
+            src={cxoBg}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+        </div>
 
-        {/* HEADING */}
-        <h3
-          className="
-          mb-5 sm:mb-6 inline-block border-b border-white/40 pb-2
-          text-[26px] sm:text-[30px] md:text-[34px] lg:text-[36px] xl:text-[40px]
-          font-serif text-white
-        ">
-          What We Deliver
-        </h3>
+        <div className="page-shell relative z-10">
 
-        {/* GRID */}
-        <div className="grid gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {/* ✅ HEADING + CARDS IN ONE DIV */}
+          <div>
 
-          {deliverables.map((item) => (
-            <div
-              key={item.title}
+            {/* HEADING */}
+            <h3
               className="
-              relative rounded-xl bg-white
-              p-4 sm:p-5 lg:p-5
-              border border-[#E6ECF5]
-              shadow-[0_15px_40px_rgba(0,0,0,0.12)]
-              hover:shadow-[0_25px_60px_rgba(0,0,0,0.20)]
-              hover:bg-[#D6E9FF]
-              hover:scale-[1.03]
-              transition-all duration-300
-            "
-            >
+              mb-6 inline-block border-b border-white/40 pb-2
+              text-[26px] sm:text-[30px] md:text-[34px] lg:text-[36px] xl:text-[40px]
+              font-serif text-white
+            ">
+              What We Deliver
+            </h3>
 
-              <img
-                src={item.icon}
-                alt={item.title}
-                className="mb-3 sm:mb-4 h-7 w-7 sm:h-8 sm:w-8"
-              />
+            {/* ✅ FLEX CARDS (RESPONSIVE) */}
+            <div className="flex flex-wrap gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8">
 
-              <h4
-                className="
-                mb-2 font-bold text-[#0A1F44] font-serif
-                text-[20px] sm:text-[22px] md:text-[24px] lg:text-[22px] xl:text-[26px]
-                leading-tight
-              ">
-                {item.title}
-              </h4>
+              {deliverables.map((item) => (
+                <div
+                  key={item.title}
+                  className="
+                  w-full sm:w-[48%] lg:w-[23%]
+                  relative rounded-xl bg-white
+                  p-4 sm:p-5
+                  border border-[#E6ECF5]
+                  shadow-[0_15px_40px_rgba(0,0,0,0.12)]
+                  hover:shadow-[0_25px_60px_rgba(0,0,0,0.20)]
+                  hover:bg-[#D6E9FF]
+                  hover:scale-[1.03]
+                  transition-all duration-300
+                "
+                >
 
-              <p
-                className="
-                font-serif text-[#5A6B85]
-                text-[14px] sm:text-[15px] md:text-[16px] lg:text-[14px] xl:text-[16px]
-                leading-relaxed
-              ">
-                {item.description}
-              </p>
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className="mb-3 sm:mb-4 h-7 w-7 sm:h-8 sm:w-8"
+                  />
+
+                  <h4
+                    className="
+                    mb-2 font-bold text-[#0A1F44] font-serif
+                    text-[20px] sm:text-[22px] md:text-[24px] lg:text-[22px] xl:text-[26px]
+                  ">
+                    {item.title}
+                  </h4>
+
+                  <p
+                    className="
+                    font-serif text-[#5A6B85]
+                    text-[14px] sm:text-[15px] md:text-[16px] lg:text-[14px] xl:text-[16px]
+                    leading-relaxed
+                  ">
+                    {item.description}
+                  </p>
+
+                </div>
+              ))}
+
             </div>
-          ))}
+
+          </div>
 
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
   );
 };
 
