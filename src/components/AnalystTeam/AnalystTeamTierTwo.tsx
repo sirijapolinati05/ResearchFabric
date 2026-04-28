@@ -21,35 +21,19 @@ const featuredAnalyst = {
   image: johnBurnellImg,
 };
 
+const tierCardClass =
+  "group mx-auto flex h-full w-full max-w-[clamp(240px,18vw,360px)] flex-col rounded-xl border border-[#dfe4ea] bg-white px-4 pt-6 pb-6 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)] transition-all duration-300 hover:-translate-y-2 hover:border-navy hover:bg-navy min-h-[clamp(300px,22vw,480px)] max-sm:min-h-[380px] sm:mx-0";
+
+const tierGridClass =
+  "grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3";
+
 const TierTwoCard = ({ name, subtitle, image }) => (
-  <article
-    className="
-      group flex flex-col
-      w-full
-      mx-auto
-
-      /* ✅ FLUID WIDTH */
-      max-w-[clamp(240px,18vw,360px)]
-      max-sm:max-w-[340px]
-
-      /* ✅ FLUID HEIGHT */
-      min-h-[clamp(300px,22vw,480px)]
-      max-sm:min-h-[380px]
-
-      rounded-xl border border-[#dfe4ea] bg-white
-      px-4 pt-6 pb-4 text-center
-      shadow-[0_4px_10px_rgba(8,18,59,0.15)]
-      transition-all duration-300
-      hover:-translate-y-2 hover:border-navy hover:bg-navy
-    "
-  >
-
-    {/* IMAGE (same as Tier1 behavior) */}
+  <article className={tierCardClass}>
     <div
       className="mx-auto mb-6 rounded-full overflow-hidden"
       style={{
-        width: "clamp(100px, 7vw, 160px)",
-        height: "clamp(100px, 7vw, 160px)",
+        width: "clamp(110px, 8vw, 170px)",
+        height: "clamp(110px, 8vw, 170px)",
         backgroundImage: `url(${circleBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -62,59 +46,40 @@ const TierTwoCard = ({ name, subtitle, image }) => (
       />
     </div>
 
-    {/* NAME */}
-    <h3 className="
-      mt-2 whitespace-nowrap
-
-      text-[18px]
-      max-sm:text-[24px]
-      lg:text-[20px]
-      xl:text-[22px]
-      2xl:text-[24px]
-
-      min-[2500px]:text-[28px]
-
-      text-[#17204c]
-      group-hover:text-white
-    ">
+    <h3
+      className="
+        mt-2 whitespace-nowrap text-[#17204c] group-hover:text-white
+        text-[18px] max-sm:text-[24px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]
+        min-[2500px]:text-[28px]
+      "
+    >
       {name}
     </h3>
 
-    {/* SUBTITLE */}
-    <p className="
-      mt-2 whitespace-nowrap
-
-      text-[clamp(1.125rem,1vw,1.125rem)]
-
-      min-[2500px]:text-[22px]
-
-      text-[#1E4E8C]
-      group-hover:text-white/90
-      font-bold
-    ">
+    <p
+      className="
+        mt-2 whitespace-nowrap text-[clamp(1.125rem,1vw,1.125rem)] font-bold text-[#1E4E8C]
+        group-hover:text-white/90 min-[2500px]:text-[22px]
+      "
+    >
       {subtitle}
     </p>
 
-    {/* DIVIDER */}
-    <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] group-hover:bg-white/35" />
+    <div className="mt-auto w-full pt-6">
+      <div className="h-px w-full bg-[#c8ccd5] group-hover:bg-white/35" />
 
-    {/* ICONS */}
-    <div className="mt-6 flex items-center justify-center gap-6">
-      <img src={linkedInLogo} className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9" />
-      <img src={gmailLogo} className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9" />
+      <div className="mt-5 flex justify-center gap-6">
+        <img src={linkedInLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+        <img src={gmailLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+      </div>
     </div>
-
   </article>
 );
 
 const AnalystTeamTierTwo = () => {
   return (
     <section id="analysts" className="bg-[#33a9da] py-16 lg:py-20 xl:py-24 text-[#141948]">
-
-      {/* SAME CONTAINER AS TIER1 */}
-      <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 mx-auto">
-
-        {/* HEADER */}
+      <div className="mx-auto w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
         <div className="max-w-[1200px]">
           <p className="flex items-center gap-2 text-[clamp(1rem,1.2vw,1.375rem)] font-bold text-[#20254d]">
             <span className="h-px w-6 bg-[#20254d]" />
@@ -127,24 +92,25 @@ const AnalystTeamTierTwo = () => {
           </h2>
         </div>
 
-        <div className="mt-12 lg:mt-16 space-y-12">
+        <div className="mt-12 space-y-12 lg:mt-16">
+          <div className="grid gap-6 lg:grid-cols-[180px_1fr]">
+            <p className="flex items-center text-[18px] font-semibold lg:min-h-[44px]">
+              Lead Analysts
+            </p>
 
-          {/* LEAD */}
-          <div className="grid gap-6 lg:grid-cols-[160px_1fr]">
-            <p className="flex items-center text-[18px] font-semibold">Lead Analysts</p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className={tierGridClass}>
               {leadAnalysts.map((member) => (
                 <TierTwoCard key={member.name} {...member} />
               ))}
             </div>
           </div>
 
-          {/* BUSINESS */}
-          <div className="grid gap-6 lg:grid-cols-[160px_1fr]">
-            <p className="flex items-center text-[18px] font-semibold">Business Analyst</p>
+          <div className="grid gap-6 lg:grid-cols-[180px_1fr]">
+            <p className="flex items-center text-[18px] font-semibold lg:min-h-[44px]">
+              Business Analyst
+            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className={tierGridClass}>
               <TierTwoCard
                 name="Saurav Patra"
                 subtitle="Micro-Markets"
@@ -153,13 +119,12 @@ const AnalystTeamTierTwo = () => {
             </div>
           </div>
 
-          {/* FEATURED */}
-          <div className="grid gap-6 lg:grid-cols-[160px_1fr]">
-            <p className="flex items-center text-[18px] font-semibold">
+          <div className="grid gap-6 lg:grid-cols-[180px_1fr]">
+            <p className="flex items-center text-[18px] font-semibold lg:min-h-[44px]">
               {featuredAnalyst.subtitle}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className={tierGridClass}>
               <TierTwoCard
                 name={featuredAnalyst.cardName}
                 subtitle={featuredAnalyst.cardSubtitle}
@@ -167,7 +132,6 @@ const AnalystTeamTierTwo = () => {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>

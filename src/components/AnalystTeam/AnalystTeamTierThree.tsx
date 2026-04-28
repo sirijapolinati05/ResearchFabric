@@ -18,36 +18,19 @@ const researchAnalysts = [
   { name: "Shatakshi Singh", image: shatakshiImg },
 ];
 
+const tierCardClass =
+  "group mx-auto flex h-full w-full max-w-[clamp(240px,18vw,360px)] flex-col rounded-xl border border-[#dfe4ea] bg-white px-4 pt-6 pb-6 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)] transition-all duration-300 hover:-translate-y-2 hover:border-[#17204c] hover:bg-[#17204c] hover:shadow-[0_20px_34px_rgba(8,18,59,0.24)] min-h-[clamp(300px,22vw,480px)] max-sm:min-h-[380px] sm:mx-0";
+
+const tierGridClass =
+  "grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3";
+
 const TierThreeCard = ({ name, image }) => (
-  <article
-    className="
-      group flex flex-col w-full mx-auto
-
-      max-w-[clamp(220px,18vw,320px)]
-      max-sm:max-w-[340px]
-
-      min-h-[clamp(280px,22vw,420px)]
-      max-sm:min-h-[380px]
-
-      rounded-xl border border-[#dfe4ea] bg-white
-      px-4 pt-5 pb-4 text-center
-      shadow-[0_4px_10px_rgba(8,18,59,0.15)]
-
-      transition-all duration-300
-
-      /* ✅ ONLY HOVER */
-      hover:-translate-y-2
-      hover:border-[#17204c]
-      hover:bg-[#17204c]
-      hover:shadow-[0_20px_34px_rgba(8,18,59,0.24)]
-    "
-  >
-    {/* IMAGE */}
+  <article className={tierCardClass}>
     <div
       className="mx-auto mb-6 rounded-full overflow-hidden flex items-center justify-center"
       style={{
-        width: "clamp(100px, 7vw, 150px)",
-        height: "clamp(100px, 7vw, 150px)",
+        width: "clamp(110px, 8vw, 170px)",
+        height: "clamp(110px, 8vw, 170px)",
         backgroundImage: `url(${circleBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -60,38 +43,22 @@ const TierThreeCard = ({ name, image }) => (
       />
     </div>
 
-    {/* NAME */}
     <h3
       className="
-        mt-2 whitespace-nowrap
-
-        text-[clamp(1.125rem,1.2vw,1.375rem)]
-        max-sm:text-[24px]
-        min-[2500px]:text-[26px]
-
-        text-[#17204c]
-        font-normal
-        transition-colors duration-300
-
-        group-hover:text-white
+        mt-2 whitespace-nowrap text-[clamp(1.125rem,1.2vw,1.375rem)] font-normal text-[#17204c]
+        transition-colors duration-300 group-hover:text-white max-sm:text-[24px] min-[2500px]:text-[26px]
       "
     >
       {name}
     </h3>
 
-    {/* DIVIDER */}
-    <div className="mx-auto mt-auto h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/40" />
+    <div className="mt-auto w-full pt-6">
+      <div className="h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/40" />
 
-    {/* ICONS */}
-    <div className="mt-5 flex items-center justify-center gap-6">
-      <img
-        src={linkedInLogo}
-        className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9"
-      />
-      <img
-        src={gmailLogo}
-        className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9"
-      />
+      <div className="mt-5 flex justify-center gap-6">
+        <img src={linkedInLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+        <img src={gmailLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+      </div>
     </div>
   </article>
 );
@@ -102,9 +69,7 @@ const AnalystTeamTierThree = () => {
       id="research-team"
       className="bg-[#f8f7f3] py-16 lg:py-20 xl:py-24 text-[#141948]"
     >
-      <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 mx-auto">
-
-        {/* SUPPORT LEADS */}
+      <div className="mx-auto w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
         <div className="mb-4">
           <p className="flex items-center gap-2 text-[clamp(1.125rem,1.2vw,1.375rem)] font-bold text-[#20254d]">
             <span className="h-px w-6 bg-[#20254d]" />
@@ -113,37 +78,37 @@ const AnalystTeamTierThree = () => {
           </p>
         </div>
 
-        {/* HEADING */}
-        <h2 className="mt-4 text-[clamp(1.75rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] mb-10">
+        <h2 className="mt-4 mb-10 text-[clamp(1.75rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em]">
           Research Specialists & Analysts
         </h2>
 
-        {/* SPECIALISTS */}
         <div className="grid gap-10 lg:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <p className="text-[clamp(1.125rem,1.1vw,1.25rem)] font-bold text-[#17204c]">Research Specialists</p>
+            <p className="text-[clamp(1.125rem,1.1vw,1.25rem)] font-bold text-[#17204c]">
+              Research Specialists
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className={tierGridClass}>
             {researchSpecialists.map((member) => (
               <TierThreeCard key={member.name} {...member} />
             ))}
           </div>
         </div>
 
-        {/* ANALYSTS */}
         <div className="mt-12 grid gap-10 lg:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <p className="text-[clamp(1.125rem,1.1vw,1.25rem)] font-bold text-[#17204c]">Research Analysts</p>
+            <p className="text-[clamp(1.125rem,1.1vw,1.25rem)] font-bold text-[#17204c]">
+              Research Analysts
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className={tierGridClass}>
             {researchAnalysts.map((member) => (
               <TierThreeCard key={member.name} {...member} />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
