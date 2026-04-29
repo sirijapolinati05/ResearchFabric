@@ -148,8 +148,13 @@ const Navbar = () => {
     after:h-[3px] after:w-full after:rounded-full
     after:bg-[#63d3c5]
     after:transition-transform after:duration-300
-    ${isActive ? "after:scale-x-100 font-bold" : "after:scale-x-0"}
-    ${showLightNavbar ? "text-[#0B1F3A]" : "text-white"}
+    ${showLightNavbar
+      ? isActive
+        ? "text-[#0B1F3A] font-bold after:scale-x-100"
+        : "text-[#0B1F3A]/90 hover:text-[#0B1F3A] after:scale-x-0"
+      : isActive
+        ? "text-white font-bold after:scale-x-100"
+        : "text-white/80 hover:text-white after:scale-x-0"}
   `;
 
   return (
