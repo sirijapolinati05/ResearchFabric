@@ -3,12 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 
 import darkLogo from "@/assets/LandingPage/research-fabric.png";
 import lightLogo from "@/assets/LandingPage/research-fabric-footer.png";
-import { MenuIcon } from "@/components/ui/Icons";
+import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 const logoShellClass =
   "relative h-9 w-[112px] sm:h-10 sm:w-[118px] lg:h-10 lg:w-[122px]";
 const logoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
+const navTextSizeClass = "text-[clamp(1.125rem,1.1vw,1.375rem)] font-semibold";
 
 const navItems = [
   { label: "Technology Research", href: "/technology-research" },
@@ -75,16 +76,16 @@ const MicroMarketResearchNavbar = () => {
 
   const getLinkClassName = (isActive: boolean) => {
     const activeLineClass =
-      "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:origin-left after:rounded-full after:bg-[#63d3c5] after:transition-transform after:duration-300";
+      "after:absolute after:bottom-0 after:left-1/2 after:h-[3px] after:w-[calc(100%-0.4rem)] after:-translate-x-1/2 after:origin-center after:rounded-full after:bg-[#63d3c5] after:transition-transform after:duration-300";
 
-    return `relative pb-2 text-[clamp(1.125rem,1.1vw,1.375rem)] transition-all duration-300 ${activeLineClass} ${
+    return `relative inline-flex items-center justify-center py-2 ${navTextSizeClass} transition-all duration-300 ${activeLineClass} ${
       showLightNavbar
         ? isActive
           ? "text-[#0B1F3A] font-bold after:scale-x-100"
-          : "text-[#0B1F3A] after:scale-x-0 hover:after:scale-x-50"
+          : "text-[#0B1F3A] after:scale-x-0"
         : isActive
           ? "text-white font-bold after:scale-x-100"
-          : "text-white/80 hover:text-white after:scale-x-0 hover:after:scale-x-50"
+          : "text-white/80 hover:text-white after:scale-x-0"
     }`;
   };
 
@@ -144,7 +145,7 @@ const MicroMarketResearchNavbar = () => {
 
             <div className="flex items-center">
               <span
-                className={`cursor-pointer font-semibold text-[clamp(0.875rem,1vw,1.125rem)] transition-colors ${
+                className={`cursor-pointer ${navTextSizeClass} transition-colors ${
                   mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
                 }`}
               >
@@ -162,7 +163,11 @@ const MicroMarketResearchNavbar = () => {
               onClick={() => setMobileOpen((prev) => !prev)}
               className="flex h-11 w-11 shrink-0 items-center justify-center -ml-2"
             >
-              <MenuIcon size={25} color={mobileMenuIconColor} />
+              {mobileOpen ? (
+                <CloseIcon size={25} color={mobileMenuIconColor} />
+              ) : (
+                <MenuIcon size={25} color={mobileMenuIconColor} />
+              )}
             </button>
 
             <Link to="/" className={`relative -ml-1 flex items-center ${logoShellClass}`}>
@@ -172,7 +177,7 @@ const MicroMarketResearchNavbar = () => {
           </div>
 
           <span
-            className={`cursor-pointer font-semibold text-[14px] sm:text-[16px] transition-colors ${
+            className={`cursor-pointer ${navTextSizeClass} transition-colors ${
               mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
             }`}
           >

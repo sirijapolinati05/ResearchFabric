@@ -50,13 +50,13 @@ const MicroMarketResearchHero = () => {
                   key={value}
                   className="micro-market-hero-stat flex-1 px-3 py-4 text-center sm:px-6 sm:py-5 md:px-7"
                 >
-                  <p className="micro-market-hero-stat-value text-[clamp(1.5rem,4vw,3.5rem)] font-bold leading-none text-[#68e1d0] transition duration-300 group-hover:text-white">
+                  <p className="micro-market-hero-stat-value text-[clamp(1.5rem,4vw,3.5rem)] font-semibold leading-none text-[#68e1d0] transition duration-300 group-hover:text-white">
                     {value}
                   </p>
-                  <p className="micro-market-hero-stat-label mt-2 text-[clamp(1.125rem,1vw,1.125rem)] leading-tight text-white font-bold">
-                    {lineOne}
-                    <br />
-                    {lineTwo}
+                  <p className="micro-market-hero-stat-label mt-2 text-[clamp(0.875rem,1.1vw,1.125rem)] leading-tight text-white">
+                    <span>{lineOne}</span>
+                    <span className="block lg:inline"> </span>
+                    <span className="block lg:inline">{lineTwo}</span>
                   </p>
                 </div>
               ))}

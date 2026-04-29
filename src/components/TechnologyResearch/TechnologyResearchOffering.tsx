@@ -38,7 +38,7 @@ const TechnologyResearchOffering = () => {
             Thought Shaping Papers that Define Markets
           </h2>
 
-          <p className="mt-4 max-w-[620px] text-[clamp(1.125rem,1.1vw,1.25rem)] text-white/90 leading-relaxed font-medium">
+          <p className="mt-4 max-w-[620px] text-[clamp(1.125rem,1.1vw,1.25rem)] text-white/90 leading-relaxed">
             Our Thought Shaping Papers are co-authored with renowned industry  analysts and domain experts. These aren't ordinary whitepapers — they  are strategic instruments designed to frame industry narratives, guide  enterprise decisions, and accelerate technology adoption.
           </p>
         </div>

@@ -97,7 +97,7 @@ const MicroMarketResearchExpertise = () => {
                 {item.title}
               </h3>
 
-              <p className="mt-2 text-[clamp(1.125rem,1vw,1.125rem)] leading-6 text-white/90 font-medium">
+              <p className="mt-2 text-[clamp(0.875rem,1.1vw,1.125rem)] leading-6 text-white/90">
                 {item.description}
               </p>
             </article>

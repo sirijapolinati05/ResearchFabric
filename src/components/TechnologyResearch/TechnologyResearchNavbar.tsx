@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import darkLogo from "@/assets/LandingPage/research-fabric.png";
 import lightLogo from "@/assets/LandingPage/research-fabric-footer.png";
-import { MenuIcon } from "@/components/ui/Icons";
+import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 const techLogoShellClass =
   "relative h-9 w-[112px] sm:h-10 sm:w-[118px] lg:h-10 lg:w-[122px]";
@@ -87,10 +87,10 @@ const TechnologyResearchNavbar = () => {
       showLightNavbar
         ? isActive
           ? "text-[#0B1F3A] font-bold after:scale-x-100"
-          : "text-[#0B1F3A]/90 hover:text-[#0B1F3A] after:scale-x-0 hover:after:scale-x-50"
+          : "text-[#0B1F3A]/90 hover:text-[#0B1F3A] after:scale-x-0"
         : isActive
           ? "text-white font-bold after:scale-x-100"
-          : "text-white/80 hover:text-white after:scale-x-0 hover:after:scale-x-50"
+          : "text-white/80 hover:text-white after:scale-x-0"
     }`;
   };
 
@@ -160,7 +160,11 @@ const TechnologyResearchNavbar = () => {
               onClick={() => setMobileOpen((prev) => !prev)}
               className="flex h-11 w-11 shrink-0 items-center justify-center -ml-2"
             >
-              <MenuIcon size={25} color={mobileMenuIconColor} />
+              {mobileOpen ? (
+                <CloseIcon size={25} color={mobileMenuIconColor} />
+              ) : (
+                <MenuIcon size={25} color={mobileMenuIconColor} />
+              )}
             </button>
 
             <Link to="/" className={`relative -ml-1 flex items-center p-0 ${techLogoShellClass}`}>

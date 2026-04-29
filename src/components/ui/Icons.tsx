@@ -25,6 +25,27 @@ export const MenuIcon = ({ size = 24, className, color }: IconProps) => (
   </svg>
 );
 
+export const CloseIcon = ({ size = 24, className, color }: IconProps) => (
+  <svg
+    aria-hidden="true"
+    className={className}
+    color={color}
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6 6L18 18M18 6L6 18"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    />
+  </svg>
+);
+
 export const ArrowRightIcon = ({ size = 14, className }: IconProps) => (
   <svg
     aria-hidden="true"

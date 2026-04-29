@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../assets/LandingPage/research-fabric.png";
 import lightLogo from "../assets/LandingPage/research-fabric-footer.png";
-import { MenuIcon } from "@/components/ui/Icons";
+import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
 
 const NAVBAR_HEIGHT = 92;
 
@@ -148,7 +148,7 @@ const Navbar = () => {
     after:h-[3px] after:w-full after:rounded-full
     after:bg-[#63d3c5]
     after:transition-transform after:duration-300
-    ${isActive ? "after:scale-x-100 font-bold" : "after:scale-x-0 hover:after:scale-x-50"}
+    ${isActive ? "after:scale-x-100 font-bold" : "after:scale-x-0"}
     ${showLightNavbar ? "text-[#0B1F3A]" : "text-white"}
   `;
 
@@ -219,7 +219,11 @@ const Navbar = () => {
                 onClick={toggleMobileMenu}
                 className="flex h-11 w-11 items-center justify-center -ml-2"
               >
-                <MenuIcon size={25} color={mobileMenuIconColor} />
+                {mobileOpen ? (
+                  <CloseIcon size={25} color={mobileMenuIconColor} />
+                ) : (
+                  <MenuIcon size={25} color={mobileMenuIconColor} />
+                )}
               </button>
 
               <button
