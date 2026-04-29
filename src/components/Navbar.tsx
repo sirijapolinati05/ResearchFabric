@@ -178,13 +178,14 @@ const Navbar = () => {
                   scrollToSection(currentNavItems[0].href);
                 }}
                 className={getTextClass(activeSection === currentNavItems[0].href)}
+                style={{ transform: "translateX(20px)" }}
               >
                 {currentNavItems[0].label}
               </a>
             </div>
 
             <div className="w-[55%] flex items-center justify-between gap-6">
-              <div className="flex gap-8 xl:gap-12 2xl:gap-16">
+              <div className="flex gap-6 xl:gap-8 2xl:gap-10">
                 {currentNavItems.slice(1).map((item) => {
                   const isActive = activeSection === item.href;
                   return (

@@ -126,7 +126,7 @@ const TechnologyResearchNavbar = () => {
           </div>
 
           <div className="w-[55%] flex items-center justify-between gap-6">
-            <div className="flex gap-8 xl:gap-12 2xl:gap-16">
+            <div className="flex gap-6 xl:gap-8 2xl:gap-10">
               <Link
                 to="/micro-market-research"
                 className={getNavLinkClassName(isMicroMarketResearch)}
