@@ -23,17 +23,17 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative bg-[#081A34] text-white overflow-hidden">
 
-      {/* 🔥 DESKTOP WRAPPER */}
+      {/* 🔥 DESKTOP */}
       <div className="hidden lg:flex relative w-full">
 
-        {/* 🔸 LEFT TEXT (MORE DOWN) */}
         <div className="
           w-[45%] z-10
           pl-20 xl:pl-28 2xl:pl-36
           pt-44 xl:pt-48 2xl:pt-56
         ">
 
-          <h1 className="font-serif leading-tight text-[clamp(2.5rem,5vw,4.5rem)] lg:text-[clamp(3rem,4.5vw,5.5rem)]">
+          {/* ✅ FIXED LINE HEIGHT */}
+          <h1 className="font-serif leading-[1.05] text-[clamp(2.5rem,5vw,4.5rem)] lg:text-[clamp(3rem,4.5vw,5.5rem)]">
             <span className="block">Thought-Shaping</span>
             <span className="block">Intelligence on</span>
 
@@ -66,7 +66,6 @@ const HeroSection = () => {
 
         </div>
 
-        {/* 🔸 RIGHT IMAGE + DESCRIPTION */}
         <div className="w-[55%] flex flex-col">
           <img src={heroImg} alt="Hero" className="w-full h-auto object-cover" />
 
@@ -94,7 +93,8 @@ const HeroSection = () => {
           <div className="absolute inset-0 flex flex-col justify-center px-6">
             <div className="mt-12 sm:mt-16 md:mt-20">
 
-              <h1 className="font-serif leading-tight text-[clamp(2rem,8vw,3rem)]">
+              {/* ✅ MOBILE FIX */}
+              <h1 className="font-serif leading-[1.1] text-[clamp(2rem,8vw,3rem)]">
                 <span className="block">Thought-Shaping</span>
                 <span className="block">Intelligence on</span>
 
@@ -137,7 +137,7 @@ const HeroSection = () => {
 
       </div>
 
-      {/* 🔸 GRID */}
+      {/* 🔸 GRID (UNCHANGED) */}
       <div className="-mt-2 lg:mt-[10px]">
         <div className="grid grid-cols-2 text-center lg:grid-cols-4 auto-rows-fr">
           {[

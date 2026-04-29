@@ -28,7 +28,7 @@ const TechnologyResearchHero = () => {
           </h1>
 
           <p className="technology-research-hero-copy mt-4 text-[clamp(1rem,1.2vw,1.25rem)] leading-relaxed text-white/95 sm:mt-5">
-            ResearchFabric™ partners with the world&apos;s foremost technology analysts to
+            ResearchFabric™ partners with the world's foremost technology analysts to
             produce Thought Shaping Papers that define the strategic direction of
             Quantum Computing, AI Hardware, and Artificial Intelligence.
           </p>
@@ -55,12 +55,14 @@ const TechnologyResearchHero = () => {
             </div>
           </div>
 
+          {/* ✅ FIXED BUTTON */}
           <button
             type="button"
-            className="technology-research-hero-cta mx-auto mt-6 inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[linear-gradient(180deg,#31b9ee_0%,#249fd8_100%)] px-8 py-3 text-[clamp(0.9375rem,1vw,1.125rem)] font-semibold !text-black transition-transform duration-200 hover:-translate-y-0.5 sm:mx-0"
+            className="technology-research-hero-cta mx-auto mt-6 inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[linear-gradient(180deg,#31b9ee_0%,#249fd8_100%)] px-4 py-2.5 2xl:px-8 2xl:py-5 text-[clamp(0.9375rem,1vw,1.125rem)] font-semibold !text-black transition-transform duration-200 hover:-translate-y-0.5 sm:mx-0"
           >
             Explore Thought Shaping
           </button>
+
         </div>
       </div>
     </section>

@@ -12,6 +12,9 @@ const logoShellClass =
 const logoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
 
+/** ✅ COMMON TEXT SIZE */
+const navTextSizeClass = "text-[clamp(1.125rem,1.1vw,1.25rem)] font-semibold";
+
 const navItems = [
   { label: "Our Practices", href: "#practices" },
   { label: "CXO AI Research", href: "#cxo" },
@@ -135,9 +138,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", updateActiveSection);
   }, [currentNavItems, isHomePage, isAnalystTeamPage]);
 
+  /** 🔥 FIXED TEXT CLASS */
   const getTextClass = (isActive: boolean) => `
-    relative pb-2
-    text-[clamp(1.125rem,1.1vw,1.25rem)]
+    relative py-2 flex items-center
+    ${navTextSizeClass}
     transition-all duration-300
     whitespace-nowrap
     after:absolute after:bottom-0 after:left-0
@@ -157,10 +161,9 @@ const Navbar = () => {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        {/* 🔥 MOBILE PADDING FIX */}
         <div className="w-full relative flex items-center py-4 px-3 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
 
-          {/* DESKTOP (UNCHANGED) */}
+          {/* DESKTOP */}
           <div className="hidden lg:flex w-full items-center">
             <div className="w-[45%] flex items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
               <button onClick={handleLogoClick} className={`relative ${logoShellClass}`}>
@@ -168,21 +171,19 @@ const Navbar = () => {
                 <img src={lightLogo} className={lightLogoClass} />
               </button>
 
-              {currentNavItems.length > 0 && (
-                <a
-                  href={currentNavItems[0].href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(currentNavItems[0].href);
-                  }}
-                  className={getTextClass(activeSection === currentNavItems[0].href)}
-                >
-                  {currentNavItems[0].label}
-                </a>
-              )}
+              <a
+                href={currentNavItems[0].href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(currentNavItems[0].href);
+                }}
+                className={getTextClass(activeSection === currentNavItems[0].href)}
+              >
+                {currentNavItems[0].label}
+              </a>
             </div>
 
-            <div className="w-[55%] flex items-center justify-between">
+            <div className="w-[55%] flex items-center justify-between gap-6">
               <div className="flex gap-8 xl:gap-12 2xl:gap-16">
                 {currentNavItems.slice(1).map((item) => {
                   const isActive = activeSection === item.href;
@@ -202,18 +203,18 @@ const Navbar = () => {
                 })}
               </div>
 
-              <span className={`text-[14px] sm:text-[16px] font-semibold ${
-                mobileHeaderActive ? "text-black" : "text-white"
+              {/* ✅ FIXED SUBSCRIBE */}
+              <span className={`${navTextSizeClass} py-2 flex items-center ${
+                mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
               }`}>
                 Subscribe
               </span>
             </div>
           </div>
 
-          {/* 🔥 MOBILE FIX */}
+          {/* MOBILE */}
           <div className="lg:hidden flex w-full items-center justify-between">
             <div className="flex items-center">
-
               <button
                 onClick={toggleMobileMenu}
                 className="flex h-11 w-11 items-center justify-center -ml-2"
@@ -228,16 +229,15 @@ const Navbar = () => {
                 <img src={logo} className={darkLogoClass} />
                 <img src={lightLogo} className={lightLogoClass} />
               </button>
-
             </div>
 
-            <span className={`text-[14px] sm:text-[16px] font-semibold ${
-              mobileHeaderActive ? "text-black" : "text-white"
+            {/* ✅ MOBILE SUBSCRIBE */}
+            <span className={`${navTextSizeClass} py-2 flex items-center ${
+              mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
             }`}>
               Subscribe
             </span>
           </div>
-
         </div>
 
         {mobileOpen && (

@@ -10,6 +10,9 @@ const techLogoShellClass =
 const techLogoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
 
+/** ✅ COMMON TEXT SIZE */
+const navTextSizeClass = "text-[clamp(1.125rem,1.1vw,1.375rem)] font-semibold";
+
 const navItems = [
   { label: "Technology Research", href: "/technology-research" },
   { label: "Micro-Market Research", href: "/micro-market-research" },
@@ -75,11 +78,12 @@ const TechnologyResearchNavbar = () => {
   const showLightNavbar = isScrolled;
   const showLightLogo = mobileHeaderActive;
 
+  /** 🔥 FIXED NAV LINK CLASS */
   const getNavLinkClassName = (isActive: boolean) => {
     const activeLineClass =
       "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:origin-left after:rounded-full after:bg-[#63d3c5] after:transition-transform after:duration-300";
 
-    return `relative pb-2 text-[clamp(1.125rem,1.1vw,1.375rem)] transition-all duration-300 ${activeLineClass} ${
+    return `relative py-2 flex items-center ${navTextSizeClass} transition-all duration-300 ${activeLineClass} ${
       showLightNavbar
         ? isActive
           ? "text-[#0B1F3A] font-bold after:scale-x-100"
@@ -105,7 +109,7 @@ const TechnologyResearchNavbar = () => {
     >
       <div className="relative flex w-full items-center px-3 py-4 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
 
-        {/* 🔥 DESKTOP LAYOUT (UNCHANGED) */}
+        {/* DESKTOP */}
         <div className="hidden lg:flex w-full items-center">
           <div className="w-[45%] flex items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
             <Link to="/" className={`relative z-10 -ml-2 flex items-center p-0 ${techLogoShellClass}`}>
@@ -121,7 +125,7 @@ const TechnologyResearchNavbar = () => {
             </Link>
           </div>
 
-          <div className="w-[55%] flex items-center justify-between">
+          <div className="w-[55%] flex items-center justify-between gap-6">
             <div className="flex gap-8 xl:gap-12 2xl:gap-16">
               <Link
                 to="/micro-market-research"
@@ -135,9 +139,10 @@ const TechnologyResearchNavbar = () => {
               </a>
             </div>
 
+            {/* ✅ FIXED SUBSCRIBE */}
             <div className="flex items-center">
               <span
-                className={`cursor-pointer font-semibold text-[clamp(0.875rem,1vw,1.125rem)] transition-colors ${
+                className={`cursor-pointer ${navTextSizeClass} py-2 flex items-center ${
                   mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
                 }`}
               >
@@ -147,7 +152,7 @@ const TechnologyResearchNavbar = () => {
           </div>
         </div>
 
-        {/* 🔥 MOBILE (ONLY CHANGE DONE HERE) */}
+        {/* MOBILE */}
         <div className="lg:hidden flex w-full items-center justify-between">
           <div className="flex items-center">
             <button
@@ -164,8 +169,9 @@ const TechnologyResearchNavbar = () => {
             </Link>
           </div>
 
+          {/* ✅ MOBILE SUBSCRIBE FIX */}
           <span
-            className={`cursor-pointer font-semibold text-[14px] sm:text-[16px] transition-colors ${
+            className={`cursor-pointer ${navTextSizeClass} py-2 flex items-center ${
               mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
             }`}
           >
@@ -175,10 +181,7 @@ const TechnologyResearchNavbar = () => {
       </div>
 
       {mobileOpen && (
-        <div
-          id="technology-research-mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden"
-        >
+        <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden">
           <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
             {navItems.map((item) => {
               const isActive =

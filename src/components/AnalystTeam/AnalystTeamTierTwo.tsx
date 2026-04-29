@@ -22,7 +22,7 @@ const featuredAnalyst = {
 };
 
 const tierCardClass =
-  "group mx-auto flex h-full w-full max-w-[clamp(240px,18vw,360px)] flex-col rounded-xl border border-[#dfe4ea] bg-white px-4 pt-6 pb-6 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)] transition-all duration-300 hover:-translate-y-2 hover:border-navy hover:bg-navy min-h-[clamp(300px,22vw,480px)] max-sm:min-h-[380px] sm:mx-0";
+  "group mx-auto flex h-full w-full sm:max-w-[clamp(240px,18vw,360px)] max-sm:max-w-[340px] flex-col rounded-xl border border-[#dfe4ea] bg-white px-4 pt-6 pb-6 text-center shadow-[0_4px_10px_rgba(8,18,59,0.15)] transition-all duration-300 hover:-translate-y-2 hover:border-navy hover:bg-navy sm:min-h-[clamp(300px,22vw,480px)] max-sm:min-h-[380px] sm:mx-0";
 
 const tierGridClass =
   "grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3";
