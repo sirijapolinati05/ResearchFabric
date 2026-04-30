@@ -61,7 +61,7 @@ const DeliverSection = () => {
               {deliverables.map((item) => (
                 <div
                   key={item.title}
-                  className="
+                  className="deliver-card
                   relative rounded-xl bg-white
                   p-4 sm:p-5
                   border border-[#E6ECF5]
@@ -81,7 +81,7 @@ const DeliverSection = () => {
 
                   {/* ✅ UPDATED HEADING SIZE */}
                   <h4
-                    className="
+                    className="deliver-card-title
                     mb-2 font-bold text-[#0A1F44] font-serif
                     text-[clamp(1.2rem,1.5vw,1.5rem)]
                   ">

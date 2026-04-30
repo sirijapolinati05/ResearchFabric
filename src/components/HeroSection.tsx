@@ -47,11 +47,11 @@ const HeroSection = () => {
           </h1>
 
           {/* ✅ BUTTONS */}
-          <div className="mt-10 flex gap-4 xl:gap-5">
-            <div className={`${ctaBaseClass} bg-[#3CC8FF]`}>
+          <div className="hero-desktop-cta-row mt-10 flex gap-4 xl:gap-5">
+            <div className={`hero-desktop-cta ${ctaBaseClass} bg-[#3CC8FF]`}>
               Explore Our Practices
             </div>
-            <div className={`${ctaBaseClass} bg-[#43E0B1]`}>
+            <div className={`hero-desktop-cta ${ctaBaseClass} bg-[#43E0B1]`}>
               CXO AI Research
             </div>
           </div>
@@ -108,11 +108,11 @@ const HeroSection = () => {
               </h1>
 
               {/* ✅ MOBILE BUTTONS */}
-              <div className="mt-6 flex gap-3 flex-wrap">
-                <div className={`${ctaBaseClass} bg-[#3CC8FF]`}>
+              <div className="mt-6 flex flex-nowrap gap-2 sm:gap-3">
+                <div className={`${ctaBaseClass} shrink px-4 py-2 text-[12px] leading-tight whitespace-normal text-center sm:px-6 sm:py-3.5 sm:text-[17px] sm:whitespace-nowrap bg-[#3CC8FF]`}>
                   Explore Our Practices
                 </div>
-                <div className={`${ctaBaseClass} bg-[#43E0B1]`}>
+                <div className={`${ctaBaseClass} shrink px-4 py-2 text-[12px] leading-tight whitespace-normal text-center sm:px-6 sm:py-3.5 sm:text-[17px] sm:whitespace-nowrap bg-[#43E0B1]`}>
                   CXO AI Research
                 </div>
               </div>
@@ -132,7 +132,7 @@ const HeroSection = () => {
       {/* 🔸 GRID */}
       <div className="mt-2 lg:mt-[12px] px-6 sm:px-10 lg:px-20 xl:px-28">
 
-        <div className="grid grid-cols-2 text-center lg:grid-cols-4 auto-rows-fr">
+        <div className="grid grid-cols-2 text-center auto-rows-fr lg:grid-cols-4">
 
           {[
             { title: "Technology", sub: "Deep Tech Capabilities" },
@@ -142,15 +142,15 @@ const HeroSection = () => {
           ].map((item, index) => (
             <div
               key={item.title}
-              className={`flex flex-col justify-center items-center px-3 pt-8 pb-6
+              className={`flex flex-col items-center justify-start px-3 pt-6 pb-5 sm:justify-center sm:px-3 sm:pt-8 sm:pb-6
               ${index % 2 === 0 ? `border-r border-white/100` : ""}
               ${index < 2 ? `border-b border-white/100 lg:border-b-0` : ""}
               ${index < 3 ? `lg:border-r border-white/100` : ""}`}
             >
-              <h3 className="text-[clamp(1.25rem,2.5vw,2rem)] text-[#5AE0BB] font-serif font-bold">
+              <h3 className="min-h-[1.5rem] text-[1.05rem] leading-tight text-[#5AE0BB] font-serif font-bold sm:min-h-0 sm:text-[clamp(1.25rem,2.5vw,2rem)]">
                 {item.title}
               </h3>
-              <p className="text-[clamp(1.125rem,1.2vw,1.375rem)] text-white/80 mt-2 font-medium">
+              <p className="mt-1 min-h-[2.4rem] text-[0.82rem] leading-tight text-white/80 font-medium sm:mt-2 sm:min-h-0 sm:text-[clamp(1.125rem,1.2vw,1.375rem)]">
                 {item.sub}
               </p>
             </div>

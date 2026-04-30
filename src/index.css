@@ -804,3 +804,26 @@
     line-height: 1.45 !important;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .hero-desktop-cta-row {
+    gap: 0.75rem !important;
+  }
+
+  .hero-desktop-cta {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (width: 1024px) {
+  .deliver-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .deliver-card-title {
+    min-height: 3.25rem !important;
+  }
+}
