@@ -827,3 +827,9 @@
     min-height: 3.25rem !important;
   }
 }
+
+@media (min-width: 1024px) {
+  .footer-top-shell {
+    padding-bottom: 2.75rem !important;
+  }
+}

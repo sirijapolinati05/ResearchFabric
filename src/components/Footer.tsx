@@ -22,7 +22,7 @@ const Footer = () => {
       <footer className="border-t border-border bg-background">
 
         {/* TOP */}
-        <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 mx-auto py-8 sm:py-12 md:py-16">
+        <div className="footer-top-shell w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 mx-auto py-8 sm:py-12 md:py-16">
 
           {/* ✅ TOP CONTENT WRAPPER */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 sm:gap-10 text-center md:text-left">
