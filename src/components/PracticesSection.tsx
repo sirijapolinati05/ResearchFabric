@@ -103,7 +103,7 @@ const PracticesSection = () => {
             <div className="transition-all duration-300 group-hover:-translate-y-1">
               <img src={microIcon} className="mb-4 h-[clamp(2rem,3vw,3rem)] w-[clamp(2rem,3vw,3rem)]" />
 
-              <div className="mb-4 lg:min-h-[11.25rem] xl:min-h-[11.75rem]">
+              <div className="mb-4 lg:min-h-[9.125rem] xl:min-h-[9.375rem]">
                 <h3 className="text-[clamp(1.25rem,1.6vw,2rem)] font-bold text-[#0A1F44]">
                   Micro-Market Research
                 </h3>
@@ -112,7 +112,7 @@ const PracticesSection = () => {
                 </p>
               </div>
 
-              <div className="mb-6 lg:-mt-[2.125rem] xl:-mt-[2.375rem]">
+              <div className="mb-6">
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {microMarketTags.map((tag) => (
                     <span key={tag} className={tagClassName}>
