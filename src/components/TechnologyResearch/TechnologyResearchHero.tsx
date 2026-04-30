@@ -21,8 +21,8 @@ const TechnologyResearchHero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,15,67,0.94)_0%,rgba(8,15,67,0.82)_38%,rgba(8,15,67,0.52)_64%,rgba(8,15,67,0.24)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(52,90,255,0.22),transparent_34%)]" />
 
-      <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 relative z-10 mx-auto">
-        <div className="max-w-[860px] pt-6 sm:pt-8 md:pt-10 lg:pt-20">
+      <div className="relative z-10 mx-auto w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
+        <div className="max-w-[860px] pt-6 sm:pt-8 md:pt-10 lg:pt-16 xl:pt-20">
           <h1 className="technology-research-hero-title text-[clamp(2rem,5vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
             Thought Shaping Research for Quantum, Chipsets & AI
           </h1>

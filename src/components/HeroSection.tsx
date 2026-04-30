@@ -22,7 +22,7 @@ const HeroSection = () => {
       {/* 🔥 DESKTOP */}
       <div className="hidden lg:flex relative w-full">
 
-        <div className="w-[45%] z-10 pl-20 xl:pl-28 pt-44 xl:pt-48">
+        <div className="w-[45%] z-10 pl-20 xl:pl-28 2xl:pl-36 pt-40 xl:pt-44">
 
           <h1 className="font-serif leading-[1.05] text-[clamp(2.5rem,5vw,4.5rem)] lg:text-[clamp(3rem,4.5vw,5.5rem)]">
             <span className="block">Thought-Shaping</span>

@@ -183,7 +183,6 @@ const Navbar = () => {
                   scrollToSection(currentNavItems[0].href);
                 }}
                 className={getTextClass(activeSection === currentNavItems[0].href)}
-                style={{ transform: "translateX(20px)" }}
               >
                 {currentNavItems[0].label}
               </a>

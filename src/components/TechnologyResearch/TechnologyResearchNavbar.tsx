@@ -112,7 +112,7 @@ const TechnologyResearchNavbar = () => {
         {/* DESKTOP */}
         <div className="hidden lg:flex w-full items-center">
           <div className="w-[45%] flex items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
-            <Link to="/" className={`relative z-10 -ml-2 flex items-center p-0 ${techLogoShellClass}`}>
+            <Link to="/" className={`relative z-10 flex items-center p-0 ${techLogoShellClass}`}>
               <img src={darkLogo} className={darkLogoClass} />
               <img src={lightLogo} className={lightLogoClass} />
             </Link>
@@ -120,7 +120,6 @@ const TechnologyResearchNavbar = () => {
               <Link
                 to="/technology-research"
                 className={getNavLinkClassName(isTechnologyResearch)}
-                style={{ transform: "translateX(20px)" }}
               >
                 Technology Research
               </Link>
