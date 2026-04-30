@@ -145,7 +145,9 @@ const MicroMarketResearchMethodology = () => {
                 h-[195px] 
                 sm:h-[245px] 
                 md:h-[330px] 
-                lg:h-[305px]
+                lg:h-[300px]
+                xl:h-[330px]
+                2xl:h-[360px]
                 w-auto max-w-full object-contain mx-auto lg:mx-0
                 transition-transform duration-500 hover:scale-105
               "
