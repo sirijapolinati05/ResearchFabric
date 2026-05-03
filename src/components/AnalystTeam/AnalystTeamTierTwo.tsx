@@ -46,31 +46,40 @@ const TierTwoCard = ({ name, subtitle, image }) => (
       />
     </div>
 
-    <h3
-      className="
-        mt-2 whitespace-nowrap text-[#17204c] group-hover:text-white
-        text-[18px] max-sm:text-[24px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]
-        min-[2500px]:text-[28px]
-      "
-    >
+    <h3 className="mt-2 whitespace-nowrap text-[#17204c] group-hover:text-white text-[18px] max-sm:text-[24px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] min-[2500px]:text-[28px]">
       {name}
     </h3>
 
-    <p
-      className="
-        mt-2 whitespace-nowrap text-[clamp(1.125rem,1vw,1.125rem)] font-bold text-[#1E4E8C]
-        group-hover:text-white/90 min-[2500px]:text-[22px]
-      "
-    >
+    <p className="mt-2 whitespace-nowrap text-[clamp(1.125rem,1vw,1.125rem)] font-bold text-[#1E4E8C] group-hover:text-white/90 min-[2500px]:text-[22px]">
       {subtitle}
     </p>
 
     <div className="mt-auto w-full pt-6">
       <div className="h-px w-full bg-[#c8ccd5] group-hover:bg-white/35" />
 
+      {/* ✅ UPDATED LOGOS */}
       <div className="mt-5 flex justify-center gap-6">
-        <img src={linkedInLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
-        <img src={gmailLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+        <div
+          className="flex items-center justify-center rounded-full"
+          style={{
+            width: "32px",
+            height: "32px",
+            backgroundColor: "#43E0B1",
+          }}
+        >
+          <img src={linkedInLogo} style={{ width: "16px", height: "16px" }} />
+        </div>
+
+        <div
+          className="flex items-center justify-center rounded-full"
+          style={{
+            width: "32px",
+            height: "32px",
+            backgroundColor: "#43E0B1",
+          }}
+        >
+          <img src={gmailLogo} style={{ width: "16px", height: "16px" }} />
+        </div>
       </div>
     </div>
   </article>

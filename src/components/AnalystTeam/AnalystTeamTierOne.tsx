@@ -35,7 +35,6 @@ const AnalystTeamTierOne = () => {
 
       <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 mx-auto">
 
-        {/* HEADER */}
         <div className="max-w-[1200px]">
           <p className="flex items-center gap-2 text-[clamp(1rem,1.2vw,1.375rem)] font-bold text-[#20254d]">
             <span className="h-px w-6 bg-[#20254d]" />
@@ -48,17 +47,11 @@ const AnalystTeamTierOne = () => {
           </h2>
         </div>
 
-        {/* GRID TO FLEX */}
         <div className="mt-12 lg:mt-16">
           <div className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-4
+            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
             gap-8 lg:gap-10 xl:gap-12
-
-            min-[2500px]:flex
-            min-[2500px]:gap-12
+            min-[2500px]:flex min-[2500px]:gap-12
           ">
 
             {partnerCards.map((member) => (
@@ -68,18 +61,15 @@ const AnalystTeamTierOne = () => {
                   group rounded-xl border border-[#dfe4ea] bg-white
                   shadow-md transition-all duration-300
                   hover:-translate-y-2 hover:bg-[#0b1d3a]
-
                   w-full mx-auto
                   max-sm:max-w-[340px]
                   max-sm:min-h-[380px]
-
                   min-[2500px]:flex-1
                   min-[2500px]:h-[420px]
                 "
               >
                 <div className="flex flex-col items-center text-center px-6 py-6 h-full">
 
-                  {/* IMAGE */}
                   <div
                     className="rounded-full overflow-hidden mb-5"
                     style={{
@@ -97,55 +87,44 @@ const AnalystTeamTierOne = () => {
                     />
                   </div>
 
-                  {/* CONTENT */}
                   <div className="flex flex-col items-center flex-grow w-full">
 
-                    {/* NAME */}
-                    <h3
-                      className="
-                        font-normal leading-snug group-hover:text-white
-
-                        text-[20px]
-                        max-sm:text-[26px]
-                        lg:text-[22px]
-                        xl:text-[24px]
-                        2xl:text-[26px]
-
-                        min-[2500px]:text-[30px]
-
-                        min-[2500px]:whitespace-nowrap
-                        min-[2500px]:overflow-hidden
-                        min-[2500px]:text-ellipsis
-                      "
-                    >
+                    <h3 className="font-normal leading-snug group-hover:text-white text-[20px] max-sm:text-[26px] lg:text-[22px] xl:text-[24px] 2xl:text-[26px] min-[2500px]:text-[30px]">
                       {member.name}
                     </h3>
 
-                    {/* SUBTITLE */}
-                    <p
-                      className="
-                        mt-3 text-[#1E4E8C] group-hover:text-white/90
-                        font-bold
-                        text-[clamp(1.125rem,1vw,1.125rem)]
-
-                        min-[2500px]:text-[22px]
-
-                        min-[2500px]:whitespace-nowrap
-                        min-[2500px]:overflow-hidden
-                        min-[2500px]:text-ellipsis
-                      "
-                    >
+                    <p className="mt-3 text-[#1E4E8C] group-hover:text-white/90 font-bold text-[clamp(1.125rem,1vw,1.125rem)] min-[2500px]:text-[22px]">
                       {member.subtitle}
                     </p>
 
-                    {/* BOTTOM */}
                     <div className="mt-auto w-full">
                       <div className="w-full h-px bg-[#c8ccd5] group-hover:bg-white/30" />
 
+                      {/* ✅ UPDATED LOGOS */}
                       <div className="mt-6 flex justify-center gap-6">
-                        <img src={linkedInLogo} className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9" />
-                        <img src={gmailLogo} className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9" />
+                        <div
+                          className="flex items-center justify-center rounded-full"
+                          style={{
+                            width: "32px",
+                            height: "32px",
+                            backgroundColor: "#43E0B1",
+                          }}
+                        >
+                          <img src={linkedInLogo} style={{ width: "16px", height: "16px" }} />
+                        </div>
+
+                        <div
+                          className="flex items-center justify-center rounded-full"
+                          style={{
+                            width: "32px",
+                            height: "32px",
+                            backgroundColor: "#43E0B1",
+                          }}
+                        >
+                          <img src={gmailLogo} style={{ width: "16px", height: "16px" }} />
+                        </div>
                       </div>
+
                     </div>
 
                   </div>

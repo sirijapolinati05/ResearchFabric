@@ -28,12 +28,12 @@ const microMarketTags = [
   "Competitive Landscaping",
 ];
 
-/* ✅ UPDATED BADGE STYLE */
 const tagClassName =
   "rounded-full border border-[#C7D2E2] bg-white px-3 py-1.5 lg:px-3.5 lg:py-1.5 xl:px-4 xl:py-2 text-[clamp(0.75rem,0.85vw,1rem)] font-semibold text-[#0A1F44] transition-all duration-300 hover:bg-[#F0F4F9]";
 
+/* ✅ ONLY CHANGE HERE (+2px) */
 const buttonClassName =
-  "w-full inline-flex items-center justify-center gap-1.5 lg:gap-2 rounded-full h-[clamp(2.75rem,3.5vw,4rem)] px-3 lg:px-6 xl:px-8 text-[clamp(0.8rem,0.9vw,1.25rem)] font-semibold xl:font-bold text-white bg-[#111B4D] transition-all duration-300 hover:scale-[1.02] hover:bg-[#1A2B6D] whitespace-normal sm:whitespace-nowrap text-center leading-tight";
+  "w-full inline-flex items-center justify-center gap-1.5 lg:gap-2 rounded-full h-[clamp(2.75rem,3.5vw,4rem)] px-3 lg:px-6 xl:px-8 text-[clamp(0.925rem,1.025vw,1.375rem)] font-semibold xl:font-bold text-white bg-[#111B4D] transition-all duration-300 hover:scale-[1.02] hover:bg-[#1A2B6D] whitespace-normal sm:whitespace-nowrap text-center leading-tight";
 
 const cardBaseClass =
   "group flex flex-col justify-between rounded-[12px] border border-[#E2E6EE] bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1";

@@ -53,9 +53,29 @@ const TierThreeCard = ({ name, image }) => (
     <div className="mt-auto w-full pt-6">
       <div className="h-px w-full bg-[#c8ccd5] transition-colors duration-300 group-hover:bg-white/40" />
 
+      {/* ✅ UPDATED LOGOS */}
       <div className="mt-5 flex justify-center gap-6">
-        <img src={linkedInLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
-        <img src={gmailLogo} className="h-7 w-7 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9" />
+        <div
+          className="flex items-center justify-center rounded-full"
+          style={{
+            width: "32px",
+            height: "32px",
+            backgroundColor: "#43E0B1",
+          }}
+        >
+          <img src={linkedInLogo} style={{ width: "16px", height: "16px" }} />
+        </div>
+
+        <div
+          className="flex items-center justify-center rounded-full"
+          style={{
+            width: "32px",
+            height: "32px",
+            backgroundColor: "#43E0B1",
+          }}
+        >
+          <img src={gmailLogo} style={{ width: "16px", height: "16px" }} />
+        </div>
       </div>
     </div>
   </article>

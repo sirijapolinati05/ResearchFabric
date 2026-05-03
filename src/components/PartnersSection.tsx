@@ -38,7 +38,6 @@ const partners = [
 const PartnersSection = () => {
   return (
     <div>
-
       <section
         id="analysts"
         className="overflow-hidden bg-background py-10 sm:py-12 md:py-14 lg:py-12 xl:py-14 2xl:py-16 font-serif"
@@ -46,7 +45,6 @@ const PartnersSection = () => {
         <div className="w-full px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36 text-center">
 
           <div>
-
             <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3">
               <span className="w-4 sm:w-6 h-[1px] bg-current opacity-40"></span>
 
@@ -74,12 +72,10 @@ const PartnersSection = () => {
             ">
               Our research is shaped by partners who have spent decades at the forefront of technology research and advisory.
             </p>
-
           </div>
 
           <div className="flex justify-center">
             <div className="w-full">
-
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 
                 {partners.map((partner) => (
@@ -131,9 +127,15 @@ const PartnersSection = () => {
                         <div className="mx-auto mt-3 h-[2px] w-20 bg-gray-400 opacity-70" />
                       </div>
 
-                      <div className="mt-auto flex justify-center gap-8 pt-6">
-                        <img src={linkedInLogo} className="h-7 w-7" />
-                        <img src={gmailLogo} className="h-7 w-7" />
+                      {/* ✅ COLOR MATCHED WITH BUTTON */}
+                      <div className="mt-auto flex justify-center gap-6 pt-6">
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: "#43E0B1" }}>
+                          <img src={linkedInLogo} className="w-4 h-4 object-contain" />
+                        </div>
+
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: "#43E0B1" }}>
+                          <img src={gmailLogo} className="w-4 h-4 object-contain" />
+                        </div>
                       </div>
 
                     </div>
@@ -162,7 +164,6 @@ const PartnersSection = () => {
 
         </div>
       </section>
-
     </div>
   );
 };
