@@ -548,7 +548,7 @@
   }
 }
 
-@media (width: 1920px) {
+@media (min-width: 1880px) and (max-width: 1960px) {
   .deliver-1920-shell {
     padding-left: 40px !important;
     padding-right: 40px !important;
@@ -594,7 +594,7 @@
   }
 }
 
-@media (width: 1440px) {
+@media (min-width: 1400px) and (max-width: 1480px) {
   .partners-grid {
     grid-auto-rows: 1fr !important;
     align-items: stretch !important;
@@ -622,7 +622,7 @@
   }
 }
 
-@media (width: 2560px) {
+@media (min-width: 2500px) {
   .page-shell {
     max-width: 2320px !important;
     padding-left: 24px !important;
@@ -712,7 +712,7 @@
   }
 }
 
-@media (width: 375px) {
+@media (min-width: 370px) and (max-width: 390px) {
   .process-step-card {
     padding-top: 0.15rem !important;
     padding-bottom: 0.15rem !important;
@@ -747,7 +747,7 @@
   }
 }
 
-@media (width: 360px) {
+@media (min-width: 350px) and (max-width: 369px) {
   .process-step-card {
     padding: 0.85rem 0.85rem 1rem !important;
   }
@@ -771,7 +771,7 @@
   }
 }
 
-@media (width: 425px) {
+@media (min-width: 410px) and (max-width: 440px) {
   .process-step-card {
     padding-top: 0.1rem !important;
     padding-bottom: 0.1rem !important;
@@ -782,7 +782,7 @@
   }
 }
 
-@media (width: 768px) {
+@media (min-width: 750px) and (max-width: 790px) {
   .process-step-card-tablet {
     padding: 0.5rem !important;
     min-height: 350px !important;
@@ -817,7 +817,7 @@
   }
 }
 
-@media (width: 1024px) {
+@media (min-width: 990px) and (max-width: 1040px) {
   .deliver-card {
     display: flex !important;
     flex-direction: column !important;
