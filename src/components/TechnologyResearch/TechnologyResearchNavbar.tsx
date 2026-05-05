@@ -10,7 +10,8 @@ const techLogoShellClass =
 const techLogoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
 
-const navTextSizeClass = "text-[clamp(1.125rem,1.1vw,1.375rem)] font-semibold";
+const navTextSizeClass =
+  "text-[clamp(1rem,0.95vw,1.125rem)] font-semibold whitespace-nowrap";
 
 const navItems = [
   { label: "Technology Research", href: "/technology-research" },
@@ -81,7 +82,7 @@ const TechnologyResearchNavbar = () => {
     const activeLineClass =
       "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:origin-left after:rounded-full after:bg-[#63d3c5] after:transition-transform after:duration-300";
 
-    return `relative py-2 flex items-center ${navTextSizeClass} transition-all duration-300 ${activeLineClass} ${
+    return `relative flex items-center py-2 ${navTextSizeClass} transition-all duration-300 ${activeLineClass} ${
       showLightNavbar
         ? isActive
           ? "text-[#0B1F3A] font-bold after:scale-x-100"
@@ -106,43 +107,49 @@ const TechnologyResearchNavbar = () => {
       }`}
     >
       <div className="relative flex w-full items-center px-3 py-4 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
+        <div className="hidden w-full grid-cols-[auto_1fr_auto] items-center gap-10 lg:grid xl:gap-14">
+          <Link
+            to="/"
+            className={`relative z-10 flex shrink-0 items-center p-0 ${techLogoShellClass}`}
+          >
+            <img src={darkLogo} className={darkLogoClass} />
+            <img src={lightLogo} className={lightLogoClass} />
+          </Link>
 
-        {/* DESKTOP */}
-        <div className="hidden lg:flex w-full items-center">
-          <div className="w-[45%] flex items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
-            <Link to="/" className={`relative z-10 flex items-center p-0 ${techLogoShellClass}`}>
-              <img src={darkLogo} className={darkLogoClass} />
-              <img src={lightLogo} className={lightLogoClass} />
-            </Link>
+          <div className="flex min-w-0 items-center justify-center">
+            <div className="flex items-center gap-8 xl:gap-12 2xl:gap-14">
+              <Link
+                to="/technology-research"
+                className={getNavLinkClassName(isTechnologyResearch)}
+              >
+                Technology Research
+              </Link>
 
-            <Link to="/technology-research" className={getNavLinkClassName(isTechnologyResearch)}>
-              Technology Research
-            </Link>
-          </div>
-
-          <div className="w-[55%] flex items-center justify-between gap-6">
-            <div className="flex gap-6 xl:gap-8 2xl:gap-10">
-              <Link to="/micro-market-research" className={getNavLinkClassName(isMicroMarketResearch)}>
+              <Link
+                to="/micro-market-research"
+                className={getNavLinkClassName(isMicroMarketResearch)}
+              >
                 Micro-Market Research
               </Link>
 
-              {/* ✅ FIXED (STATIC, NEVER ACTIVE) */}
               <a href="#cta" className={getNavLinkClassName(false)}>
                 Download Approach Note
               </a>
             </div>
+          </div>
 
-            <div className="flex items-center">
-              <span className={`cursor-pointer ${navTextSizeClass} py-2 flex items-center ${
+          <div className="flex shrink-0 items-center justify-end">
+            <span
+              className={`cursor-pointer ${navTextSizeClass} py-2 flex items-center ${
                 mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
-              }`}>
-                Subscribe
-              </span>
-            </div>
+              }`}
+            >
+              Subscribe
+            </span>
           </div>
         </div>
 
-        <div className="lg:hidden flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between lg:hidden">
           <div className="flex items-center">
             <button
               type="button"
