@@ -18,7 +18,6 @@ import AnalystTeamTierThree from "@/components/AnalystTeam/AnalystTeamTierThree"
 import MicroMarketResearchExpertise from "@/components/MicroMarketResearch/MicroMarketResearchExpertise";
 import MicroMarketResearchHero from "@/components/MicroMarketResearch/MicroMarketResearchHero";
 import MicroMarketResearchMethodology from "@/components/MicroMarketResearch/MicroMarketResearchMethodology";
-import MicroMarketResearchNavbar from "@/components/MicroMarketResearch/MicroMarketResearchNavbar";
 import TechnologyResearchDomains from "@/components/TechnologyResearch/TechnologyResearchDomains";
 import TechnologyResearchHero from "@/components/TechnologyResearch/TechnologyResearchHero";
 import TechnologyResearchNavbar from "@/components/TechnologyResearch/TechnologyResearchNavbar";
@@ -81,7 +80,7 @@ const AnalystTeamPage = () => (
 
 const MicroMarketResearchPage = () => (
   <PageWrapper>
-    <MicroMarketResearchNavbar />
+    <TechnologyResearchNavbar />
     <div className="bg-[#15203c] lg:bg-[#f8f7f3]">
       <MicroMarketResearchHero />
       <MicroMarketResearchExpertise />

@@ -30,6 +30,8 @@ const MicroMarketResearchNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCtaVisible, setIsCtaVisible] = useState(false);
 
+  const isTechnologyResearch = pathname === "/technology-research";
+  const isMicroMarketResearch = pathname === "/micro-market-research";
   const mobileHeaderActive = mobileOpen || isScrolled;
   const showLightNavbar = isScrolled;
   const showLightLogo = mobileHeaderActive;
@@ -39,10 +41,9 @@ const MicroMarketResearchNavbar = () => {
     setMobileOpen(false);
   }, [pathname]);
 
-  // 🔥 SCROLL FIX
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20); // smoother trigger
+      setIsScrolled(window.scrollY > 20);
     };
 
     handleScroll();
@@ -98,43 +99,38 @@ const MicroMarketResearchNavbar = () => {
     <nav
       className={`
       fixed top-0 left-0 right-0 z-50 w-full
-
       transition-all duration-500 ease-in-out
-
       ${
         mobileHeaderActive
-          ? "bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+          ? "border-b border-gray-200/60 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md"
           : "bg-transparent"
       }
     `}
     >
       <div className="relative flex w-full items-center px-3 py-4 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
-
-        {/* 🔥 DESKTOP LAYOUT (45/55 SPLIT) */}
-        <div className="hidden lg:flex w-full items-center">
-          
-          {/* 🔸 LEFT (45%) → Logo & First Item */}
-          <div className="w-[45%] flex items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
-            <Link to="/" className={`relative z-10 -ml-2 flex items-center ${logoShellClass}`}>
+        <div className="hidden w-full items-center lg:flex">
+          <div className="flex w-[45%] items-center justify-between pr-8 xl:pr-12 2xl:pr-16">
+            <Link
+              to="/"
+              className={`relative z-10 -ml-2 flex items-center ${logoShellClass}`}
+            >
               <img src={darkLogo} className={darkLogoClass} />
               <img src={lightLogo} className={lightLogoClass} />
             </Link>
+
+            <Link
+              to="/technology-research"
+              className={getLinkClassName(isTechnologyResearch)}
+            >
+              Technology Research
+            </Link>
           </div>
 
-          {/* 🔸 RIGHT (55%) → Remaining Items & Subscribe */}
-          <div className="w-[55%] flex items-center justify-between gap-6">
+          <div className="flex w-[55%] items-center justify-between gap-6">
             <div className="flex gap-6 xl:gap-8 2xl:gap-10">
               <Link
-                to="/technology-research"
-                className={getLinkClassName(pathname === "/technology-research")}
-                style={{ transform: "translateX(20px)" }}
-              >
-                Technology Research
-              </Link>
-
-              <Link
                 to="/micro-market-research"
-                className={getLinkClassName(pathname === "/micro-market-research")}
+                className={getLinkClassName(isMicroMarketResearch)}
               >
                 Micro-Market Research
               </Link>
@@ -156,8 +152,7 @@ const MicroMarketResearchNavbar = () => {
           </div>
         </div>
 
-        {/* 🔹 MOBILE LAYOUT */}
-        <div className="lg:hidden flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between lg:hidden">
           <div className="flex items-center">
             <button
               type="button"
@@ -171,7 +166,10 @@ const MicroMarketResearchNavbar = () => {
               )}
             </button>
 
-            <Link to="/" className={`relative -ml-1 flex items-center ${logoShellClass}`}>
+            <Link
+              to="/"
+              className={`relative -ml-1 flex items-center ${logoShellClass}`}
+            >
               <img src={darkLogo} className={darkLogoClass} />
               <img src={lightLogo} className={lightLogoClass} />
             </Link>
@@ -187,16 +185,15 @@ const MicroMarketResearchNavbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       {mobileOpen && (
         <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden">
           <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/technology-research"
-                  ? pathname === "/technology-research"
+                  ? isTechnologyResearch
                   : item.href === "/micro-market-research"
-                    ? pathname === "/micro-market-research"
+                    ? isMicroMarketResearch
                     : isCtaVisible;
 
               if (item.href.startsWith("#")) {
