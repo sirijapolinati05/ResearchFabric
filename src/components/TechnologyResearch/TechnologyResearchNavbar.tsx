@@ -142,8 +142,77 @@ const TechnologyResearchNavbar = () => {
           </div>
         </div>
 
-        {/* MOBILE unchanged */}
+        <div className="lg:hidden flex w-full items-center justify-between">
+          <div className="flex items-center">
+            <button
+              type="button"
+              onClick={() => setMobileOpen((prev) => !prev)}
+              className="flex h-11 w-11 shrink-0 items-center justify-center -ml-2"
+            >
+              {mobileOpen ? (
+                <CloseIcon size={25} color={mobileMenuIconColor} />
+              ) : (
+                <MenuIcon size={25} color={mobileMenuIconColor} />
+              )}
+            </button>
+
+            <Link
+              to="/"
+              className={`relative -ml-1 flex items-center ${techLogoShellClass}`}
+            >
+              <img src={darkLogo} className={darkLogoClass} />
+              <img src={lightLogo} className={lightLogoClass} />
+            </Link>
+          </div>
+
+          <span
+            className={`cursor-pointer ${navTextSizeClass} transition-colors ${
+              mobileHeaderActive ? "text-[#0B1F3A]" : "text-white"
+            }`}
+          >
+            Subscribe
+          </span>
+        </div>
       </div>
+
+      {mobileOpen && (
+        <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-md lg:hidden">
+          <nav className="flex flex-col gap-2 text-[16px] font-semibold text-[#0B1F3A]">
+            {navItems.map((item) => {
+              const isActive =
+                item.href === "/technology-research"
+                  ? isTechnologyResearch
+                  : item.href === "/micro-market-research"
+                    ? isMicroMarketResearch
+                    : isCtaVisible;
+
+              if (item.href.startsWith("#")) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={getMobileItemClassName(isActive)}
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={getMobileItemClassName(isActive)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      )}
     </nav>
   );
 };

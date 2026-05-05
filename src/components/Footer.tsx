@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 text-center sm:text-left">
 
               <p className="text-[clamp(1.125rem,0.9vw,1.125rem)] text-muted-foreground font-medium">
-                (c) 2022 DIGITALFABRIC. All Rights Reserved
+                © 2022 DIGITALFABRIC®. All Rights Reserved
               </p>
 
               <p className="text-[clamp(1.125rem,0.9vw,1.125rem)] text-muted-foreground font-medium">
