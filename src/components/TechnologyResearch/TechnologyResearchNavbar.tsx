@@ -11,7 +11,7 @@ const techLogoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
 
 const navTextSizeClass =
-  "text-[clamp(1rem,0.95vw,1.125rem)] font-semibold whitespace-nowrap";
+  "text-[clamp(1.125rem,1.1vw,1.25rem)] font-semibold whitespace-nowrap";
 
 const navItems = [
   { label: "Technology Research", href: "/technology-research" },

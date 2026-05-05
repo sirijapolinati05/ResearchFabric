@@ -13,7 +13,8 @@ const logoImageClass =
   "absolute inset-0 h-full w-full scale-[1.35] origin-left object-contain transition-all duration-500";
 
 /** ✅ COMMON TEXT SIZE */
-const navTextSizeClass = "text-[clamp(1.125rem,1.1vw,1.25rem)] font-semibold";
+const navTextSizeClass =
+  "text-[clamp(1.125rem,1.1vw,1.25rem)] font-semibold";
 
 const navItems = [
   { label: "Our Practices", href: "#practices" },
